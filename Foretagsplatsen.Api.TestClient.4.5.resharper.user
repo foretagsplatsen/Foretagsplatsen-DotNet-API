@@ -1,0 +1,438 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:IAccessTokenRepository.cs" caret="476" fromTop="13" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Settings.Designer.cs" caret="1067" fromTop="23" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Company.cs" caret="157" fromTop="5" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ChartOfAccountsType.cs" caret="163" fromTop="5" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:OAuth.cs" caret="233" fromTop="9" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiErrorType.cs" caret="158" fromTop="8" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:UploadSieResult.cs" caret="1542" fromTop="55" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiException.cs" caret="0" fromTop="0" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiConnectionException.cs" caret="110" fromTop="5" />
+      <File id="61B700B6-3911-4CEF-8751-7F42CA765068/d:Consumer/f:IOAuthSession.cs" caret="1667" fromTop="1" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:CredentialService.cs" caret="885" fromTop="15" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11172" fromTop="25" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11404" fromTop="36" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:CredentialService.cs" caret="507" fromTop="6" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="12769" fromTop="32" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiConnectionException.cs" caret="289" fromTop="10" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiConnectionException.cs" caret="110" fromTop="5" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11218" fromTop="12" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11832" fromTop="10" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3575" fromTop="55" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3553" fromTop="55" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3250" fromTop="49" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="4313" fromTop="72" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="5168" fromTop="89" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="4718" fromTop="80" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="5518" fromTop="100" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="7021" fromTop="39" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="7964" fromTop="15" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="9136" fromTop="41" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="800" fromTop="26" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3044" fromTop="36" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="12707" fromTop="38" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11218" fromTop="7" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="12769" fromTop="39" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="1532" fromTop="9" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3948" fromTop="30" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="4580" fromTop="18" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="5965" fromTop="17" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="7814" fromTop="30" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="8171" fromTop="26" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="using" priority="1" />
+      <Item value="System" priority="0" />
+      <Item value="Web" priority="0" />
+      <Item value="UI" priority="0" />
+      <Item value="WebControls" priority="0" />
+      <Item value="SessionState" priority="0" />
+      <Item value="public" priority="24" />
+      <Item value="class" priority="2" />
+      <Item value="GetChildAtPointSkip" priority="0" />
+      <Item value="private" priority="12" />
+      <Item value="InitializeLifetimeService" priority="1" />
+      <Item value="sessionData" priority="0" />
+      <Item value="new" priority="29" />
+      <Item value="SessionData" priority="0" />
+      <Item value="_sessionData" priority="0" />
+      <Item value="override" priority="4" />
+      <Item value="void" priority="9" />
+      <Item value="base" priority="1" />
+      <Item value="webBrowser" priority="1" />
+      <Item value="session" priority="5" />
+      <Item value="requestToken" priority="2" />
+      <Item value="authorizationUrl" priority="0" />
+      <Item value="string" priority="26" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="0" />
+      <Item value="usernameAndPassword" priority="0" />
+      <Item value="usernameAndPasswordParameters" priority="0" />
+      <Item value="SessionTest" priority="0" />
+      <Item value="authorizationResponse" priority="2" />
+      <Item value="authorizationRequest" priority="1" />
+      <Item value="false" priority="2" />
+      <Item value="Uri" priority="1" />
+      <Item value="callbackUri" priority="1" />
+      <Item value="UriUtility" priority="1" />
+      <Item value="var" priority="18" />
+      <Item value="callbackParameters" priority="0" />
+      <Item value="s" priority="0" />
+      <Item value="Parameters" priority="0" />
+      <Item value="r" priority="1" />
+      <Item value="verifier" priority="0" />
+      <Item value="UriBuilder" priority="0" />
+      <Item value="UriParser" priority="0" />
+      <Item value="if" priority="21" />
+      <Item value="accessToken" priority="11" />
+      <Item value="OpenAddressInWebBrowser" priority="0" />
+      <Item value="response" priority="23" />
+      <Item value="MessageBox" priority="7" />
+      <Item value="Form" priority="0" />
+      <Item value="UsernameAndPasswordForm" priority="2" />
+      <Item value="frm" priority="0" />
+      <Item value="Form1" priority="0" />
+      <Item value="this" priority="3" />
+      <Item value="return" priority="13" />
+      <Item value="Visible" priority="0" />
+      <Item value="true" priority="0" />
+      <Item value="EventArgs" priority="2" />
+      <Item value="ea" priority="0" />
+      <Item value="IToken" priority="1" />
+      <Item value="null" priority="8" />
+      <Item value="InvokeAccessTokenRetrieved" priority="0" />
+      <Item value="tbUsername" priority="0" />
+      <Item value="messageBox" priority="0" />
+      <Item value="GetAccessToken" priority="0" />
+      <Item value="_getAccessTokenForm" priority="2" />
+      <Item value="_accessToken" priority="2" />
+      <Item value="password" priority="3" />
+      <Item value="else" priority="4" />
+      <Item value="GoToCompany" priority="0" />
+      <Item value="enum" priority="0" />
+      <Item value="Action" priority="3" />
+      <Item value="switch" priority="1" />
+      <Item value="case" priority="0" />
+      <Item value="break" priority="1" />
+      <Item value="ExportSie" priority="1" />
+      <Item value="checked" priority="0" />
+      <Item value="_exportSieForm" priority="9" />
+      <Item value="ExportSieForm" priority="5" />
+      <Item value="Show" priority="0" />
+      <Item value="ExportEventHandler" priority="0" />
+      <Item value="InvokeExportEventHandler" priority="0" />
+      <Item value="tbLatestTransactionDay" priority="0" />
+      <Item value="Hide" priority="2" />
+      <Item value="e" priority="9" />
+      <Item value="_currentAction" priority="0" />
+      <Item value="MemoryStream" priority="0" />
+      <Item value="stream" priority="2" />
+      <Item value="StreamReader" priority="1" />
+      <Item value="UploadSieResult" priority="2" />
+      <Item value="IAccessTokenRepository" priority="2" />
+      <Item value="accessTokenRepository" priority="6" />
+      <Item value="CredentialService" priority="0" />
+      <Item value="AccessToken" priority="3" />
+      <Item value="username" priority="5" />
+      <Item value="throw" priority="10" />
+      <Item value="ArgumentNullException" priority="0" />
+      <Item value="List&lt;AccessToken&gt;" priority="0" />
+      <Item value="listOfAccessTokens" priority="1" />
+      <Item value="CreateNewAccessToken" priority="0" />
+      <Item value="char" priority="1" />
+      <Item value="Newtonsoft" priority="0" />
+      <Item value="utf8Bytes" priority="1" />
+      <Item value="Length" priority="0" />
+      <Item value="utf8String" priority="0" />
+      <Item value="EncodingInfo" priority="0" />
+      <Item value="company" priority="5" />
+      <Item value="utf8" priority="0" />
+      <Item value="Encoding" priority="6" />
+      <Item value="ServerResponse" priority="1" />
+      <Item value="Code" priority="0" />
+      <Item value="statusCode" priority="2" />
+      <Item value="Json" priority="0" />
+      <Item value="json" priority="1" />
+      <Item value="static" priority="5" />
+      <Item value="bool" priority="3" />
+      <Item value="HttpStatusCode" priority="3" />
+      <Item value="HttpWebResponse" priority="0" />
+      <Item value="IServiceResponseResult" priority="1" />
+      <Item value="IBaseResponseResult" priority="0" />
+      <Item value="Company" priority="3" />
+      <Item value="CompaniesResponseResult" priority="2" />
+      <Item value="result" priority="12" />
+      <Item value="ServiceResponseTypes" priority="0" />
+      <Item value="companies" priority="2" />
+      <Item value="List&lt;Company&gt;" priority="0" />
+      <Item value="IResponseResult" priority="2" />
+      <Item value="FiscalYear" priority="3" />
+      <Item value="ServiceResponse" priority="0" />
+      <Item value="Monitor2ApiException" priority="18" />
+      <Item value="Message" priority="1" />
+      <Item value="message" priority="6" />
+      <Item value="catch" priority="1" />
+      <Item value="ResponseTypes" priority="0" />
+      <Item value="try" priority="2" />
+      <Item value="ex" priority="1" />
+      <Item value="ResponseResult" priority="1" />
+      <Item value="List" priority="3" />
+      <Item value="error" priority="2" />
+      <Item value="SieErrors" priority="0" />
+      <Item value="sieUploadResult" priority="4" />
+      <Item value="formatedText" priority="0" />
+      <Item value="Environment" priority="0" />
+      <Item value="Identifier" priority="0" />
+      <Item value="MessageBoxHeaderText" priority="12" />
+      <Item value="Convert" priority="1" />
+      <Item value="String" priority="1" />
+      <Item value="ToString" priority="0" />
+      <Item value="res" priority="0" />
+      <Item value="sb" priority="1" />
+      <Item value="UTF8Encoding" priority="1" />
+      <Item value="byte" priority="0" />
+      <Item value="unicode" priority="1" />
+      <Item value="DevDefined" priority="0" />
+      <Item value="OAuth" priority="0" />
+      <Item value="Wcf" priority="0" />
+      <Item value="DevDefined.OAuth" priority="0" />
+      <Item value="innerException" priority="0" />
+      <Item value="credentials" priority="0" />
+      <Item value="parameters" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.TestClient.SessionData">
+      <Item value="RequestToken" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.Form">
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.WebBrowser">
+      <Item value="Dispose" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevDefined.OAuth.Consumer.IOAuthSession">
+      <Item value="Request" priority="2" />
+      <Item value="ExchangeRequestTokenForAccessToken" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevDefined.OAuth.Consumer.IConsumerRequest">
+      <Item value="ForUrl" priority="0" />
+      <Item value="SignWithToken" priority="0" />
+      <Item value="WithFormParameters" priority="0" />
+      <Item value="ToBodyParameters" priority="0" />
+      <Item value="ToWebRequest" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.HttpWebRequest">
+      <Item value="GetResponse" priority="1" />
+      <Item value="AllowAutoRedirect" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevDefined.OAuth.Consumer.OAuthSession">
+      <Item value="RequiresCallbackConfirmation" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DevDefined.OAuth.Framework.UriUtility">
+      <Item value="ToQueryParameters" priority="0" />
+      <Item value="GetQueryParameters" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Uri">
+      <Item value="PathAndQuery" priority="0" />
+      <Item value="Query" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.KeyValuePair`2">
+      <Item value="Value" priority="2" />
+      <Item value="Key" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@DevDefined.OAuth.Framework.Parameters">
+      <Item value="OAuth_Token" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="Select" priority="0" />
+      <Item value="FirstOrDefault" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="First" priority="0" />
+      <Item value="Add" priority="0" />
+      <Item value="SingleOrDefault" priority="0" />
+      <Item value="Count" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Web.HttpUtility">
+      <Item value="ParseQueryString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.TestClient.UsernameAndPasswordForm">
+      <Item value="Show" priority="0" />
+      <Item value="Close" priority="0" />
+      <Item value="Visible" priority="0" />
+      <Item value="AccessTokenRetrieved" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.TestClient.Form1">
+      <Item value="Enabled" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="IsNullOrEmpty" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.MessageBox">
+      <Item value="Show" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Monitor2.Api.TestClient.Action">
+      <Item value="ExportSie" priority="1" />
+      <Item value="GoToCompany" priority="1" />
+      <Item value="ExportSieLogin" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.TestClient.ExportSieForm">
+      <Item value="Show" priority="0" />
+      <Item value="Hide" priority="2" />
+      <Item value="exportEventHandler" priority="0" />
+      <Item value="FormClosing" priority="0" />
+      <Item value="FormClosed" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.EventArgs">
+      <Item value="Equals" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.WebResponse">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.HttpWebResponse">
+      <Item value="GetResponseStream" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.Stream">
+      <Item value="Flush" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Void">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.StreamReader">
+      <Item value="ReadToEnd" priority="0" />
+      <Item value="Dispose" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Monitor2.Api.UploadSieResult">
+      <Item value="Ok" priority="0" />
+      <Item value="FormatResult" priority="0" />
+      <Item value="FormatErrors" priority="0" />
+      <Item value="FormatWarnings" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.CredentialService">
+      <Item value="accessTokenRepository" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.IAccessTokenRepository">
+      <Item value="Save" priority="0" />
+      <Item value="Find" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevDefined.OAuth.Storage.Basic.AccessToken">
+      <Item value="UserName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Text.Encoding">
+      <Item value="UTF8" priority="4" />
+      <Item value="Convert" priority="2" />
+      <Item value="GetEncoding" priority="1" />
+      <Item value="Unicode" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.Company">
+      <Item value="CompanyName" priority="1" />
+      <Item value="ContactName" priority="3" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="ToCharArray" priority="2" />
+      <Item value="Substring" priority="0" />
+      <Item value="ToUpper" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.Encoding">
+      <Item value="GetBytes" priority="0" />
+      <Item value="GetString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.ServerResponse">
+      <Item value="Json" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Net.HttpStatusCode">
+      <Item value="OK" priority="2" />
+      <Item value="Unused" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.ServiceResponse">
+      <Item value="IsOk" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.IResponseResult">
+      <Item value="Status" priority="0" />
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Monitor2.Api.ResponseTypes">
+      <Item value="Ok" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.CompaniesResponseResult">
+      <Item value="Companies" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.ResponseResult">
+      <Item value="Message" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.Monitor2ApiException">
+      <Item value="Message" priority="2" />
+      <Item value="FormatedMessage" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.UploadSieResult">
+      <Item value="SieErrors" priority="0" />
+      <Item value="HasErrors" priority="0" />
+      <Item value="HasWarnings" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox+ObjectCollection">
+      <Item value="Indexer" priority="0" />
+      <Item value="Count" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Environment">
+      <Item value="NewLine" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Monitor2.Api.TestClient.MessageBoxHeaderText">
+      <Item value="Success" priority="6" />
+      <Item value="Error" priority="8" />
+      <Item value="Info" priority="6" />
+      <Item value="Failure" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.TestClient.MessageBoxHeaderText">
+      <Item value="ToString" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToByte" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.StringBuilder">
+      <Item value="ToString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Text.UTF8Encoding">
+      <Item value="GetString" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Monitor2.Api.CredentialService">
+      <Item value="CreateNewAccessToken" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Net.WebException">
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Monitor2.Api.Settings">
+      <Item value="GetAllYearsUrl" priority="0" />
+      <Item value="GetAllCompaniesUrl" priority="0" />
+      <Item value="DeleteYearUrl" priority="0" />
+      <Item value="UpdateCompanyUrl" priority="0" />
+      <Item value="DeleteCompanyUrl" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
