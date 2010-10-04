@@ -10,50 +10,8 @@
     <NAntPath value="" />
   </NAntValidationSettings>
   <RecentFiles>
-    <RecentFiles>
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:IAccessTokenRepository.cs" caret="476" fromTop="13" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Settings.Designer.cs" caret="1067" fromTop="23" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Company.cs" caret="157" fromTop="5" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ChartOfAccountsType.cs" caret="163" fromTop="5" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:OAuth.cs" caret="233" fromTop="9" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiErrorType.cs" caret="158" fromTop="8" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:UploadSieResult.cs" caret="1542" fromTop="55" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiException.cs" caret="0" fromTop="0" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiConnectionException.cs" caret="110" fromTop="5" />
-      <File id="61B700B6-3911-4CEF-8751-7F42CA765068/d:Consumer/f:IOAuthSession.cs" caret="1667" fromTop="1" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:CredentialService.cs" caret="885" fromTop="15" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11172" fromTop="25" />
-    </RecentFiles>
-    <RecentEdits>
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11404" fromTop="36" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:CredentialService.cs" caret="507" fromTop="6" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="12769" fromTop="32" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiConnectionException.cs" caret="289" fromTop="10" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:Monitor2ApiConnectionException.cs" caret="110" fromTop="5" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11218" fromTop="12" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11832" fromTop="10" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3575" fromTop="55" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3553" fromTop="55" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3250" fromTop="49" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="4313" fromTop="72" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="5168" fromTop="89" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="4718" fromTop="80" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="5518" fromTop="100" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="7021" fromTop="39" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="7964" fromTop="15" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="9136" fromTop="41" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="800" fromTop="26" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3044" fromTop="36" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="12707" fromTop="38" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="11218" fromTop="7" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="12769" fromTop="39" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="1532" fromTop="9" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="3948" fromTop="30" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="4580" fromTop="18" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="5965" fromTop="17" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="7814" fromTop="30" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:DataService.cs" caret="8171" fromTop="26" />
-    </RecentEdits>
+    <RecentFiles />
+    <RecentEdits />
   </RecentFiles>
   <UnitTestRunner>
     <Providers />
