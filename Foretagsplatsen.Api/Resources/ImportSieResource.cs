@@ -40,7 +40,7 @@ namespace Foretagsplatsen.Api.Resources
         public ImportSieResult Upload(ImportData importData)
         {
             string sieImportUrl = GetUrl();
-            return client.Post<ImportSieResult>(sieImportUrl, JObject.FromObject(importData).ToString());
+            return client.Put<ImportSieResult>(sieImportUrl, JObject.FromObject(importData).ToString());
         }
     }
 }

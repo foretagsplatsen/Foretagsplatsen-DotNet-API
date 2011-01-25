@@ -70,12 +70,60 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action.cs" />
+    <Compile Include="AttachAgencyUserToCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttachAgencyUserToCompanyForm.Designer.cs">
+      <DependentUpon>AttachAgencyUserToCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttachCompanyToUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttachCompanyToUserForm.Designer.cs">
+      <DependentUpon>AttachCompanyToUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttachCompanyUserToCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AttachCompanyUserToCompanyForm.Designer.cs">
+      <DependentUpon>AttachCompanyUserToCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateCompanyForm.Designer.cs">
+      <DependentUpon>CreateCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateAgencyUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateAgencyUserForm.Designer.cs">
+      <DependentUpon>CreateAgencyUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCompanyUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateCompanyUserForm.Designer.cs">
+      <DependentUpon>CreateCompanyUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CurrentApiClient.cs" />
+    <Compile Include="EditCompaniesForAgencyUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCompaniesForAgencyUserForm.Designer.cs">
+      <DependentUpon>EditCompaniesForAgencyUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCompaniesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditCompaniesForm.Designer.cs">
       <DependentUpon>EditCompaniesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUsersForm.Designer.cs">
+      <DependentUpon>EditUsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditYearsForCompanyForm.cs">
       <SubType>Form</SubType>
@@ -98,8 +146,32 @@
     <Compile Include="MessageBoxHeaderText.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AttachAgencyUserToCompanyForm.resx">
+      <DependentUpon>AttachAgencyUserToCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttachCompanyToUserForm.resx">
+      <DependentUpon>AttachCompanyToUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttachCompanyUserToCompanyForm.resx">
+      <DependentUpon>AttachCompanyUserToCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateCompanyForm.resx">
+      <DependentUpon>CreateCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAgencyUserForm.resx">
+      <DependentUpon>CreateAgencyUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateCompanyUserForm.resx">
+      <DependentUpon>CreateCompanyUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCompaniesForAgencyUserForm.resx">
+      <DependentUpon>EditCompaniesForAgencyUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCompaniesForm.resx">
       <DependentUpon>EditCompaniesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUsersForm.resx">
+      <DependentUpon>EditUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditYearsForCompanyForm.resx">
       <DependentUpon>EditYearsForCompanyForm.cs</DependentUpon>

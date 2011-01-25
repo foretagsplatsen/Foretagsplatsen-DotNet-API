@@ -14,13 +14,11 @@ namespace Foretagsplatsen.Api.Exceptions
         public ApiServerException(string message) : base(message) { }
 
         public ApiServerException(string message, ApiErrorType typeOfError, string identifier)
-            : base(message)
+            : base(message, typeOfError)
         {
-            TypeOfError = typeOfError;
             Identifier = identifier;
         }
 
-        public ApiErrorType TypeOfError { get; private set; }
         public string Identifier { get; private set; }
 
         public string FormatedMessage()

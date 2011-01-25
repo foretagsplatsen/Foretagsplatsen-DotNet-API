@@ -47,16 +47,21 @@ namespace Foretagsplatsen.Api
             IConsumerRequest request = session.Request()
                 .ForMethod(httpMethod)
                 .ForUrl(url)
+                .AlterHttpWebRequest(httpRequest => httpRequest.ContentType = "application/json")
                 .AlterContext(context => context.UseQueryParametersForOAuth = true)
                 .SignWithToken(credentials.Token)
                 .AlterHttpWebRequest(httpRequest => httpRequest.Timeout = 30 * 60 * 1000)
                 .AlterHttpWebRequest(httpRequest => httpRequest.ReadWriteTimeout = 30 * 60 * 1000);
 
+            
             if (arguments != null && (httpMethod == "POST" || httpMethod == "PUT"))
             {
-                request.AlterHttpWebRequest(httpRequest => httpRequest.ContentType = "application/json");
                 request.ConsumerContext.EncodeRequestBody = false;
                 request.WithBody(arguments.ToString());
+            }
+            else if (httpMethod == "POST" || httpMethod == "PUT")
+            {
+                request.AlterHttpWebRequest(httpRequest => httpRequest.ContentLength = 0);
             }
 
             if (arguments != null && (httpMethod == "GET" || httpMethod == "DELETE"))

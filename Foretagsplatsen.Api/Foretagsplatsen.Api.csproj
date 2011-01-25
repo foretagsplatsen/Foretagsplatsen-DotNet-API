@@ -55,8 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\AuthorizeResult.cs" />
+    <Compile Include="Entities\CompanyRole.cs" />
+    <Compile Include="Entities\CompanyRoleType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
     <Compile Include="Entities\ImportData.cs" />
+    <Compile Include="Entities\UserInfo.cs" />
+    <Compile Include="Entities\UserType.cs" />
+    <Compile Include="Entities\XAuthResult.cs" />
     <Compile Include="Exceptions\ApiErrorType.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
     <Compile Include="Entities\ChartOfAccountsType.cs" />
@@ -73,9 +79,15 @@
     <Compile Include="OAuthRestClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\ImportSieResult.cs" />
+    <Compile Include="Resources\AgencyUserCompanyResource.cs" />
+    <Compile Include="Resources\AgencyUserResource.cs" />
+    <Compile Include="Resources\CompanyAgencyUserResource.cs" />
     <Compile Include="Resources\CompanyResource.cs" />
+    <Compile Include="Resources\CompanyUserResource.cs" />
     <Compile Include="Resources\FiscalYearResource.cs" />
     <Compile Include="Resources\ImportSieResource.cs" />
+    <Compile Include="Resources\UserResource.cs" />
+    <Compile Include="WebResponseExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

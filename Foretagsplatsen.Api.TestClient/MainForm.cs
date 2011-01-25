@@ -37,8 +37,6 @@ namespace Foretagsplatsen.Api.TestClient
 
             editCompaniesForm = new EditCompaniesForm();
             editCompaniesForm.FormClosed += EditCompaniesForm_FormClosed;
-
-            
         }
 
         private void GetUserForm_UpdateAccessTokenStatus(object sender, EventArgs e)
@@ -125,7 +123,8 @@ namespace Foretagsplatsen.Api.TestClient
 
         private void btnRemoveAccessToken_Click(object sender, EventArgs e)
         {
-            CurrentApiClient.Credentials = null;
+            CurrentApiClient.ResetInstance();
+
 
             tbAccessTokenUsername.Text = string.Empty;
             tbAccessToken.Text = string.Empty;
@@ -185,10 +184,17 @@ namespace Foretagsplatsen.Api.TestClient
 
         private static void GoToService()
         {
-            Uri uri = CurrentApiClient.Instance.GetLoginUrl();
+            try
+            {
+                Uri uri = CurrentApiClient.Instance.GetLoginUrl();
 
-            // Access resource
-            OpenAddressInWebBrowser(uri.AbsoluteUri);
+                // Access resource
+                OpenAddressInWebBrowser(uri.AbsoluteUri);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, MessageBoxHeaderText.Error);
+            }
         }
 
         public static void OpenAddressInWebBrowser(string address)

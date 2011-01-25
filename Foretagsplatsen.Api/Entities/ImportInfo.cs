@@ -1,7 +1,7 @@
 namespace Foretagsplatsen.Api.Entities
 {
     /// <summary>
-    /// Wrning/Error in SIE-import <see cref="ImportSieResult"/>.  
+    /// Warning/Error in SIE-import <see cref="ImportSieResult"/>.  
     /// </summary>
     public class ImportInfo
     {

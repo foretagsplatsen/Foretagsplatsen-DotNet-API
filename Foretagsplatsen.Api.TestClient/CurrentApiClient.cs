@@ -31,6 +31,12 @@ namespace Foretagsplatsen.Api.TestClient
             }
         }
         
+        public static void ResetInstance()
+        {
+            instance = null;
+            Credentials = null;
+        }
+
         public static string Host
         {
             get

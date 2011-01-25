@@ -54,10 +54,15 @@ namespace Foretagsplatsen.Api.Resources
         /// <summary>
         /// List companies. 
         /// </summary>
+        /// <param name="showAll">Get all companies for agency if <see langword="true"/> and <see cref="UserType"/> is 
+        /// an AgencyDirector otherwise the companies attached to the user</param>
         /// <returns><see cref="CompanyInfo"/>List of companies.</returns>
-        public List<CompanyInfo> List()
+        public List<CompanyInfo> List(bool showAll)
         {
             string companyCollectionUrl = GetCollectionUrl();
+
+            companyCollectionUrl += "?showAll=" + showAll;
+
             return client.Get<List<CompanyInfo>>(companyCollectionUrl);
         }
 
@@ -85,7 +90,7 @@ namespace Foretagsplatsen.Api.Resources
         public void Update(CompanyInfo company)
         {
             string companyUrl = GetUrl(company);
-            client.Put<bool?>(companyUrl, JObject.FromObject(company).ToString());
+            client.Put(companyUrl, JObject.FromObject(company).ToString());
         }
 
         /// <summary>
@@ -95,7 +100,17 @@ namespace Foretagsplatsen.Api.Resources
         public void Delete(CompanyInfo company)
         {
             string companyUrl = GetUrl(company);
-            client.Delete<bool?>(companyUrl);
+            client.Delete(companyUrl);
+        }
+
+        /// <summary>
+        /// Create an empty company.
+        /// </summary>
+        /// <param name="company">Company to create.</param>
+        public void Create(CompanyInfo company)
+        {
+            string companyUrl = GetUrl(company);
+            client.Post(companyUrl, JObject.FromObject(company).ToString());
         }
     }
 }

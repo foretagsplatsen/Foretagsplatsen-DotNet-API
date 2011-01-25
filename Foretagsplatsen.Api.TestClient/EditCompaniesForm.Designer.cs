@@ -49,6 +49,8 @@
             this.btnGetCompanies = new System.Windows.Forms.Button();
             this.btnEditYearsForCompany = new System.Windows.Forms.Button();
             this.btnGotoSelectedCompany = new System.Windows.Forms.Button();
+            this.btnCreateCompany = new System.Windows.Forms.Button();
+            this.btnEditUsers = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -178,7 +180,7 @@
             this.groupBox1.Controls.Add(this.tbCompanyContactPostalAddress);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(15, 224);
+            this.groupBox1.Location = new System.Drawing.Point(15, 251);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(439, 113);
             this.groupBox1.TabIndex = 14;
@@ -200,17 +202,17 @@
             // 
             // btnUpdateSelectedCompanty
             // 
-            this.btnUpdateSelectedCompanty.Location = new System.Drawing.Point(260, 104);
+            this.btnUpdateSelectedCompanty.Location = new System.Drawing.Point(260, 156);
             this.btnUpdateSelectedCompanty.Name = "btnUpdateSelectedCompanty";
             this.btnUpdateSelectedCompanty.Size = new System.Drawing.Size(179, 23);
             this.btnUpdateSelectedCompanty.TabIndex = 16;
             this.btnUpdateSelectedCompanty.Text = "Update selected company";
             this.btnUpdateSelectedCompanty.UseVisualStyleBackColor = true;
-            this.btnUpdateSelectedCompanty.Click += new System.EventHandler(this.btnUpdateSelectedCompanty_Click);
+            this.btnUpdateSelectedCompanty.Click += new System.EventHandler(this.btnUpdateSelectedCompany_Click);
             // 
             // btnRemoveSelectedCompany
             // 
-            this.btnRemoveSelectedCompany.Location = new System.Drawing.Point(260, 147);
+            this.btnRemoveSelectedCompany.Location = new System.Drawing.Point(260, 185);
             this.btnRemoveSelectedCompany.Name = "btnRemoveSelectedCompany";
             this.btnRemoveSelectedCompany.Size = new System.Drawing.Size(179, 23);
             this.btnRemoveSelectedCompany.TabIndex = 17;
@@ -230,7 +232,7 @@
             // 
             // btnEditYearsForCompany
             // 
-            this.btnEditYearsForCompany.Location = new System.Drawing.Point(260, 65);
+            this.btnEditYearsForCompany.Location = new System.Drawing.Point(260, 98);
             this.btnEditYearsForCompany.Name = "btnEditYearsForCompany";
             this.btnEditYearsForCompany.Size = new System.Drawing.Size(179, 23);
             this.btnEditYearsForCompany.TabIndex = 19;
@@ -240,7 +242,7 @@
             // 
             // btnGotoSelectedCompany
             // 
-            this.btnGotoSelectedCompany.Location = new System.Drawing.Point(260, 185);
+            this.btnGotoSelectedCompany.Location = new System.Drawing.Point(260, 214);
             this.btnGotoSelectedCompany.Name = "btnGotoSelectedCompany";
             this.btnGotoSelectedCompany.Size = new System.Drawing.Size(179, 23);
             this.btnGotoSelectedCompany.TabIndex = 20;
@@ -248,11 +250,33 @@
             this.btnGotoSelectedCompany.UseVisualStyleBackColor = true;
             this.btnGotoSelectedCompany.Click += new System.EventHandler(this.btnGotoSelectedCompany_Click);
             // 
+            // btnCreateCompany
+            // 
+            this.btnCreateCompany.Location = new System.Drawing.Point(260, 69);
+            this.btnCreateCompany.Name = "btnCreateCompany";
+            this.btnCreateCompany.Size = new System.Drawing.Size(179, 23);
+            this.btnCreateCompany.TabIndex = 21;
+            this.btnCreateCompany.Text = "Create company";
+            this.btnCreateCompany.UseVisualStyleBackColor = true;
+            this.btnCreateCompany.Click += new System.EventHandler(this.btnCreateCompany_Click);
+            // 
+            // btnEditUsers
+            // 
+            this.btnEditUsers.Location = new System.Drawing.Point(260, 127);
+            this.btnEditUsers.Name = "btnEditUsers";
+            this.btnEditUsers.Size = new System.Drawing.Size(179, 23);
+            this.btnEditUsers.TabIndex = 22;
+            this.btnEditUsers.Text = "Edit users for company";
+            this.btnEditUsers.UseVisualStyleBackColor = true;
+            this.btnEditUsers.Click += new System.EventHandler(this.btnEditUsers_Click);
+            // 
             // EditCompaniesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(483, 355);
+            this.ClientSize = new System.Drawing.Size(484, 387);
+            this.Controls.Add(this.btnEditUsers);
+            this.Controls.Add(this.btnCreateCompany);
             this.Controls.Add(this.btnGotoSelectedCompany);
             this.Controls.Add(this.btnEditYearsForCompany);
             this.Controls.Add(this.btnGetCompanies);
@@ -296,5 +320,7 @@
         private System.Windows.Forms.Button btnGetCompanies;
         private System.Windows.Forms.Button btnEditYearsForCompany;
         private System.Windows.Forms.Button btnGotoSelectedCompany;
+        private System.Windows.Forms.Button btnCreateCompany;
+        private System.Windows.Forms.Button btnEditUsers;
     }
 }

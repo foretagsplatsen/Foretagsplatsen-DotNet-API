@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using System.Net;
 using Foretagsplatsen.Api.Entities;
 using Foretagsplatsen.Api.Exceptions;
@@ -85,13 +84,59 @@ namespace Foretagsplatsen.Api
         }
 
         /// <summary>
+        /// Instantiates a new <seealso cref="CompanyAgencyUserResource"/>
+        /// </summary>
+        /// <param name="company">Company to get the agency users from</param>
+        /// <returns><see cref="CompanyAgencyUserResource"/></returns>
+        public CompanyAgencyUserResource GetCompanyAgencyUserResource(CompanyInfo company)
+        {
+            return new CompanyAgencyUserResource(this, company);
+        }
+
+        /// <summary>
+        /// Instantiate a new <seealso cref="AgencyUserCompanyResource"/>
+        /// </summary>
+        /// <returns><see cref="AgencyUserCompanyResource"/></returns>
+        public AgencyUserCompanyResource GetAgencyUserCompanyResource()
+        {
+            return new AgencyUserCompanyResource(this);
+        }
+
+        /// <summary>
+        /// Instantiate a new <seealso cref="CompanyUserResource"/>
+        /// </summary>
+        /// <returns><see cref="CompanyUserResource"/></returns>
+        public CompanyUserResource GetCompanyUserResource(CompanyInfo company)
+        {
+            return new CompanyUserResource(this, company);
+        }
+
+        /// <summary>
+        /// Instantiate a new <seealso cref="AgencyUserResource"/>
+        /// </summary>
+        /// <returns><see cref="AgencyUserResource"/></returns>
+        public AgencyUserResource GetAgencyUserResource()
+        {
+            return new AgencyUserResource(this);
+        }
+
+        /// <summary>
+        /// Instantiate a new <seealso cref="UserResource"/>
+        /// </summary>
+        /// <returns><see cref="UserResource"/></returns>
+        public UserResource GetUserResource()
+        {
+            return new UserResource(this);
+        }
+
+        /// <summary>
         /// Login URL for Single-Sign-On (SSO). Company users will be redirected to the 
         /// Presentation UI and Agency user to the Agency UI.
         /// </summary>
         /// <returns>Url for the SSO service.</returns>
         public Uri GetLoginUrl()
         {
-            string loginUrl = String.Format("{0}/Api/Account/Login", baseUrl);
+            string loginUrl = String.Format("{0}/Account/Login", baseUrl);
             Uri uri = restClient.GetUri(loginUrl);
             return uri;
         }
@@ -103,10 +148,28 @@ namespace Foretagsplatsen.Api
         /// <returns>Url for the SSO service.</returns>
         public Uri GetLoginUrl(string businessIdentityCode)
         {
-            string loginToUrl = String.Format("{0}/Api/Account/Login", baseUrl);
-            var queryParameters = new { id = businessIdentityCode };
-            Uri uri = restClient.GetUri(loginToUrl, queryParameters);
+            string loginToUrl = String.Format("{0}/Account/Login/{1}", baseUrl, businessIdentityCode);
+            Uri uri = restClient.GetUri(loginToUrl);
             return uri;
+        }
+
+        /// <summary>
+        /// Execute a GET request on resource.
+        /// </summary>
+        /// <param name="resourceUrl">Url for resource.</param>
+        public void Get(string resourceUrl)
+        {
+            Get(resourceUrl, null);
+        }
+
+        /// <summary>
+        /// Execute a GET request on resource.
+        /// </summary>
+        /// <param name="resourceUrl">Url for resource.</param>
+        /// <param name="arguments">Query parameters.</param>
+        public void Get(string resourceUrl, object arguments)
+        {
+            MakeRequest(resourceUrl, arguments, "GET");
         }
 
         /// <summary>
@@ -135,6 +198,16 @@ namespace Foretagsplatsen.Api
         /// <summary>
         /// Execute a PUT request on resource.
         /// </summary>
+        /// <param name="resourceUrl">Url for resource.</param>
+        /// <param name="arguments">Object to send in request body.</param>
+        public void Put(string resourceUrl, object arguments)
+        {
+            MakeRequest(resourceUrl, arguments, "PUT");
+        }
+
+        /// <summary>
+        /// Execute a PUT request on resource.
+        /// </summary>
         /// <typeparam name="T">Type to return and use when we deserialize the response.</typeparam>
         /// <param name="resourceUrl">Url for resource.</param>
         /// <param name="arguments">Object to send in request body.</param>
@@ -147,6 +220,16 @@ namespace Foretagsplatsen.Api
         /// <summary>
         /// Execute a POST request on resource.
         /// </summary>
+        /// <param name="resourceUrl">Url for resource.</param>
+        /// <param name="arguments">Object to send in request body.</param>
+        public void Post(string resourceUrl, object arguments)
+        {
+            MakeRequest(resourceUrl, arguments, "POST");
+        }
+
+        /// <summary>
+        /// Execute a POST request on resource.
+        /// </summary>
         /// <typeparam name="T">Type to return and use when we deserialize the response.</typeparam>
         /// <param name="resourceUrl">Url for resource.</param>
         /// <param name="arguments">Object to send in request body.</param>
@@ -154,6 +237,25 @@ namespace Foretagsplatsen.Api
         public T Post<T>(string resourceUrl, object arguments) where T : new()
         {
             return MakeRequest<T>(resourceUrl, arguments, "POST");
+        }
+
+        /// <summary>
+        /// Execute a DELETE request on resource.
+        /// </summary>
+        /// <param name="resourceUrl">Url for resource.</param>
+        public void Delete(string resourceUrl)
+        {
+            Delete(resourceUrl, null);
+        }
+
+        /// <summary>
+        /// Execute a DELETE request on resource.
+        /// </summary>
+        /// <param name="resourceUrl">Url for resource.</param>
+        /// <param name="arguments">Query parameters.</param>
+        public void Delete(string resourceUrl, object arguments)
+        {
+            MakeRequest(resourceUrl, arguments, "DELETE");
         }
 
         /// <summary>
@@ -182,10 +284,31 @@ namespace Foretagsplatsen.Api
         /// <summary>
         /// Execute a HTTP request
         /// </summary>
+        /// <param name="url">Url for resource</param>
+        /// <param name="arguments">Query parameters if GET or DELETE and message body if POST or PUT.</param>
+        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
+        public void MakeRequest(string url, object arguments, string httpMethod)
+        {
+            WebResponse response;
+            try
+            {
+                response = restClient.MakeRequest(httpMethod, url, arguments);
+            }
+            catch (WebException exception)
+            {
+                response = exception.Response;
+            }
+
+            ParseResponse(response);
+        }
+
+        /// <summary>
+        /// Execute a HTTP request
+        /// </summary>
         /// <typeparam name="T">Type to return and use when we deserialize the response.</typeparam>
         /// <param name="url">Url for resource</param>
         /// <param name="arguments">Query parameters if GET or DELETE and message body if POST or PUT.</param>
-        /// <param name="httpMethod">HTTP Verb (GET, PUST, PUT, DELETE)</param>
+        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <returns>Deserialized result.</returns>
         public T MakeRequest<T>(string url, object arguments, string httpMethod) where T : new()
         {
@@ -203,6 +326,39 @@ namespace Foretagsplatsen.Api
         }
 
         /// <summary>
+        /// Parse a HTTP response and expecting no result if OK
+        /// </summary>
+        /// <param name="response">HTTP response to parse.</param>
+        public static void ParseResponse(WebResponse response)
+        {
+            // Get status code
+            HttpStatusCode statusCode = ((HttpWebResponse)(response)).StatusCode;
+
+            // Throw an exception if not OK
+            if (statusCode != HttpStatusCode.OK)
+            {
+                ApiServerException serverErrorException;
+                try
+                {
+                    // Read response
+                    string json = response.ReadBody();
+
+                    serverErrorException = ApiServerException.CreateFromJson(json);
+                }
+                catch (Exception)
+                {
+                    throw new ApiServerException("Unknown error");
+                }
+
+                throw serverErrorException;
+            }
+
+            response.Close();
+
+            return;
+        }
+
+        /// <summary>
         /// Parse a HTTP response.
         /// </summary>
         /// <typeparam name="T">Type to return and use when we parse/deserialize the response.</typeparam>
@@ -211,18 +367,7 @@ namespace Foretagsplatsen.Api
         public static T ParseResponse<T>(WebResponse response)
         {
             // Read response
-            string json;
-            using (Stream responseStream = response.GetResponseStream())
-            {
-                if (responseStream.CanSeek)
-                {
-                    responseStream.Seek(0, SeekOrigin.Begin);
-                }
-                using (var reader = new StreamReader(responseStream))
-                {
-                    json = reader.ReadToEnd();
-                }
-            }
+            string json = response.ReadBody();
 
             // Get status code
             HttpStatusCode statusCode = ((HttpWebResponse) (response)).StatusCode;

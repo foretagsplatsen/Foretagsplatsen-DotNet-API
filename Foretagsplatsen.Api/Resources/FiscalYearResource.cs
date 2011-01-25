@@ -81,7 +81,7 @@ namespace Foretagsplatsen.Api.Resources
         public void Delete(string fiscalYearId)
         {
             string yearUrl = GetUrl(fiscalYearId);
-            client.Delete<bool>(yearUrl);
+            client.Delete(yearUrl);
         }
     }
 }

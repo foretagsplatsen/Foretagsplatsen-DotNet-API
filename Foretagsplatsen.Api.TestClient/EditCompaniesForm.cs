@@ -13,6 +13,8 @@ namespace Foretagsplatsen.Api.TestClient
     public partial class EditCompaniesForm : Form
     {
         private EditYearsForCompanyForm editYearsForCompanyForm;
+        private CreateCompanyForm createCompanyForm;
+        private EditUsersForm editUsersForm;
         private List<CompanyInfo> companies;
 
         public EditCompaniesForm()
@@ -27,6 +29,30 @@ namespace Foretagsplatsen.Api.TestClient
 
             editYearsForCompanyForm = new EditYearsForCompanyForm();
             editYearsForCompanyForm.FormClosed += EditYearsForCompanyForm_FormClosed;
+
+            createCompanyForm = new CreateCompanyForm();
+            createCompanyForm.FormClosed += CreateCompanyForm_FormClosed;
+
+            editUsersForm = new EditUsersForm();
+            editUsersForm.FormClosed += EditUsersForm_FormClosed;
+        }
+
+        private void EditUsersForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            editUsersForm = new EditUsersForm();
+            editUsersForm.FormClosed += EditUsersForm_FormClosed;
+            editUsersForm.Hide();
+            Enabled = true;
+        }
+
+        private void CreateCompanyForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Old form is disposed create a new form and attach events
+            createCompanyForm = new CreateCompanyForm();
+            createCompanyForm.FormClosed += CreateCompanyForm_FormClosed;
+            createCompanyForm.Hide();
+            Enabled = true;
+            RefreshCompanyList();
         }
 
         private void EditYearsForCompanyForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -35,6 +61,7 @@ namespace Foretagsplatsen.Api.TestClient
             editYearsForCompanyForm = new EditYearsForCompanyForm();
             editYearsForCompanyForm.FormClosed += EditYearsForCompanyForm_FormClosed;
             editYearsForCompanyForm.Hide();
+            RefreshCompanyList();
             Enabled = true;
         }
 
@@ -61,9 +88,9 @@ namespace Foretagsplatsen.Api.TestClient
         {
             try
             {
-                companies = CurrentApiClient.Instance.GetCompanyResource().List();
+                companies = CurrentApiClient.Instance.GetCompanyResource().List(false);
             }
-            catch (Exception e)
+            catch (ApiException e)
             {
                 MessageBox.Show(e.Message, MessageBoxHeaderText.Error);
                 companies = new List<CompanyInfo>();
@@ -117,7 +144,7 @@ namespace Foretagsplatsen.Api.TestClient
             RefreshCompanyList();
         }
 
-        private void btnUpdateSelectedCompanty_Click(object sender, EventArgs e)
+        private void btnUpdateSelectedCompany_Click(object sender, EventArgs e)
         {
             if (companies.Count == 0)
             {
@@ -143,23 +170,21 @@ namespace Foretagsplatsen.Api.TestClient
                 try
                 {
                     CurrentApiClient.Instance.GetCompanyResource().Update(selectedCompany);
+                    MessageBox.Show("Company information updated.", MessageBoxHeaderText.Success);
                 }
                 catch (ApiException ex)
                 {
                     MessageBox.Show(ex.Message, MessageBoxHeaderText.Error);
-                    return;
                 }
-
-                MessageBox.Show("Company information updated.", MessageBoxHeaderText.Success);
-
-
-                // Reload companies
-                PopulateCompanyComboBox();
             }
             else
             {
                 MessageBox.Show("Could not find selected company", MessageBoxHeaderText.Error);
             }
+
+            // Reload companies
+            PopulateCompanyComboBox();
+            RefreshCompanyList();
         }
 
         private void PopulateCompanyComboBox()
@@ -217,11 +242,43 @@ namespace Foretagsplatsen.Api.TestClient
             }
             
             string businessIdentityCode = GetBusinessIdentityCode();
+
+            try
+            {
+                Uri uri = CurrentApiClient.Instance.GetLoginUrl(businessIdentityCode);
+
+                // Access resource
+                MainForm.OpenAddressInWebBrowser(uri.AbsoluteUri);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, MessageBoxHeaderText.Error);
+                return;
+            }
+        }
+
+        private void btnCreateCompany_Click(object sender, EventArgs e)
+        {
+            createCompanyForm.Show();
+            Enabled = false;
+        }
+
+        private void btnEditUsers_Click(object sender, EventArgs e)
+        {
+            if (companies.Count == 0)
+            {
+                MessageBox.Show("No company selected", MessageBoxHeaderText.Info);
+                return;
+            }
+
+            // Get company object
+            string businessIdentityCode = GetBusinessIdentityCode();
+            CompanyInfo selectedCompany = companies.FirstOrDefault(c => c.BusinessIdentityCode.Equals(businessIdentityCode));
             
-            Uri uri = CurrentApiClient.Instance.GetLoginUrl(businessIdentityCode);
-            
-            // Access resource
-            MainForm.OpenAddressInWebBrowser(uri.AbsoluteUri);
+            // Init and display edit user form
+            editUsersForm.CurrentCompany = selectedCompany;
+            editUsersForm.Show();
+            Enabled = false;
         }
     }
 }

@@ -38,7 +38,7 @@ namespace Foretagsplatsen.Api.SimpleConsoleClient
 
             // List all companies
             var companyResource = client.GetCompanyResource();
-            var companies = companyResource.List();
+            var companies = companyResource.List(true);
             foreach (CompanyInfo info in companies)
             {
                 Console.WriteLine(info.Name);

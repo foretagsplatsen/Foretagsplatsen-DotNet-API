@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.IO;
 using System.Net;
 using System.Web;
 using DevDefined.OAuth.Consumer;
 using DevDefined.OAuth.Framework;
 using DevDefined.OAuth.Storage.Basic;
+using Foretagsplatsen.Api.Entities;
 using Foretagsplatsen.Api.Exceptions;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using OAuthException=DevDefined.OAuth.Framework.OAuthException;
 
 namespace Foretagsplatsen.Api
@@ -82,7 +86,7 @@ namespace Foretagsplatsen.Api
                 
                 if (RequestToken.Token == null)
                 {
-                    throw new ApiException("Invalid request token. Probably wrong provider host.");
+                    throw new ApiException("Invalid request token. (This can occur with the wrong provider host.)");
                 }
             }
             catch (OAuthException ex)
@@ -142,15 +146,18 @@ namespace Foretagsplatsen.Api
                 .ForUrl(authorizationUrl)
                 .SignWithToken(RequestToken)
                 .WithFormParameters(usernameAndPasswordParameters)
+                .AlterHttpWebRequest(httpRequest => httpRequest.Accept = "application/json")
                 .AlterHttpWebRequest(httpRequest => httpRequest.AllowAutoRedirect = false);
-
 
             // Get response from server and parse needed values from response
             HttpWebResponse authorizationResponse = authorizationRequest.ToWebResponse();
-            var callbackUri = new Uri(authorizationResponse.Headers["Location"]);
-            NameValueCollection callbackParameters = HttpUtility.ParseQueryString(callbackUri.Query);
 
-            return callbackParameters[Parameters.OAuth_Verifier];
+            // Read response
+            string json = authorizationResponse.ReadBody();
+            
+            var authorizeResult  = JsonConvert.DeserializeObject<AuthorizeResult>(json);
+            
+            return authorizeResult.Verifier;
         }
 
         /// <summary>

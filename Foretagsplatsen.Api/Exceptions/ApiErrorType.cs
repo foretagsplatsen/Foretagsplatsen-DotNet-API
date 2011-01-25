@@ -6,6 +6,8 @@ namespace Foretagsplatsen.Api.Exceptions
         UnAuthorized,
         InvalidArguments,
         NotImplemented,
+        Exists,
+        DetachNotAllow,
         Unknown        
     }
 }
