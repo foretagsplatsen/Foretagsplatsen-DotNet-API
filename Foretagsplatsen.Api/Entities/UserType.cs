@@ -5,8 +5,8 @@ namespace Foretagsplatsen.Api.Entities
     /// </summary>
     public enum UserType
     {
-        CompanyUser,
-        AgencyConsultant,
-        AgencyDirector
+        CompanyUser = 0,
+        AgencyConsultant = 1,
+        AgencyDirector = 2
     }
 }

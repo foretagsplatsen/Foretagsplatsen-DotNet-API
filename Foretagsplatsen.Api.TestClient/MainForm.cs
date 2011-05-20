@@ -156,6 +156,24 @@ namespace Foretagsplatsen.Api.TestClient
             }
         }
 
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (CurrentApiClient.Credentials == null)
+            {
+                ShowLoginForm();
+            }
+            else
+            {
+                // Log out user answear is yes
+                if (MessageBox.Show("A user is already logged in." + Environment.NewLine + "Do You want to logout and login as another user?",
+                    MessageBoxHeaderText.Info,
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    CurrentApiClient.Credentials = null;
+                }
+            }
+        }
+
         private void ShowLoginForm()
         {
             Enabled = false;

@@ -19,6 +19,10 @@ namespace Foretagsplatsen.Api.Exceptions
             Identifier = identifier;
         }
 
+        public ApiServerException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
         public string Identifier { get; private set; }
 
         public string FormatedMessage()

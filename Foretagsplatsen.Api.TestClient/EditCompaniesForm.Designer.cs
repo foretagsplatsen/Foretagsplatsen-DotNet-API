@@ -51,6 +51,7 @@
             this.btnGotoSelectedCompany = new System.Windows.Forms.Button();
             this.btnCreateCompany = new System.Windows.Forms.Button();
             this.btnEditUsers = new System.Windows.Forms.Button();
+            this.btnKeyFigures = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -180,7 +181,7 @@
             this.groupBox1.Controls.Add(this.tbCompanyContactPostalAddress);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Location = new System.Drawing.Point(15, 251);
+            this.groupBox1.Location = new System.Drawing.Point(15, 274);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(439, 113);
             this.groupBox1.TabIndex = 14;
@@ -242,7 +243,7 @@
             // 
             // btnGotoSelectedCompany
             // 
-            this.btnGotoSelectedCompany.Location = new System.Drawing.Point(260, 214);
+            this.btnGotoSelectedCompany.Location = new System.Drawing.Point(260, 243);
             this.btnGotoSelectedCompany.Name = "btnGotoSelectedCompany";
             this.btnGotoSelectedCompany.Size = new System.Drawing.Size(179, 23);
             this.btnGotoSelectedCompany.TabIndex = 20;
@@ -270,11 +271,22 @@
             this.btnEditUsers.UseVisualStyleBackColor = true;
             this.btnEditUsers.Click += new System.EventHandler(this.btnEditUsers_Click);
             // 
+            // btnKeyFigures
+            // 
+            this.btnKeyFigures.Location = new System.Drawing.Point(260, 214);
+            this.btnKeyFigures.Name = "btnKeyFigures";
+            this.btnKeyFigures.Size = new System.Drawing.Size(179, 23);
+            this.btnKeyFigures.TabIndex = 23;
+            this.btnKeyFigures.Text = "KeyFigures";
+            this.btnKeyFigures.UseVisualStyleBackColor = true;
+            this.btnKeyFigures.Click += new System.EventHandler(this.btnKeyFigures_Click);
+            // 
             // EditCompaniesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 387);
+            this.ClientSize = new System.Drawing.Size(484, 431);
+            this.Controls.Add(this.btnKeyFigures);
             this.Controls.Add(this.btnEditUsers);
             this.Controls.Add(this.btnCreateCompany);
             this.Controls.Add(this.btnGotoSelectedCompany);
@@ -322,5 +334,6 @@
         private System.Windows.Forms.Button btnGotoSelectedCompany;
         private System.Windows.Forms.Button btnCreateCompany;
         private System.Windows.Forms.Button btnEditUsers;
+        private System.Windows.Forms.Button btnKeyFigures;
     }
 }

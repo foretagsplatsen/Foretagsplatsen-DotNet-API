@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,6 +12,10 @@
     <AssemblyName>Foretagsplatsen.Api.TestClient</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,25 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+	  <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ThirdParty\DevDefined\DevDefined.OAuth.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -87,6 +75,12 @@
     </Compile>
     <Compile Include="AttachCompanyUserToCompanyForm.Designer.cs">
       <DependentUpon>AttachCompanyUserToCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyKeyFiguresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyKeyFiguresForm.Designer.cs">
+      <DependentUpon>CompanyKeyFiguresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateCompanyForm.cs">
       <SubType>Form</SubType>
@@ -155,6 +149,9 @@
     <EmbeddedResource Include="AttachCompanyUserToCompanyForm.resx">
       <DependentUpon>AttachCompanyUserToCompanyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CompanyKeyFiguresForm.resx">
+      <DependentUpon>CompanyKeyFiguresForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateCompanyForm.resx">
       <DependentUpon>CreateCompanyForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +190,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -218,10 +216,6 @@
     <ProjectReference Include="..\Foretagsplatsen.Api\Foretagsplatsen.Api.csproj">
       <Project>{ACCE865F-FE35-47F5-9D01-C6DB5F12422C}</Project>
       <Name>Foretagsplatsen.Api</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ThirdParty\DevDefined\DevDefined.OAuth\DevDefined.OAuth.csproj">
-      <Project>{61B700B6-3911-4CEF-8751-7F42CA765068}</Project>
-      <Name>DevDefined.OAuth</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

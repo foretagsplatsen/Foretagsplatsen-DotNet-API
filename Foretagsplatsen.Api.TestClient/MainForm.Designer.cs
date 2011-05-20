@@ -45,6 +45,7 @@
             this.tbAccessTokenUsername = new System.Windows.Forms.TextBox();
             this.tbProviderHost = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,9 +71,9 @@
             // 
             // btnRemoveAccessToken
             // 
-            this.btnRemoveAccessToken.Location = new System.Drawing.Point(185, 13);
+            this.btnRemoveAccessToken.Location = new System.Drawing.Point(157, 13);
             this.btnRemoveAccessToken.Name = "btnRemoveAccessToken";
-            this.btnRemoveAccessToken.Size = new System.Drawing.Size(124, 23);
+            this.btnRemoveAccessToken.Size = new System.Drawing.Size(152, 23);
             this.btnRemoveAccessToken.TabIndex = 9;
             this.btnRemoveAccessToken.Text = "Remove access token";
             this.btnRemoveAccessToken.UseVisualStyleBackColor = true;
@@ -100,7 +101,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tbConsumerKey);
             this.groupBox1.Controls.Add(this.tbAccessTokenUsername);
-            this.groupBox1.Location = new System.Drawing.Point(13, 111);
+            this.groupBox1.Location = new System.Drawing.Point(13, 162);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(321, 187);
             this.groupBox1.TabIndex = 11;
@@ -196,9 +197,9 @@
             // 
             // tbProviderHost
             // 
-            this.tbProviderHost.Location = new System.Drawing.Point(185, 58);
+            this.tbProviderHost.Location = new System.Drawing.Point(157, 58);
             this.tbProviderHost.Name = "tbProviderHost";
-            this.tbProviderHost.Size = new System.Drawing.Size(149, 20);
+            this.tbProviderHost.Size = new System.Drawing.Size(177, 20);
             this.tbProviderHost.TabIndex = 13;
             this.tbProviderHost.Text = "https://web.foretagsplatsen.se";
             this.tbProviderHost.TextChanged += new System.EventHandler(this.tbProviderHost_TextChanged);
@@ -206,17 +207,28 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(182, 42);
+            this.label7.Location = new System.Drawing.Point(154, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Provider host";
             // 
+            // btnLogin
+            // 
+            this.btnLogin.Location = new System.Drawing.Point(13, 99);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(124, 23);
+            this.btnLogin.TabIndex = 14;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 315);
+            this.ClientSize = new System.Drawing.Size(346, 360);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbProviderHost);
             this.Controls.Add(this.groupBox1);
@@ -252,6 +264,7 @@
         private System.Windows.Forms.TextBox tbConsumerSecret;
         private System.Windows.Forms.TextBox tbProviderHost;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnLogin;
     }
 }
 

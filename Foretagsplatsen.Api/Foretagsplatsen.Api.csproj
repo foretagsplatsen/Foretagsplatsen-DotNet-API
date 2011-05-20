@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -12,6 +12,10 @@
     <AssemblyName>Foretagsplatsen.Api</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,6 +64,20 @@
     <Compile Include="Entities\CompanyRoleType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
     <Compile Include="Entities\ImportData.cs" />
+    <Compile Include="Entities\KeyFigures\CostsForEmployees.cs" />
+    <Compile Include="Entities\KeyFigures\CostsForEmployeesEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossMargin.cs" />
+    <Compile Include="Entities\KeyFigures\GrossMarginEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfitMarginEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfitMargin.cs" />
+    <Compile Include="Entities\KeyFigures\IKeyFigure.cs" />
+    <Compile Include="Entities\KeyFigures\IKeyFigureEntry.cs" />
+    <Compile Include="Entities\KeyFigures\KeyFigureType.cs" />
+    <Compile Include="Entities\KeyFigures\PeriodType.cs" />
+    <Compile Include="Entities\KeyFigures\Profit.cs" />
+    <Compile Include="Entities\KeyFigures\ProfitEntry.cs" />
+    <Compile Include="Entities\KeyFigures\Turnover.cs" />
+    <Compile Include="Entities\KeyFigures\TurnoverEntry.cs" />
     <Compile Include="Entities\UserInfo.cs" />
     <Compile Include="Entities\UserType.cs" />
     <Compile Include="Entities\XAuthResult.cs" />
@@ -86,6 +104,7 @@
     <Compile Include="Resources\CompanyUserResource.cs" />
     <Compile Include="Resources\FiscalYearResource.cs" />
     <Compile Include="Resources\ImportSieResource.cs" />
+    <Compile Include="Resources\KeyFigureResource.cs" />
     <Compile Include="Resources\UserResource.cs" />
     <Compile Include="WebResponseExtension.cs" />
   </ItemGroup>

@@ -15,6 +15,7 @@ namespace Foretagsplatsen.Api.TestClient
         private EditYearsForCompanyForm editYearsForCompanyForm;
         private CreateCompanyForm createCompanyForm;
         private EditUsersForm editUsersForm;
+        private CompanyKeyFiguresForm companyKeyFiguresForm;
         private List<CompanyInfo> companies;
 
         public EditCompaniesForm()
@@ -35,6 +36,17 @@ namespace Foretagsplatsen.Api.TestClient
 
             editUsersForm = new EditUsersForm();
             editUsersForm.FormClosed += EditUsersForm_FormClosed;
+
+            companyKeyFiguresForm = new CompanyKeyFiguresForm();
+            companyKeyFiguresForm.FormClosed += CompanyKeyFiguresForm_FormClosed;
+        }
+
+        private void CompanyKeyFiguresForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            companyKeyFiguresForm = new CompanyKeyFiguresForm();
+            companyKeyFiguresForm.FormClosed += CompanyKeyFiguresForm_FormClosed;
+            companyKeyFiguresForm.Hide();
+            Enabled = true;
         }
 
         private void EditUsersForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -69,7 +81,7 @@ namespace Foretagsplatsen.Api.TestClient
         {
             string businessIdentityCode = GetBusinessIdentityCode();
 
-            var companyToDisplay = companies.FirstOrDefault(c => c.BusinessIdentityCode.Equals(businessIdentityCode));
+            CompanyInfo companyToDisplay = companies.FirstOrDefault(c => c.BusinessIdentityCode.Equals(businessIdentityCode));
 
             DisplayCompanyInfo(companyToDisplay);
         }
@@ -278,6 +290,26 @@ namespace Foretagsplatsen.Api.TestClient
             // Init and display edit user form
             editUsersForm.CurrentCompany = selectedCompany;
             editUsersForm.Show();
+            Enabled = false;
+        }
+
+        private void btnKeyFigures_Click(object sender, EventArgs e)
+        {
+            if (companies.Count == 0)
+            {
+                MessageBox.Show("No companies to edit", MessageBoxHeaderText.Info);
+                return;
+            }
+
+            CompanyInfo currentSelectedCompany = companies.FirstOrDefault(c => c.BusinessIdentityCode.Equals(tbCompanyBusinessIdentityCode.Text));
+            if (currentSelectedCompany == null)
+            {
+                MessageBox.Show("Could not find selected company", MessageBoxHeaderText.Info);
+                return;
+            }
+
+            companyKeyFiguresForm.SetCurrentBusinessIdentityCode(currentSelectedCompany);
+            companyKeyFiguresForm.Show();
             Enabled = false;
         }
     }

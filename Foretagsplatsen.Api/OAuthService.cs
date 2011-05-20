@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
-using System.Web;
 using DevDefined.OAuth.Consumer;
 using DevDefined.OAuth.Framework;
 using DevDefined.OAuth.Storage.Basic;
 using Foretagsplatsen.Api.Entities;
 using Foretagsplatsen.Api.Exceptions;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using OAuthException=DevDefined.OAuth.Framework.OAuthException;
 
 namespace Foretagsplatsen.Api
@@ -25,6 +21,7 @@ namespace Foretagsplatsen.Api
     /// var service = new CredentialService("key", "secret");
     /// OAuthCredentials credentials = service.GetCredentials("username", "password");
     /// </code>
+    /// </example>
     /// <example>
     /// Get access token using OAuth :
     /// <code>
