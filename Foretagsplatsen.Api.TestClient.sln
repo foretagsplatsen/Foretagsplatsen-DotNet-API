@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foretagsplatsen.Api.TestClient", "Foretagsplatsen.Api.TestClient\Foretagsplatsen.Api.TestClient.csproj", "{DB64315C-D646-48EA-B739-1757BAA4DDC3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foretagsplatsen.Api", "Foretagsplatsen.Api\Foretagsplatsen.Api.csproj", "{ACCE865F-FE35-47F5-9D01-C6DB5F12422C}"
