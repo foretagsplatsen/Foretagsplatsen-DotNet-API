@@ -188,7 +188,7 @@ namespace Foretagsplatsen.Api
         /// <param name="arguments">Query parameters.</param>
         public WebResponse Get(string resourceUrl, object arguments)
         {
-            return MakeRequest(resourceUrl, arguments, "GET");
+            return GetResponse("GET", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Foretagsplatsen.Api
         /// <returns>Deserialized result</returns>
         public T Get<T>(string resourceUrl, object arguments) where T : new()
         {
-            return GetResponse<T>(resourceUrl, arguments, "GET");
+            return Execute<T>("GET", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Foretagsplatsen.Api
         /// <param name="arguments">Object to send in request body.</param>
         public void Put(string resourceUrl, object arguments)
         {
-            GetResponse(resourceUrl, arguments, "PUT");
+            Execute("PUT", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Foretagsplatsen.Api
         /// <returns>Deserialized result</returns>
         public T Put<T>(string resourceUrl, object arguments) where T : new()
         {
-            return GetResponse<T>(resourceUrl, arguments, "PUT");
+            return Execute<T>("PUT", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace Foretagsplatsen.Api
         /// <param name="arguments">Object to send in request body.</param>
         public void Post(string resourceUrl, object arguments)
         {
-            GetResponse(resourceUrl, arguments, "POST");
+            Execute("POST", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -255,7 +255,7 @@ namespace Foretagsplatsen.Api
         /// <returns>Deserialized result</returns>
         public T Post<T>(string resourceUrl, object arguments) where T : new()
         {
-            return GetResponse<T>(resourceUrl, arguments, "POST");
+            return Execute<T>("POST", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -274,7 +274,7 @@ namespace Foretagsplatsen.Api
         /// <param name="arguments">Query parameters.</param>
         public void Delete(string resourceUrl, object arguments)
         {
-            GetResponse(resourceUrl, arguments, "DELETE");
+            Execute("DELETE", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -297,43 +297,43 @@ namespace Foretagsplatsen.Api
         /// <returns>Deserialized result</returns>
         public T Delete<T>(string resourceUrl, object arguments) where T : new()
         {
-            return GetResponse<T>(resourceUrl, arguments, "DELETE");
+            return Execute<T>("DELETE", resourceUrl, arguments);
         }
 
         /// <summary>
         /// Execute a HTTP request and parse response
         /// </summary>
+        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <param name="url">Url for resource</param>
         /// <param name="arguments">Query parameters if GET or DELETE and message body if POST or PUT.</param>
-        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
-        public void GetResponse(string url, object arguments, string httpMethod)
+        public void Execute(string httpMethod, string url, object arguments)
         {
-            WebResponse response = MakeRequest(url, arguments, httpMethod);
-            TryReadResponseBody(response);
+            WebResponse response = GetResponse(httpMethod, url, arguments);
+            TryReadResponseBody(response); // to check for error messages
         }
 
         /// <summary>
         /// Execute a HTTP request and parse response to type T
         /// </summary>
         /// <typeparam name="T">Type to return and use when we deserialize the response.</typeparam>
+        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <param name="url">Url for resource</param>
         /// <param name="arguments">Query parameters if GET or DELETE and message body if POST or PUT.</param>
-        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <returns>Deserialized result.</returns>
-        public T GetResponse<T>(string url, object arguments, string httpMethod) where T : new()
+        public T Execute<T>(string httpMethod, string url, object arguments) where T : new()
         {
-            WebResponse response = MakeRequest(url, arguments, httpMethod);
+            WebResponse response = GetResponse(httpMethod, url, arguments);
             return ParseResponse<T>(response);
         }
 
         /// <summary>
         /// Execute a HTTP request and send back the response
         /// </summary>
+        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <param name="url">Url for resource</param>
         /// <param name="arguments">Query parameters if GET or DELETE and message body if POST or PUT.</param>
-        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <returns><see cref="WebResponse" /> for request</returns>
-        public WebResponse MakeRequest(string url, object arguments, string httpMethod)
+        public WebResponse GetResponse(string httpMethod, string url, object arguments)
         {
             WebResponse response;
             try
@@ -378,7 +378,7 @@ namespace Foretagsplatsen.Api
             }
             catch (Exception ex)
             {
-                throw new ApiServerException("Unknown error", ex);
+                throw new ApiServerException("Failed to read response body", ex);
             }
 
             // Get status code and throw Api Server Exception if not OK

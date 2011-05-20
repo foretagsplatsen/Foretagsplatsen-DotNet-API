@@ -11,10 +11,20 @@
   </NAntValidationSettings>
   <RecentFiles>
     <RecentFiles>
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiClient.cs" caret="15527" fromTop="25" />
-      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1104" fromTop="19" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiClient.cs" caret="281" fromTop="10" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1823" fromTop="39" />
     </RecentFiles>
-    <RecentEdits />
+    <RecentEdits>
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1156" fromTop="23" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1176" fromTop="25" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1927" fromTop="40" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1548" fromTop="34" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiClient.cs" caret="15274" fromTop="23" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/d:Exceptions/f:ApiServerException.cs" caret="1823" fromTop="39" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiClient.cs" caret="12967" fromTop="28" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiClient.cs" caret="13655" fromTop="32" />
+      <File id="ACCE865F-FE35-47F5-9D01-C6DB5F12422C/f:ApiClient.cs" caret="12417" fromTop="23" />
+    </RecentEdits>
   </RecentFiles>
   <UnitTestRunner>
     <Providers />
@@ -33,7 +43,7 @@
       <Item value="private" priority="12" />
       <Item value="InitializeLifetimeService" priority="1" />
       <Item value="sessionData" priority="0" />
-      <Item value="new" priority="29" />
+      <Item value="new" priority="30" />
       <Item value="SessionData" priority="0" />
       <Item value="_sessionData" priority="0" />
       <Item value="override" priority="4" />
@@ -113,7 +123,7 @@
       <Item value="CredentialService" priority="0" />
       <Item value="AccessToken" priority="3" />
       <Item value="username" priority="5" />
-      <Item value="throw" priority="10" />
+      <Item value="throw" priority="11" />
       <Item value="ArgumentNullException" priority="0" />
       <Item value="List&lt;AccessToken&gt;" priority="0" />
       <Item value="listOfAccessTokens" priority="1" />
@@ -152,7 +162,7 @@
       <Item value="message" priority="6" />
       <Item value="catch" priority="1" />
       <Item value="ResponseTypes" priority="0" />
-      <Item value="try" priority="2" />
+      <Item value="try" priority="3" />
       <Item value="ex" priority="1" />
       <Item value="ResponseResult" priority="1" />
       <Item value="List" priority="3" />
@@ -178,6 +188,7 @@
       <Item value="innerException" priority="0" />
       <Item value="credentials" priority="0" />
       <Item value="parameters" priority="0" />
+      <Item value="ApiServerException" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:Monitor2.Api.TestClient.SessionData">
       <Item value="RequestToken" priority="0" />

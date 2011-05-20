@@ -37,16 +37,25 @@ namespace Foretagsplatsen.Api.Exceptions
 
         public static ApiServerException CreateFromJson(string json)
         {
-            var jsonObject = JObject.Parse(json);
+            try
+            {
+                var jsonObject = JObject.Parse(json);
 
-            var message = jsonObject["Message"].Value<string>();
+                var message = jsonObject["Message"].Value<string>();
 
-            var typeOfError = (ApiErrorType)Enum.Parse(typeof(ApiErrorType),
-                jsonObject["TypeOfError"].Value<string>());
+                var typeOfError = (ApiErrorType)Enum.Parse(typeof(ApiErrorType),
+                    jsonObject["TypeOfError"].Value<string>());
 
-            var identifier = jsonObject["Identifier"].Value<string>();
+                var identifier = jsonObject["Identifier"].Value<string>();
 
-            return new ApiServerException(message, typeOfError, identifier);
+                return new ApiServerException(message, typeOfError, identifier);
+            }
+            catch (Exception ex)
+            {
+                // Usualy the case when an error message is returned from an intermediate 
+                // node such as a proxy or webserver.
+                throw new ApiServerException("Not a valid json error response.", ex);
+            }
         }
     }
 }
