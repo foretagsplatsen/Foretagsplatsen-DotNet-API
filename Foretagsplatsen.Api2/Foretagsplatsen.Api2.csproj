@@ -46,9 +46,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiClient.cs" />
+    <Compile Include="BasicAuthenticationRestClient.cs" />
+    <Compile Include="Entities\Accounts\AccountGroup.cs" />
+    <Compile Include="Entities\Accounts\AccountIntervalGroup.cs" />
+    <Compile Include="Entities\Accounts\AccountNumberInterval.cs" />
+    <Compile Include="Entities\Accounts\ChartOfAccounts.cs" />
+    <Compile Include="Entities\Accounts\IAccountGroup.cs" />
+    <Compile Include="Entities\Accounts\IChartOfAccountChild.cs" />
+    <Compile Include="Entities\Accounts\KnownGroup.cs" />
+    <Compile Include="Entities\Accounts\KnownGroupDictionary.cs" />
     <Compile Include="Entities\Agency.cs" />
-    <Compile Include="Entities\CompanyInfo.cs" />
+    <Compile Include="Entities\AuthorizeResult.cs" />
+    <Compile Include="Entities\Comments\Comment.cs" />
+    <Compile Include="Entities\Comments\KeyFigureComment.cs" />
+    <Compile Include="Entities\Company\CompanyInfo.cs" />
+    <Compile Include="Entities\Company\CompanyRole.cs" />
+    <Compile Include="Entities\Company\CompanyRoleType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
+    <Compile Include="Entities\Documents\DocumentFolder.cs" />
+    <Compile Include="Entities\Documents\Document.cs" />
+    <Compile Include="Entities\Documents\DocumentFile.cs" />
     <Compile Include="Entities\FiscalYear.cs" />
     <Compile Include="Entities\KeyFigures\KeyFigureData.cs" />
     <Compile Include="Entities\KeyFigures\KeyFigure.cs" />
@@ -59,23 +76,48 @@
     <Compile Include="Entities\SieImport\SieImportInfo.cs" />
     <Compile Include="Entities\SieImport\SieImportResult.cs" />
     <Compile Include="Entities\KeyFigures\KeyFigureResult.cs" />
+    <Compile Include="Entities\User\AgencyUser.cs" />
+    <Compile Include="Entities\User\CompanyUser.cs" />
+    <Compile Include="Entities\User\AgencyDirector.cs" />
+    <Compile Include="Entities\User\PartnerUser.cs" />
+    <Compile Include="Entities\User\AgencyConsultant.cs" />
+    <Compile Include="Entities\User\UserInfo.cs" />
+    <Compile Include="Entities\User\UserType.cs" />
     <Compile Include="Exceptions\ApiErrorType.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Exceptions\ApiOAuthException.cs" />
+    <Compile Include="Exceptions\OAuthAuthorizationException.cs" />
+    <Compile Include="Exceptions\OAuthConsumerException.cs" />
     <Compile Include="IRestClient.cs" />
+    <Compile Include="OAuthCredentials.cs" />
+    <Compile Include="OAuthRestClient.cs" />
+    <Compile Include="OAuthService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AgencyCompanyResource.cs" />
     <Compile Include="Resources\AgencyResource.cs" />
+    <Compile Include="Resources\CompanyCommentResource.cs" />
     <Compile Include="Resources\CompanyKeyFigureValueResource.cs" />
     <Compile Include="Resources\CompanyResource.cs" />
     <Compile Include="Resources\AgencySieImportResource.cs" />
     <Compile Include="Resources\CompanyFiscalYearResource.cs" />
     <Compile Include="Resources\CompanyKeyFigureDataResource.cs" />
     <Compile Include="Resources\CompanyKeyFigurePresetResource.cs" />
+    <Compile Include="Resources\CompanyDocumentResource.cs" />
+    <Compile Include="Resources\CompanyChartOfAccountsResource.cs" />
+    <Compile Include="Resources\UserBaseResource.cs" />
+    <Compile Include="Resources\MeResource.cs" />
+    <Compile Include="Resources\UserResource.cs" />
     <Compile Include="SamlRestClient.cs" />
     <Compile Include="Saml\FtgpSamlAssertionInfo.cs" />
     <Compile Include="Saml\FtgpSamlAssertionService.cs" />
     <Compile Include="Saml\SamlSignedXml.cs" />
     <Compile Include="WebResponseExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\thirdparty\libs\DevDefined.OAuth\src\DevDefined.OAuth\DevDefined.OAuth.csproj">
+      <Project>{61b700b6-3911-4cef-8751-7f42ca765068}</Project>
+      <Name>DevDefined.OAuth</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

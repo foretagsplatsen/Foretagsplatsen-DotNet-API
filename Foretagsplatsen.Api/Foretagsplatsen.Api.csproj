@@ -10,12 +10,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Foretagsplatsen.Api</RootNamespace>
     <AssemblyName>Foretagsplatsen.Api</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,8 +40,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ThirdParty\DevDefined\DevDefined.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\ThirdParty\JsonDotNet\Net35\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\JsonDotNet\Json45r10\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -67,6 +69,7 @@
     <Compile Include="Entities\Accounts\KnownGroupDictionaryJsonConverter.cs" />
     <Compile Include="Entities\Accounts\IChartOfAccountChild.cs" />
     <Compile Include="Entities\Accounts\KnownGroupDictionary.cs" />
+    <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\AuthorizeResult.cs" />
     <Compile Include="Entities\Accounts\ChartOfAccounts.cs" />
     <Compile Include="Entities\Comments\IComment.cs" />
@@ -78,8 +81,8 @@
     <Compile Include="Entities\ImportData.cs" />
     <Compile Include="Entities\KeyFigureData.cs" />
     <Compile Include="Entities\KeyFigurePreset.cs" />
-    <Compile Include="Entities\KeyFigures\AccumulatedResult.cs" />
-    <Compile Include="Entities\KeyFigures\AccumulatedResultEntry.cs" />
+    <Compile Include="Entities\KeyFigures\PreliminaryResult.cs" />
+    <Compile Include="Entities\KeyFigures\PreliminaryResultEntry.cs" />
     <Compile Include="Entities\KeyFigures\GrossProfit.cs" />
     <Compile Include="Entities\KeyFigures\GrossProfitEntry.cs" />
     <Compile Include="Entities\KeyFigures\GrossProfitMarginEntry.cs" />
@@ -107,6 +110,7 @@
     <Compile Include="Entities\CompanyInfo.cs" />
     <Compile Include="Exceptions\OAuthConsumerException.cs" />
     <Compile Include="Exceptions\OAuthAuthorizationException.cs" />
+    <Compile Include="IRestClient.cs" />
     <Compile Include="OAuthCredentials.cs" />
     <Compile Include="Exceptions\ApiOAuthException.cs" />
     <Compile Include="OAuthService.cs" />

@@ -73,6 +73,16 @@ namespace Foretagsplatsen.Api2
             return new CompanyKeyFigurePresetResource(this, companyId);
         }
 
+        public CompanyCommentResource GetCompanyCommentResource(CompanyInfo company)
+        {
+            return GetCompanyCommentResource(company.id);
+        }
+
+        public CompanyCommentResource GetCompanyCommentResource(string companyId)
+        {
+            return new CompanyCommentResource(this, companyId);
+        }
+
         public CompanyKeyFigureDataResource GetCompanyKeyFigureDataResource(CompanyInfo company)
         {
             return new CompanyKeyFigureDataResource(this, company);
@@ -91,6 +101,36 @@ namespace Foretagsplatsen.Api2
         public CompanyFiscalYearResource GetCompanyFiscalYearResource(string companyId)
         {
             return new CompanyFiscalYearResource(this, companyId);
+        }
+
+        public UserResource GetUserResource()
+        {
+            return new UserResource(this);
+        }
+
+        public MeResource GetMeResource()
+        {
+            return new MeResource(this);
+        }
+
+        public CompanyChartOfAccountsResource GetCompanyChartOfAccountResource(CompanyInfo company)
+        {
+            return GetCompanyChartOfAccountResource(company.id);
+        }
+
+        public CompanyChartOfAccountsResource GetCompanyChartOfAccountResource(string companyId)
+        {
+            return new CompanyChartOfAccountsResource(this, companyId);
+        }
+
+        public CompanyDocumentResource GetCompanyDocumentResource(CompanyInfo company)
+        {
+            return GetCompanyDocumentResource(company.id);
+        }
+
+        public CompanyDocumentResource GetCompanyDocumentResource(string companyId)
+        {
+            return new CompanyDocumentResource(this, companyId);
         }
 
         public string Get(string resourceUrl)

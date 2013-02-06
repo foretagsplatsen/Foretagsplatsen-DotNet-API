@@ -233,12 +233,12 @@ namespace Foretagsplatsen.Api.Resources
                     case KeyFigureComment.KeyFigureCommentTypeName:
                         return JsonConvert.DeserializeObject<KeyFigureComment>(obj.ToString());
                     default:
-                        throw new ApiException("Key figure type not implemented.");
+                        throw new ApiException("Comment type not implemented.");
                 }
             }
             catch (Exception ex)
             {
-                throw new ApiException(string.Format("Could not parse key figure type: {0}", type), ex.InnerException);
+                throw new ApiException(string.Format("Could not parse comment type: {0}", type), ex.InnerException);
             }
         }
 

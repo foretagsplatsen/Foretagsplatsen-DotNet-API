@@ -137,14 +137,14 @@ namespace Foretagsplatsen.Api.Resources
         /// </summary>
         /// <param name="startDate">Date to start fetch data from</param>
         /// <param name="endDate">Date to stop fetch data from</param>
-        /// <returns><see cref="AccumulatedResult"/></returns>
-        public AccumulatedResult GetAccumulatedResult(DateTime startDate, DateTime endDate)
+        /// <returns><see cref="PreliminaryResult"/></returns>
+        public PreliminaryResult GetPreliminaryResult(DateTime startDate, DateTime endDate)
         {
-            string url = string.Format(BaseUrl, businessIdentityCode, "AccumulatedResult");
+            string url = string.Format(BaseUrl, businessIdentityCode, "PreliminaryResult");
 
             string urlWithDateArguments = string.Format("{0}?startdate={1}&enddate={2}", url, startDate.ToShortDateString(), endDate.ToShortDateString());
 
-            return apiClient.Get<AccumulatedResult>(urlWithDateArguments);
+            return apiClient.Get<PreliminaryResult>(urlWithDateArguments);
         }
 
 
@@ -153,7 +153,7 @@ namespace Foretagsplatsen.Api.Resources
         /// </summary>
         /// <param name="startDate">Date to start fetch data from</param>
         /// <param name="endDate">Date to stop fetch data from</param>
-        /// <returns><see cref="AccumulatedResult"/></returns>
+        /// <returns><see cref="NetProfitMargin"/></returns>
         public NetProfitMargin GetNetProfitMargin(DateTime startDate, DateTime endDate)
         {
             string url = string.Format(BaseUrl, businessIdentityCode, "NetProfitMargin");
@@ -224,8 +224,8 @@ namespace Foretagsplatsen.Api.Resources
                         return JsonConvert.DeserializeObject<Profit>(keyFigureData.ToString());
                     case KeyFigureType.Turnover:
                         return JsonConvert.DeserializeObject<Turnover>(keyFigureData.ToString());
-                    case KeyFigureType.AccumulatedResult:
-                        return JsonConvert.DeserializeObject<AccumulatedResult>(keyFigureData.ToString());
+                    case KeyFigureType.PreliminaryResult:
+                        return JsonConvert.DeserializeObject<PreliminaryResult>(keyFigureData.ToString());
                     case KeyFigureType.NetProfitMargin:
                         return JsonConvert.DeserializeObject<NetProfitMargin>(keyFigureData.ToString());
                     case KeyFigureType.NetSalesPerEmployee:

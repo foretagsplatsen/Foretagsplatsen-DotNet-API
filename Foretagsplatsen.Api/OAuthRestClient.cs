@@ -7,7 +7,7 @@ namespace Foretagsplatsen.Api
     /// <summary>
     /// OAuth client to sign and execute REST requests.
     /// </summary>
-    public class OAuthRestClient
+    public class OAuthRestClient : IRestClient
     {
         private readonly OAuthCredentials credentials;
         private readonly string baseUrl;

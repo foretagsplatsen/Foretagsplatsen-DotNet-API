@@ -8,8 +8,12 @@ namespace Foretagsplatsen.Api2.Exceptions
         public string TypeOfError { get; set; }
         public string Identifier { get; set; }
 
-        public ApiException()
-        {}
+        public ApiException(string message)
+            : base(message)
+        {
+            TypeOfError = "UNKNOWN";
+        }
+
 
         public ApiException(string message, string errorType)
             : base(message)
@@ -23,6 +27,13 @@ namespace Foretagsplatsen.Api2.Exceptions
             TypeOfError = errorType;
             Identifier = identifier;
         }
+
+        public ApiException(string message, Exception innerException)
+            : base(message, innerException)
+        {
+            TypeOfError = "UNKNOWN";
+        }
+
 
         public ApiException(string message, string errorType, Exception innerException)
             : base(message, innerException)

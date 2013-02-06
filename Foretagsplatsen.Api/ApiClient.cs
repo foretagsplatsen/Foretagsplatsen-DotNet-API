@@ -12,7 +12,7 @@ namespace Foretagsplatsen.Api
     /// </summary>
     public class ApiClient
     {
-        private readonly OAuthRestClient restClient;
+        private readonly IRestClient restClient;
         private readonly string baseUrl;
 
         /// <summary>
@@ -33,6 +33,12 @@ namespace Foretagsplatsen.Api
         {
             this.baseUrl = baseUrl;
             restClient = new OAuthRestClient(credentials, baseUrl);
+        }
+
+        public ApiClient(IRestClient restClient)
+        {
+            this.restClient = restClient;
+            this.baseUrl = restClient.BaseUrl;
         }
 
         /// <summary>

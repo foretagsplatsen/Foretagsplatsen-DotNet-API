@@ -2,7 +2,7 @@
 {
     public class NetSalesPerEmployeeEntry : KeyFigureEntryBase
     {
-        public float NetSales { get; set; }
-        public float NumberOfEmployees { get; set; }
+        public float? NetSales { get; set; }
+        public float? NumberOfEmployees { get; set; }
     }
 }

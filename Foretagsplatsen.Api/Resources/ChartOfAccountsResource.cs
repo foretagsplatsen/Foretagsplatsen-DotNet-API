@@ -168,9 +168,9 @@ namespace Foretagsplatsen.Api.Resources
         /// <param name="json">JSON representation of the chart of account</param>
         public void Create(string id, string json)
         {
-            string url = GetUrl();
+            string url = GetUrlWithChartOfAccountsId(id);
 
-            client.Put(url, json);
+            client.Post(url, json);
         }
 
         /// <summary>

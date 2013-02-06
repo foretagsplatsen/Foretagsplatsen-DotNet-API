@@ -6,6 +6,6 @@ namespace Foretagsplatsen.Api.Entities.KeyFigures
     /// </summary>
     public class TurnoverEntry : KeyFigureEntryBase
     {
-        public float Income { get; set; }
+        public float? Income { get; set; }
     }
 }

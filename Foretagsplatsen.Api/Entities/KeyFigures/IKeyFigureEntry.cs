@@ -10,6 +10,6 @@ namespace Foretagsplatsen.Api.Entities.KeyFigures
     {
         DateTime Start { get; set; }
         DateTime End { get; set; }
-        float Value { get; set; }
+        float? Value { get; set; }
     }
 }

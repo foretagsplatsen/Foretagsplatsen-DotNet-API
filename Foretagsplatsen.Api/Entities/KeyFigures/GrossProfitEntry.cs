@@ -5,7 +5,7 @@ namespace Foretagsplatsen.Api.Entities.KeyFigures
     /// </summary>
     public class GrossProfitEntry : KeyFigureEntryBase
     {
-        public float NetSale { get; set; }
-        public float Cost { get; set; }
+        public float? NetSale { get; set; }
+        public float? Cost { get; set; }
     }
 }
