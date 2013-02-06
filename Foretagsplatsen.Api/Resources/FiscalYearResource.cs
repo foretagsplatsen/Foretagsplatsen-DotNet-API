@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Foretagsplatsen.Api.Entities;
 
@@ -41,7 +40,7 @@ namespace Foretagsplatsen.Api.Resources
         public string GetCollectionUrl()
         {
             const string yearCollectionUrlFormat = "{0}/Api/Company/{1}/FiscalYear/";
-            return String.Format(yearCollectionUrlFormat, client.BaseUrl, businessIdentityCode);
+            return string.Format(yearCollectionUrlFormat, client.BaseUrl, businessIdentityCode);
         }
         
         /// <summary>
@@ -52,7 +51,7 @@ namespace Foretagsplatsen.Api.Resources
         public string GetUrl(string fiscalYearId)
         {
             const string yearUrlFormat = "{0}/Api/Company/{1}/FiscalYear/{2}";
-            return String.Format(yearUrlFormat, client.BaseUrl, businessIdentityCode, fiscalYearId);
+            return string.Format(yearUrlFormat, client.BaseUrl, businessIdentityCode, fiscalYearId);
         }
 
         /// <summary>

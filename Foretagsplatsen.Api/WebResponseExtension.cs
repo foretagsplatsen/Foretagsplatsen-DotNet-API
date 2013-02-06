@@ -9,6 +9,10 @@ namespace Foretagsplatsen.Api
         {
             using (Stream responseStream = webResponse.GetResponseStream())
             {
+                if (responseStream == null)
+                {
+                    return null;
+                }
                 if (responseStream.CanSeek)
                 {
                     responseStream.Seek(0, SeekOrigin.Begin);

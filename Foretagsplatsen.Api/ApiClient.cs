@@ -148,6 +148,52 @@ namespace Foretagsplatsen.Api
         }
 
         /// <summary>
+        /// Instantiate a new <see cref="KeyFigureDataResource"/>
+        /// </summary>
+        /// <returns><see cref="KeyFigureDataResource"/></returns>
+        public KeyFigureDataResource GetKeyFigureDataResource(string businessIdentityCode)
+        {
+            return new KeyFigureDataResource(this, businessIdentityCode);
+        }
+
+        /// <summary>
+        /// Instantiate a new <see cref="KeyFigurePresetResource"/>
+        /// </summary>
+        /// <returns><see cref="KeyFigurePresetResource"/></returns>
+        public KeyFigurePresetResource GetKeyFigurePresetDataResource(string businessIdentityCode)
+        {
+            return new KeyFigurePresetResource(this, businessIdentityCode);
+        }
+
+        /// <summary>
+        /// Instantiate a new <see cref="ChartOfAccountsResource"/>
+        /// </summary>
+        /// <returns><see cref="ChartOfAccountsResource"/></returns>
+        public ChartOfAccountsResource GetChartOfAccountsResource(string businessIdentityCode)
+        {
+            return new ChartOfAccountsResource(this, businessIdentityCode);
+        }
+
+        /// <summary>
+        /// Instantiate a new <see cref="DocumentResource"/>
+        /// </summary>
+        /// <returns><see cref="DocumentResource"/></returns>
+        public DocumentResource GetDocumentResource(string businessIdentityCode)
+        {
+            return new DocumentResource(this, businessIdentityCode);
+        }
+
+        /// <summary>
+        /// Instantiate a new <see cref="CommentResource"/>
+        /// </summary>
+        /// <returns><see cref="CommentResource"/></returns>
+        public CommentResource GetCommentResource(string businessIdentityCode)
+        {
+            return new CommentResource(this, businessIdentityCode);
+        }
+
+
+        /// <summary>
         /// Login URL for Single-Sign-On (SSO). Company users will be redirected to the 
         /// Presentation UI and Agency user to the Agency UI.
         /// </summary>
@@ -172,11 +218,25 @@ namespace Foretagsplatsen.Api
         }
 
         /// <summary>
+        /// Login URL for Single-Sign-On (SSO) to a specific company and serivce.
+        /// Valid services are: "Accounting", "Financial", "Document" and "MyCompanies"
+        /// </summary>
+        /// <param name="businessIdentityCode">Business identity code for company to login to, can be empty if the serivce is "MyCompanies"</param>
+        /// <param name="service"> The serive to redirect to user to.</param>
+        /// <returns>Url for the SSO service.</returns>
+        public Uri GetLoginUrl(string businessIdentityCode, string service)
+        {
+            string loginToUrl = String.Format("{0}/Account/Login/{1}", baseUrl, businessIdentityCode);
+            Uri uri = restClient.GetUri(loginToUrl, new {service});
+            return uri;
+        }
+
+        /// <summary>
         /// Execute a GET request on resource.
         /// </summary>
         /// <param name="resourceUrl">Url for resource.</param>
-        /// <rereturns>Http response</rereturns>
-        public WebResponse Get(string resourceUrl)
+        /// <rereturns>json result</rereturns>
+        public string Get(string resourceUrl)
         {
             return Get(resourceUrl, null);
         }
@@ -186,9 +246,10 @@ namespace Foretagsplatsen.Api
         /// </summary>
         /// <param name="resourceUrl">Url for resource.</param>
         /// <param name="arguments">Query parameters.</param>
-        public WebResponse Get(string resourceUrl, object arguments)
+        /// <rereturns>json result</rereturns>
+        public string Get(string resourceUrl, object arguments)
         {
-            return GetResponse("GET", resourceUrl, arguments);
+            return Execute("GET", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -219,9 +280,10 @@ namespace Foretagsplatsen.Api
         /// </summary>
         /// <param name="resourceUrl">Url for resource.</param>
         /// <param name="arguments">Object to send in request body.</param>
-        public void Put(string resourceUrl, object arguments)
+        /// <rereturns>json result</rereturns>
+        public string Put(string resourceUrl, object arguments)
         {
-            Execute("PUT", resourceUrl, arguments);
+            return Execute("PUT", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -241,9 +303,10 @@ namespace Foretagsplatsen.Api
         /// </summary>
         /// <param name="resourceUrl">Url for resource.</param>
         /// <param name="arguments">Object to send in request body.</param>
-        public void Post(string resourceUrl, object arguments)
+        /// <rereturns>json result</rereturns>
+        public string Post(string resourceUrl, object arguments)
         {
-            Execute("POST", resourceUrl, arguments);
+            return Execute("POST", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -262,9 +325,10 @@ namespace Foretagsplatsen.Api
         /// Execute a DELETE request on resource.
         /// </summary>
         /// <param name="resourceUrl">Url for resource.</param>
-        public void Delete(string resourceUrl)
+        /// <rereturns>json result</rereturns>
+        public string Delete(string resourceUrl)
         {
-            Delete(resourceUrl, null);
+            return Delete(resourceUrl, null);
         }
 
         /// <summary>
@@ -272,9 +336,10 @@ namespace Foretagsplatsen.Api
         /// </summary>
         /// <param name="resourceUrl">Url for resource.</param>
         /// <param name="arguments">Query parameters.</param>
-        public void Delete(string resourceUrl, object arguments)
+        /// <rereturns>json result</rereturns>
+        public string Delete(string resourceUrl, object arguments)
         {
-            Execute("DELETE", resourceUrl, arguments);
+            return Execute("DELETE", resourceUrl, arguments);
         }
 
         /// <summary>
@@ -306,10 +371,10 @@ namespace Foretagsplatsen.Api
         /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
         /// <param name="url">Url for resource</param>
         /// <param name="arguments">Query parameters if GET or DELETE and message body if POST or PUT.</param>
-        public void Execute(string httpMethod, string url, object arguments)
+        public string Execute(string httpMethod, string url, object arguments)
         {
             WebResponse response = GetResponse(httpMethod, url, arguments);
-            TryReadResponseBody(response); // to check for error messages
+            return TryReadResponseBody(response); // to check for error messages
         }
 
         /// <summary>

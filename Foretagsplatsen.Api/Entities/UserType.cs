@@ -7,6 +7,7 @@ namespace Foretagsplatsen.Api.Entities
     {
         CompanyUser = 0,
         AgencyConsultant = 1,
-        AgencyDirector = 2
+        AgencyDirector = 2,
+        AgencyOwner = 3
     }
 }

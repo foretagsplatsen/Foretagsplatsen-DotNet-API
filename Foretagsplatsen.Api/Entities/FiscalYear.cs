@@ -10,7 +10,7 @@ namespace Foretagsplatsen.Api.Entities
         public string Id { get; set; }
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
-        public ChartOfAccountsType ChartOfAccountsType { get; set; }
+        public string ChartOfAccountsId { get; set; }
         public DateTime LastLedgerDate { get; set; }
         public string Currency { get; set; }
     }

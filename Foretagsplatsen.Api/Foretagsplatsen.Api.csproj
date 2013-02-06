@@ -39,9 +39,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ThirdParty\DevDefined\DevDefined.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ThirdParty\Json.NET 3.5 Release 8\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\ThirdParty\JsonDotNet\Net35\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -59,31 +58,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Accounts\AccountGroup.cs" />
+    <Compile Include="Entities\Accounts\AccountNumberInterval.cs" />
+    <Compile Include="Entities\Accounts\AccountIntervalGroup.cs" />
+    <Compile Include="Entities\Accounts\ChartOfAccountChildJsonConverter.cs" />
+    <Compile Include="Entities\Accounts\IAccountGroup.cs" />
+    <Compile Include="Entities\Accounts\KnownGroup.cs" />
+    <Compile Include="Entities\Accounts\KnownGroupDictionaryJsonConverter.cs" />
+    <Compile Include="Entities\Accounts\IChartOfAccountChild.cs" />
+    <Compile Include="Entities\Accounts\KnownGroupDictionary.cs" />
     <Compile Include="Entities\AuthorizeResult.cs" />
+    <Compile Include="Entities\Accounts\ChartOfAccounts.cs" />
+    <Compile Include="Entities\Comments\IComment.cs" />
+    <Compile Include="Entities\Comments\KeyFigureComment.cs" />
     <Compile Include="Entities\CompanyRole.cs" />
     <Compile Include="Entities\CompanyRoleType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
+    <Compile Include="Entities\Document.cs" />
     <Compile Include="Entities\ImportData.cs" />
-    <Compile Include="Entities\KeyFigures\CostsForEmployees.cs" />
-    <Compile Include="Entities\KeyFigures\CostsForEmployeesEntry.cs" />
-    <Compile Include="Entities\KeyFigures\GrossMargin.cs" />
-    <Compile Include="Entities\KeyFigures\GrossMarginEntry.cs" />
+    <Compile Include="Entities\KeyFigureData.cs" />
+    <Compile Include="Entities\KeyFigurePreset.cs" />
+    <Compile Include="Entities\KeyFigures\AccumulatedResult.cs" />
+    <Compile Include="Entities\KeyFigures\AccumulatedResultEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfit.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfitEntry.cs" />
     <Compile Include="Entities\KeyFigures\GrossProfitMarginEntry.cs" />
     <Compile Include="Entities\KeyFigures\GrossProfitMargin.cs" />
     <Compile Include="Entities\KeyFigures\IKeyFigure.cs" />
     <Compile Include="Entities\KeyFigures\IKeyFigureEntry.cs" />
+    <Compile Include="Entities\KeyFigures\KeyFigureBase.cs" />
+    <Compile Include="Entities\KeyFigures\KeyFigureEntryBase.cs" />
     <Compile Include="Entities\KeyFigures\KeyFigureType.cs" />
+    <Compile Include="Entities\KeyFigures\NetProfitMargin.cs" />
+    <Compile Include="Entities\KeyFigures\NetProfitMarginEntry.cs" />
+    <Compile Include="Entities\KeyFigures\NetSalesPerEmployee.cs" />
+    <Compile Include="Entities\KeyFigures\NetSalesPerEmployeeEntry.cs" />
     <Compile Include="Entities\KeyFigures\PeriodType.cs" />
     <Compile Include="Entities\KeyFigures\Profit.cs" />
     <Compile Include="Entities\KeyFigures\ProfitEntry.cs" />
     <Compile Include="Entities\KeyFigures\Turnover.cs" />
     <Compile Include="Entities\KeyFigures\TurnoverEntry.cs" />
+    <Compile Include="Entities\Period.cs" />
     <Compile Include="Entities\UserInfo.cs" />
     <Compile Include="Entities\UserType.cs" />
     <Compile Include="Entities\XAuthResult.cs" />
     <Compile Include="Exceptions\ApiErrorType.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
-    <Compile Include="Entities\ChartOfAccountsType.cs" />
     <Compile Include="Entities\CompanyInfo.cs" />
     <Compile Include="Exceptions\OAuthConsumerException.cs" />
     <Compile Include="Exceptions\OAuthAuthorizationException.cs" />
@@ -99,11 +119,16 @@
     <Compile Include="Entities\ImportSieResult.cs" />
     <Compile Include="Resources\AgencyUserCompanyResource.cs" />
     <Compile Include="Resources\AgencyUserResource.cs" />
+    <Compile Include="Resources\ChartOfAccountsResource.cs" />
+    <Compile Include="Resources\CommentResource.cs" />
     <Compile Include="Resources\CompanyAgencyUserResource.cs" />
     <Compile Include="Resources\CompanyResource.cs" />
     <Compile Include="Resources\CompanyUserResource.cs" />
+    <Compile Include="Resources\DocumentResource.cs" />
     <Compile Include="Resources\FiscalYearResource.cs" />
     <Compile Include="Resources\ImportSieResource.cs" />
+    <Compile Include="Resources\KeyFigureDataResource.cs" />
+    <Compile Include="Resources\KeyFigurePresetResource.cs" />
     <Compile Include="Resources\KeyFigureResource.cs" />
     <Compile Include="Resources\UserResource.cs" />
     <Compile Include="WebResponseExtension.cs" />

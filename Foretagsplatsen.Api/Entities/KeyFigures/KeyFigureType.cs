@@ -7,8 +7,10 @@ namespace Foretagsplatsen.Api.Entities.KeyFigures
     {
         public const string Turnover = "Turnover";
         public const string Profit = "Profit";
-        public const string GrossMargin = "GrossMargin";
+        public const string GrossProfit = "GrossProfit";
         public const string GrossProfitMargin = "GrossProfitMargin";
-        public const string CostForEmployees = "CostForEmployees";
+        public const string NetProfitMargin = "NetProfitMargin";
+        public const string AccumulatedResult = "AccumulatedResult";
+        public const string NetSalesPerEmployee = "NetSalesPerEmployee";
     }
 }

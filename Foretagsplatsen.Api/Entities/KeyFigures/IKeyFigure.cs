@@ -9,9 +9,10 @@ namespace Foretagsplatsen.Api.Entities.KeyFigures
     {
         string Name { get; set; }
         string Description { get; set; }
-        string Type { get; set; }
         DateTime Start { get; set; }
         DateTime End { get; set; }
         PeriodType PeriodType { get; set; }
+        string Type { get; set; }
+        string ValueType { get; set; }
     }
 }

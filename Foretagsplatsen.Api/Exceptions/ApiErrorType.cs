@@ -8,6 +8,7 @@ namespace Foretagsplatsen.Api.Exceptions
         NotImplemented,
         Exists,
         DetachNotAllow,
-        Unknown        
+        Unknown,
+        NoFiscalYearData
     }
 }

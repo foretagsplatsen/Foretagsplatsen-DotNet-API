@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using Foretagsplatsen.Api.Entities.KeyFigures;
 using Foretagsplatsen.Api.Exceptions;
 using Newtonsoft.Json;
@@ -29,18 +28,18 @@ namespace Foretagsplatsen.Api.Resources
         {
             get
             {
-                return apiClient.BaseUrl + "/Api/Company/{0}/KeyFigures/{1}";
+                return apiClient.BaseUrl + "/Api/Company/{0}/KeyFigure/{1}";
             }
         }
 
         /// <summary>
         /// Return data for Cross margin key figure
         /// </summary>
-        /// <returns><see cref="GrossMargin"/></returns>
-        public GrossMargin GetGrossMargin()
+        /// <returns><see cref="GrossProfit"/></returns>
+        public GrossProfit GetGrossProfit()
         {
             string url = string.Format(BaseUrl, businessIdentityCode, "GrossMargin");
-            return apiClient.Get<GrossMargin>(url);
+            return apiClient.Get<GrossProfit>(url);
         }
 
         /// <summary>
@@ -48,14 +47,14 @@ namespace Foretagsplatsen.Api.Resources
         /// </summary>
         /// <param name="startDate">Date to start fetch data from</param>
         /// <param name="endDate">Date to stop fetch data from</param>
-        /// <returns><see cref="GrossMargin"/></returns>
-        public GrossMargin GetGrossMargin(DateTime startDate, DateTime endDate)
+        /// <returns><see cref="GrossProfit"/></returns>
+        public GrossProfit GetGrossProfit(DateTime startDate, DateTime endDate)
         {
             string url = string.Format(BaseUrl, businessIdentityCode, "GrossMargin");
 
             string urlWithDateArguments = string.Format("{0}?startdate={1}&enddate={2}", url, startDate.ToShortDateString(), endDate.ToShortDateString());
 
-            return apiClient.Get<GrossMargin>(urlWithDateArguments);
+            return apiClient.Get<GrossProfit>(urlWithDateArguments);
         }
         
         /// <summary>
@@ -134,28 +133,34 @@ namespace Foretagsplatsen.Api.Resources
         }
 
         /// <summary>
-        /// Return key figures for costs for employees
-        /// </summary>
-        /// <returns><see cref="CostsForEmployees"/></returns>
-        public CostsForEmployees GetCostsForEmployees()
-        {
-            string url = string.Format(BaseUrl, businessIdentityCode, "CostsForEmployees");
-            return apiClient.Get<CostsForEmployees>(url);
-        }
-
-        /// <summary>
-        /// Return data for costs for employees key figure with limits for start and end date
+        /// Return data for accumulated result key figure with limits for start and end date
         /// </summary>
         /// <param name="startDate">Date to start fetch data from</param>
         /// <param name="endDate">Date to stop fetch data from</param>
-        /// <returns><see cref="CostsForEmployees"/></returns>
-        public CostsForEmployees GetCostsForEmployees(DateTime startDate, DateTime endDate)
+        /// <returns><see cref="AccumulatedResult"/></returns>
+        public AccumulatedResult GetAccumulatedResult(DateTime startDate, DateTime endDate)
         {
-            string url = string.Format(BaseUrl, businessIdentityCode, "CostsForEmployees");
+            string url = string.Format(BaseUrl, businessIdentityCode, "AccumulatedResult");
 
             string urlWithDateArguments = string.Format("{0}?startdate={1}&enddate={2}", url, startDate.ToShortDateString(), endDate.ToShortDateString());
 
-            return apiClient.Get<CostsForEmployees>(urlWithDateArguments);
+            return apiClient.Get<AccumulatedResult>(urlWithDateArguments);
+        }
+
+
+        /// <summary>
+        /// Return data for net profit margin key figure with limits for start and end date
+        /// </summary>
+        /// <param name="startDate">Date to start fetch data from</param>
+        /// <param name="endDate">Date to stop fetch data from</param>
+        /// <returns><see cref="AccumulatedResult"/></returns>
+        public NetProfitMargin GetNetProfitMargin(DateTime startDate, DateTime endDate)
+        {
+            string url = string.Format(BaseUrl, businessIdentityCode, "NetProfitMargin");
+
+            string urlWithDateArguments = string.Format("{0}?startdate={1}&enddate={2}", url, startDate.ToShortDateString(), endDate.ToShortDateString());
+
+            return apiClient.Get<NetProfitMargin>(urlWithDateArguments);
         }
 
         /// <summary>
@@ -167,16 +172,15 @@ namespace Foretagsplatsen.Api.Resources
             string url = string.Format(BaseUrl, businessIdentityCode, string.Empty);
 
             // Execute GET
-            WebResponse response = apiClient.Get(url);
-            string body = ApiClient.TryReadResponseBody(response);
+            string json = apiClient.Get(url);
 
             // Get all figures
-            JArray figures = JArray.Parse(body);
+            JArray figures = JArray.Parse(json);
 
             // Create key figures, add to a list and return
             return figures.Select(CreateKeyFigure).ToList();
         }
-
+        
         /// <summary>
         /// Return a list with all key figures 
         /// </summary>
@@ -190,16 +194,15 @@ namespace Foretagsplatsen.Api.Resources
             string urlWithDateArguments = string.Format("{0}?startdate={1}&enddate={2}", url, startDate.ToShortDateString(), endDate.ToShortDateString());
             
             // Execute GET
-            WebResponse response = apiClient.Get(urlWithDateArguments);
-            string body = ApiClient.TryReadResponseBody(response);
+            string json = apiClient.Get(urlWithDateArguments);
 
             // Get all figures
-            JArray figures = JArray.Parse(body);
+            JArray figures = JArray.Parse(json);
 
             // Create key figures, add to a list and return
             return figures.Select(CreateKeyFigure).ToList();
         }
-
+        
         /// <summary>
         /// Create and return a key figure from a JToken json data
         /// </summary>
@@ -213,16 +216,20 @@ namespace Foretagsplatsen.Api.Resources
             {
                 switch (type)
                 {
-                    case KeyFigureType.CostForEmployees:
-                        return JsonConvert.DeserializeObject<CostsForEmployees>(keyFigureData.ToString());
-                    case KeyFigureType.GrossMargin:
-                        return JsonConvert.DeserializeObject<GrossMargin>(keyFigureData.ToString());
+                    case KeyFigureType.GrossProfit:
+                        return JsonConvert.DeserializeObject<GrossProfit>(keyFigureData.ToString());
                     case KeyFigureType.GrossProfitMargin:
                         return JsonConvert.DeserializeObject<GrossProfitMargin>(keyFigureData.ToString());
                     case KeyFigureType.Profit:
                         return JsonConvert.DeserializeObject<Profit>(keyFigureData.ToString());
                     case KeyFigureType.Turnover:
                         return JsonConvert.DeserializeObject<Turnover>(keyFigureData.ToString());
+                    case KeyFigureType.AccumulatedResult:
+                        return JsonConvert.DeserializeObject<AccumulatedResult>(keyFigureData.ToString());
+                    case KeyFigureType.NetProfitMargin:
+                        return JsonConvert.DeserializeObject<NetProfitMargin>(keyFigureData.ToString());
+                    case KeyFigureType.NetSalesPerEmployee:
+                        return JsonConvert.DeserializeObject<NetSalesPerEmployee>(keyFigureData.ToString());
                     default:
                         throw new ApiException("Key figure type not implemented.");
                 }

@@ -24,13 +24,23 @@ namespace Foretagsplatsen.Api.Entities
         public string[] DimensionObjects { get; set; }
 
         /// <summary>
-        /// <see cref="ChartOfAccountsType">Chart of accounts type</see> to use.
+        /// Chart of accounts id to use.
         /// </summary>
-        public ChartOfAccountsType ChartOfAccountsType { get; set; }
+        public string ChartOfAccountsId { get; set; }
 
         /// <summary>
         /// Date for last ledger to show. All ledgers after that date will be hidden. If <c>null</c> all ledgers are visible.
         /// </summary>
         public DateTime? LastLedgerDate { get; set; }
+
+        /// <summary>
+        /// Overrides the fiscal year start date from the import data, if not null.
+        /// </summary>
+        public DateTime? FiscalYearStart { get; set; }
+
+        /// <summary>
+        /// Overrides the fiscal year end date from the import data, if not null.
+        /// </summary>
+        public DateTime? FiscalYearEnd { get; set; }
     }
 }
