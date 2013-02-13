@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Monitor2.Api.SimpleConsoleClient")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Företagsplatsen AB")]
 [assembly: AssemblyProduct("Monitor2.Api.SimpleConsoleClient")]
-[assembly: AssemblyCopyright("Copyright ©  2010")]
+[assembly: AssemblyCopyright("Copyright ©  Företagsplatsen AB")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

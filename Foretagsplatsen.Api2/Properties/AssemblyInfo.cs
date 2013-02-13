@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Foretagsplatsen.Api2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Företagsplatsen AB")]
 [assembly: AssemblyProduct("Foretagsplatsen.Api2")]
-[assembly: AssemblyCopyright("Copyright ©  2012")]
+[assembly: AssemblyCopyright("Copyright © Företagsplatsen AB")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
