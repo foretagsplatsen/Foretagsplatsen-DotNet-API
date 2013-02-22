@@ -25,19 +25,19 @@ namespace Foretagsplatsen.Api2.Resources
                 throw new ApiException("Invalid json. No user type found.", ApiErrorType.Unknown);
             }
 
-            var type = (UserType) obj["type"].Value<int>();
+            var type = obj["type"].Value<string>();
 
             try
             {
                 switch (type)
                 {
-                    case UserType.partnerUser:
+                    case PartnerUser.PartnerUserTypeName:
                         return JsonConvert.DeserializeObject<PartnerUser>(obj.ToString());
-                    case UserType.agencyDirector:
+                    case AgencyDirector.agencyDirectorTypeName:
                         return JsonConvert.DeserializeObject<AgencyDirector>(obj.ToString());
-                    case UserType.agencyConsultant:
+                    case AgencyConsultant.agencyConsultantTypeName:
                         return JsonConvert.DeserializeObject<AgencyConsultant>(obj.ToString());
-                    case UserType.companyUser:
+                    case CompanyUser.companyUserTypeName:
                         return JsonConvert.DeserializeObject<CompanyUser>(obj.ToString());
 
                     default:

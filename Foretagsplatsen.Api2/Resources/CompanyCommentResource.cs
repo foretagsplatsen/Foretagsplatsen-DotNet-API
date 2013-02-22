@@ -97,7 +97,7 @@ namespace Foretagsplatsen.Api2.Resources
             {
                 switch (type)
                 {
-                    case KeyFigureComment.KeyFigureCommentTypeName:
+                    case KeyFigureComment.keyFigureCommentTypeName:
                         return JsonConvert.DeserializeObject<KeyFigureComment>(obj.ToString());
                     default:
                         throw new ApiException("Comment type not implemented.", ApiErrorType.Unknown);

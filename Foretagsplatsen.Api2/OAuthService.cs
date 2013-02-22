@@ -154,7 +154,7 @@ namespace Foretagsplatsen.Api2
             
             var authorizeResult  = JsonConvert.DeserializeObject<AuthorizeResult>(json);
             
-            return authorizeResult.Verifier;
+            return authorizeResult.verifier;
         }
 
         /// <summary>

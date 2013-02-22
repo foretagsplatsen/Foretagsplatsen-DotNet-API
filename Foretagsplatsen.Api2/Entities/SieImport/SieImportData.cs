@@ -45,4 +45,3 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
         public DateTime? fiscalYearEnd { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

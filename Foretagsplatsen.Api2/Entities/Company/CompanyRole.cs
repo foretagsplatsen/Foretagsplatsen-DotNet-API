@@ -3,8 +3,11 @@ namespace Foretagsplatsen.Api2.Entities.Company
 {
     public class CompanyRole
     {
-        public string businessIdentityCode { get; set; }
-        public CompanyRoleType typeOfRole { get; set; }
+        public const string adminCompanyRoleType = "Admin";
+        public const string normalCompanyRoleType = "Normal";
+        public const string limitedCompanyRoleType = "Limited";
+
+        public string companyId { get; set; }
+        public string typeOfRole { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

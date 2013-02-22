@@ -1,6 +1,9 @@
 // ReSharper disable InconsistentNaming
 namespace Foretagsplatsen.Api2.Entities.SieImport
 {
+    /// <summary>
+    /// Warning/Error in SIE-import.
+    /// </summary>
     public class SieImportInfo
     {
         public string lineNo;
@@ -10,4 +13,3 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
         public string explanation;
     }
 }
-// ReSharper restore InconsistentNaming

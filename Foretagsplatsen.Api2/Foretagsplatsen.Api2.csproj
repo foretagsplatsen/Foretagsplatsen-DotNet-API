@@ -21,6 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Foretagsplatsen.Api2.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +31,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Foretagsplatsen.Api2.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -61,7 +65,6 @@
     <Compile Include="Entities\Comments\KeyFigureComment.cs" />
     <Compile Include="Entities\Company\CompanyInfo.cs" />
     <Compile Include="Entities\Company\CompanyRole.cs" />
-    <Compile Include="Entities\Company\CompanyRoleType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
     <Compile Include="Entities\Documents\DocumentFolder.cs" />
     <Compile Include="Entities\Documents\Document.cs" />
@@ -82,7 +85,6 @@
     <Compile Include="Entities\User\PartnerUser.cs" />
     <Compile Include="Entities\User\AgencyConsultant.cs" />
     <Compile Include="Entities\User\UserInfo.cs" />
-    <Compile Include="Entities\User\UserType.cs" />
     <Compile Include="Exceptions\ApiErrorType.cs" />
     <Compile Include="Exceptions\ApiException.cs" />
     <Compile Include="Exceptions\ApiOAuthException.cs" />

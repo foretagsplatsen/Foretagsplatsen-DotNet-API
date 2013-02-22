@@ -31,11 +31,6 @@ namespace Foretagsplatsen.Api2.Resources
             return Get(keyFigurePreset.id);
         }
 
-        public KeyFigurePreset Get(KeyFigurePresetId keyFigurePresetId)
-        {
-            return Get(keyFigurePresetId.ToString());
-        }
-        
         public KeyFigurePreset Get(string keyFigurePresetId)
         {
             var url = GetUrl(keyFigurePresetId);
@@ -63,11 +58,6 @@ namespace Foretagsplatsen.Api2.Resources
         public void Delete(KeyFigurePreset keyFigurePreset)
         {
             Delete(keyFigurePreset.id);
-        }
-
-        public void Delete(KeyFigurePresetId keyFigurePresetId)
-        {
-            Delete(keyFigurePresetId.ToString());
         }
 
         #region Private methods

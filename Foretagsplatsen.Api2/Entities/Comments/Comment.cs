@@ -16,7 +16,7 @@ namespace Foretagsplatsen.Api2.Entities.Comments
         public Period period { get; set; }
         public abstract string type { get; }
 
-        public bool IsKeyFigureComment { get { return type == KeyFigureComment.KeyFigureCommentTypeName; } }
+        public bool IsKeyFigureComment { get { return type == KeyFigureComment.keyFigureCommentTypeName; } }
     }
 }
 // ReSharper restore InconsistentNaming

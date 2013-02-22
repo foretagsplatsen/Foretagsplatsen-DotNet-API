@@ -5,6 +5,9 @@ using System.Linq;
 // ReSharper disable InconsistentNaming
 namespace Foretagsplatsen.Api2.Entities.SieImport
 {
+    /// <summary>
+    /// Result from the SIE-import.  
+    /// </summary>
     public class SieImportResult
     {
         public bool success { get; set; }
@@ -28,4 +31,3 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
         }
     }
 }
-// ReSharper restore InconsistentNaming
