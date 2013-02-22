@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     public class KnownGroupDictionary
     {
         #region Known group identifiers
+
         public const string incomeIdentifier = "Income";
         public const string costsIdentifier = "Costs";
         public const string assetsIdentifier = "Assets";
@@ -51,9 +53,11 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         public const string sellingExpensesIdentifier = "SellingExpenses";
         public const string taxesIdentifier = "Taxes";
         public const string untaxedReservesIdentifier = "UntaxedReserves";
+
         #endregion
 
         #region Known groups
+
         public IAccountGroup netSales { get { return getKnownGroup(netSalesIdentifier); } set { setKnownGroup(netSalesIdentifier, value); } }
         public IAccountGroup extraordinaryIncomeAndExpenses { get { return getKnownGroup(extraordinaryIncomeAndExpensesIdentifier); } set { setKnownGroup(extraordinaryIncomeAndExpensesIdentifier, value); } }
         public IAccountGroup longTermLiabilities { get { return getKnownGroup(longTermLiabilitiesIdentifier); } set { setKnownGroup(longTermLiabilitiesIdentifier, value); } }
@@ -106,8 +110,8 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
         public KnownGroupDictionary()
         {
-
             // Mandatory groups
+
             #region Mandatory groups
 
             // Basic
@@ -115,10 +119,10 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
             costs = new KnownGroup();
             assets = new KnownGroup();
             liabilities = new KnownGroup();
-            
+
             // Income children. These groups must be children to the Income group
             financialIncome = new KnownGroup();
-            
+
             // Costs children. These groups must be children to the Costs group
             financialCosts = new KnownGroup();
             deprecationsAccordingToPlan = new KnownGroup();
@@ -207,4 +211,3 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         }
     }
 }
-// ReSharper restore InconsistentNaming

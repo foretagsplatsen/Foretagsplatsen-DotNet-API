@@ -2,6 +2,7 @@
 using Foretagsplatsen.Api2.Entities.Company;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.User
 {
     /// <summary>
@@ -11,7 +12,7 @@ namespace Foretagsplatsen.Api2.Entities.User
     public class CompanyUser : UserInfo
     {
         public const string companyUserTypeName = "companyUser";
-        
+
         public CompanyUser()
         {
             type = companyUserTypeName;

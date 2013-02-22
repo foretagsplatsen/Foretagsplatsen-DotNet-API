@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.KeyFigures
 {
     public class KeyFigurePreset
@@ -18,4 +19,3 @@ namespace Foretagsplatsen.Api2.Entities.KeyFigures
         public List<string> keyFigureTypes { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

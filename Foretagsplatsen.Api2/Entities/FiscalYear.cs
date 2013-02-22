@@ -2,6 +2,7 @@ using System;
 using Foretagsplatsen.Api2.Entities.Accounts;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities
 {
     /// <summary>
@@ -40,4 +41,3 @@ namespace Foretagsplatsen.Api2.Entities
         public string currency { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

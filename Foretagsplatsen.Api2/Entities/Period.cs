@@ -1,6 +1,7 @@
 ﻿using System;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities
 {
     /// <summary>
@@ -20,4 +21,3 @@ namespace Foretagsplatsen.Api2.Entities
         public DateTime end { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

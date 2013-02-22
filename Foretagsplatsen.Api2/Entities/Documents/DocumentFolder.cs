@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Documents
 {
     /// <summary>
@@ -17,4 +19,3 @@ namespace Foretagsplatsen.Api2.Entities.Documents
         }
     }
 }
-// ReSharper restore InconsistentNaming

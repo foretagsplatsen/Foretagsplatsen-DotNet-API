@@ -1,4 +1,5 @@
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Company
 {
     public class CompanyRole

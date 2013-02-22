@@ -1,5 +1,7 @@
 ﻿using System;
+
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Comments
 {
     public abstract class Comment
@@ -8,6 +10,7 @@ namespace Foretagsplatsen.Api2.Entities.Comments
         {
             id = Guid.NewGuid().ToString();
         }
+
         public string id { get; set; }
         public string message { get; set; }
         public DateTime created { get; set; }
@@ -19,4 +22,3 @@ namespace Foretagsplatsen.Api2.Entities.Comments
         public bool IsKeyFigureComment { get { return type == KeyFigureComment.keyFigureCommentTypeName; } }
     }
 }
-// ReSharper restore InconsistentNaming

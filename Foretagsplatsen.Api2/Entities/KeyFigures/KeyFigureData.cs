@@ -1,4 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.KeyFigures
 {
     /// <summary>
@@ -11,4 +12,3 @@ namespace Foretagsplatsen.Api2.Entities.KeyFigures
         public decimal value { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

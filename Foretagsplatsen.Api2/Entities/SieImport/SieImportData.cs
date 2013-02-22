@@ -1,6 +1,7 @@
 using System;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.SieImport
 {
     /// <summary>

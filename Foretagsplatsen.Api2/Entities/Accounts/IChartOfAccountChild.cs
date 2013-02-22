@@ -1,5 +1,5 @@
-﻿using System;
-// ReSharper disable InconsistentNaming
+﻿ // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     public interface IChartOfAccountChild
@@ -8,4 +8,3 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         string type { get; }
     }
 }
-// ReSharper restore InconsistentNaming

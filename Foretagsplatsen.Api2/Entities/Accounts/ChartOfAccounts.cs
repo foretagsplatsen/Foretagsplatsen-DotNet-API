@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     public class ChartOfAccounts
@@ -59,4 +60,3 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         }
     }
 }
-// ReSharper restore InconsistentNaming

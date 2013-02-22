@@ -1,4 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.KeyFigures
 {
     public class KeyFigureValue
@@ -7,4 +8,3 @@ namespace Foretagsplatsen.Api2.Entities.KeyFigures
         public Period period { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

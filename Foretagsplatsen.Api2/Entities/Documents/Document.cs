@@ -1,5 +1,7 @@
 ﻿using System;
+
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Documents
 {
     /// <summary>
@@ -7,10 +9,9 @@ namespace Foretagsplatsen.Api2.Entities.Documents
     /// </summary>
     public class Document
     {
-        public string id { get; set; }        
-        public string path { get; set; } 
+        public string id { get; set; }
+        public string path { get; set; }
         public DateTime created { get; set; }
         public string type { get; protected set; }
     }
 }
-// ReSharper restore InconsistentNaming

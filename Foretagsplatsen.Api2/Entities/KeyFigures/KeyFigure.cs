@@ -1,4 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.KeyFigures
 {
     public class KeyFigure
@@ -11,4 +12,3 @@ namespace Foretagsplatsen.Api2.Entities.KeyFigures
         public string basId { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

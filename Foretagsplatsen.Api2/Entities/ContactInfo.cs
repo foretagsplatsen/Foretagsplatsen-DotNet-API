@@ -1,4 +1,5 @@
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities
 {
     /// <summary>
@@ -9,7 +10,6 @@ namespace Foretagsplatsen.Api2.Entities
         public string name { get; set; }
         public string address { get; set; }
         public string postalAddress { get; set; }
-        public string phone { get; set; }           
+        public string phone { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

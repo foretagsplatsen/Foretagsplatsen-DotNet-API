@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     public class AccountGroup : IAccountGroup
@@ -21,4 +22,3 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         }
     }
 }
-// ReSharper restore InconsistentNaming

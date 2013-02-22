@@ -1,5 +1,5 @@
-﻿
-// ReSharper disable InconsistentNaming
+﻿// ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     public class AccountNumberInterval
@@ -8,4 +8,3 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         public string end { get; set; }
     }
 }
-// ReSharper restore InconsistentNaming

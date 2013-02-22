@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     public interface IAccountGroup : IChartOfAccountChild
@@ -8,4 +10,3 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         List<IChartOfAccountChild> children { get; }
     }
 }
-// ReSharper restore InconsistentNaming

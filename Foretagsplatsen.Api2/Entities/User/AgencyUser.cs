@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.User
 {
     /// <summary>
@@ -12,6 +13,6 @@ namespace Foretagsplatsen.Api2.Entities.User
         /// <summary>
         /// The list of customers the user have.
         /// </summary>
-        public IEnumerable<string> customers { get; set; } 
+        public IEnumerable<string> customers { get; set; }
     }
 }

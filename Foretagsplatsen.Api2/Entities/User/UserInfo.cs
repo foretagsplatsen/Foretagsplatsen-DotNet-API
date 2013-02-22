@@ -1,4 +1,5 @@
 // ReSharper disable InconsistentNaming
+
 namespace Foretagsplatsen.Api2.Entities.User
 {
     /// <summary>
@@ -12,7 +13,7 @@ namespace Foretagsplatsen.Api2.Entities.User
         /// Must be unique.
         /// </summary>
         public string userName { get; set; }
-        
+
         /// <summary>
         /// The password, is only used for updates of the user.
         /// </summary>
