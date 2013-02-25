@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Foretagsplatsen.Api2.Entities;
+using Foretagsplatsen.Api2.Entities.Company;
 using Foretagsplatsen.Api2.Entities.KeyFigures;
 
 namespace Foretagsplatsen.Api2.Resources

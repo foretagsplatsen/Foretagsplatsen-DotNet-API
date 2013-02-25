@@ -8,7 +8,12 @@ namespace Foretagsplatsen.Api2.Entities.Documents
     public class DocumentFile : Document
     {
         public const string documentType = "File";
-        public string data { get; set; } // Base64 encoded contents
+
+        /// <summary>
+        /// Base64 encoded file content.
+        /// </summary>
+        public string data { get; set; } 
+
         public DocumentFile()
         {
             type = documentType;

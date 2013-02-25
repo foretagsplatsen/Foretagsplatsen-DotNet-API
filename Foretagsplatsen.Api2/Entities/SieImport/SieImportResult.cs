@@ -6,7 +6,7 @@ using System.Linq;
 namespace Foretagsplatsen.Api2.Entities.SieImport
 {
     /// <summary>
-    /// Result from the SIE-import.  
+    /// Result from the SIE-import. The import can be successful even if there is warnings.
     /// </summary>
     public class SieImportResult
     {

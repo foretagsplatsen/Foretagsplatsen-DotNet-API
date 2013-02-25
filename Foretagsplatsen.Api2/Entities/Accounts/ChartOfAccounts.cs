@@ -4,8 +4,12 @@
 
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
+    /// <summary>
+    /// A chart of accounts holds information on how accounts are grouped and classified.
+    /// </summary>
     public class ChartOfAccounts
     {
+
         public string id { get; set; }
         public string name { get; set; }
         public List<IChartOfAccountChild> children { get; set; }

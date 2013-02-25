@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Foretagsplatsen.Api2.Entities;
+using Foretagsplatsen.Api2.Entities.Company;
 
 namespace Foretagsplatsen.Api2.Resources
 {

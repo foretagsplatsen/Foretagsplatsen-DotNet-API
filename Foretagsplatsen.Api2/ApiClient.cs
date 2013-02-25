@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using Foretagsplatsen.Api2.Entities;
+using Foretagsplatsen.Api2.Entities.Company;
 using Foretagsplatsen.Api2.Exceptions;
 using Foretagsplatsen.Api2.Resources;
 using Newtonsoft.Json;

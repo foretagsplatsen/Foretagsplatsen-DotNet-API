@@ -1,4 +1,5 @@
 using System;
+using Foretagsplatsen.Api2.Entities.Accounts;
 
 // ReSharper disable InconsistentNaming
 
@@ -10,7 +11,7 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
     public class SieImportData
     {
         /// <summary>
-        /// >Content from a SIE-4 file. Use IBM PC 8-bits extended ASCII (Code page 437) encoding.
+        /// Content from a SIE-4 file. Use IBM PC 8-bits extended ASCII (Code page 437) encoding.
         /// </summary>
         public string data { get; set; }
 
@@ -21,17 +22,17 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
 
         /// <summary>
         /// List of object/project identifiers. If a project is not in the list it will be hidden. 
-        /// If <c>null</c> all projects are visible.
+        /// If null all projects are visible.
         /// </summary>
         public string[] dimensionObjects { get; set; }
 
         /// <summary>
-        /// Chart of accounts id to use.
+        /// Chart of accounts id to use. <see cref="ChartOfAccounts"/>
         /// </summary>
         public string chartOfAccountsId { get; set; }
 
         /// <summary>
-        /// Date for last ledger to show. All ledgers after that date will be hidden. If <c>null</c> all ledgers are visible.
+        /// Date for last ledger to show. All ledgers after that date will be hidden. If null all ledgers are visible.
         /// </summary>
         public DateTime? lastLedgerDate { get; set; }
 

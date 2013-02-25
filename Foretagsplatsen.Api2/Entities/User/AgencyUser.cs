@@ -11,7 +11,7 @@ namespace Foretagsplatsen.Api2.Entities.User
     public class AgencyUser : UserInfo
     {
         /// <summary>
-        /// The list of customers the user have.
+        /// List of company ids.
         /// </summary>
         public IEnumerable<string> customers { get; set; }
     }

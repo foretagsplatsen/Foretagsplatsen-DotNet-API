@@ -2,7 +2,7 @@
 namespace Foretagsplatsen.Api2.Entities.SieImport
 {
     /// <summary>
-    /// Warning/Error in SIE-import.
+    /// Holds warning/errors from a SIE-import.
     /// </summary>
     public class SieImportInfo
     {

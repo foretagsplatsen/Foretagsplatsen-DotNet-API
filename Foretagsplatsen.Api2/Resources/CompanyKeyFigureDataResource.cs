@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Foretagsplatsen.Api2.Entities;
+using Foretagsplatsen.Api2.Entities.Company;
 using Foretagsplatsen.Api2.Entities.KeyFigures;
 using Newtonsoft.Json.Linq;
 

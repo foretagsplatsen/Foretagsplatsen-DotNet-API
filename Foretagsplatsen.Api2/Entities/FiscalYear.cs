@@ -1,42 +1,31 @@
 using System;
 using Foretagsplatsen.Api2.Entities.Accounts;
+using Foretagsplatsen.Api2.Entities.Company;
 
 // ReSharper disable InconsistentNaming
 
 namespace Foretagsplatsen.Api2.Entities
 {
     /// <summary>
-    /// Represents a Fiscal Year in a <see cref="CompanyInfo"/>
+    /// Represents a Fiscal Year in a <see cref="CompanyInfo"/>.
     /// </summary>
     public class FiscalYear
     {
         /// <summary>
-        /// Uniqe identifier of the fiscal year
+        /// Uniqe identifier of the fiscal year. Is created by the server.
         /// </summary>
         public string id { get; set; }
-
-        /// <summary>
-        /// Start date of the fiscal year
-        /// </summary>
         public DateTime start { get; set; }
-
-        /// <summary>
-        /// End date of the fiscal year
-        /// </summary>
         public DateTime end { get; set; }
 
         /// <summary>
-        /// Id of the chart of account used in this  fiscal year. <seealso cref="ChartOfAccounts"/>
+        /// Id of the chart of account used in this fiscal year. See also <see cref="ChartOfAccounts"/>.
         /// </summary>
         public string chartOfAccountsId { get; set; }
-
-        /// <summary>
-        /// Date of the latest ledger in the fiscal year.
-        /// </summary>
         public DateTime lastLedgerDate { get; set; }
 
         /// <summary>
-        /// Currency in ISO-XXX, example SEK, NOK, USD
+        /// Currency in ISO 4217, example SEK, NOK, USD
         /// </summary>
         public string currency { get; set; }
     }

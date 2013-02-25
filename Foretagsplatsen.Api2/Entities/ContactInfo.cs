@@ -3,7 +3,7 @@
 namespace Foretagsplatsen.Api2.Entities
 {
     /// <summary>
-    /// Basic company contact information 
+    /// Basic company contact information.
     /// </summary>
     public class ContactInfo
     {

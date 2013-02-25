@@ -8,39 +8,25 @@ namespace Foretagsplatsen.Api2.Entities.User
     public class UserInfo
     {
         /// <summary>
-        /// The user name.
-        /// Required field.
-        /// Must be unique.
+        /// The user name. Is a required field, must be unique.
         /// </summary>
         public string userName { get; set; }
 
         /// <summary>
-        /// The password, is only used for updates of the user.
+        /// The password, is only used when updating the user.
         /// </summary>
         public string password { get; set; }
-
-        /// <summary>
-        /// The real name of the user.
-        /// </summary>
         public string name { get; set; }
-
-        /// <summary>
-        /// Phone number to the user.
-        /// </summary>
         public string phone { get; set; }
-
-        /// <summary>
-        /// Cell phone number to the user.
-        /// </summary>
         public string cellphone { get; set; }
-
-        /// <summary>
-        /// E-mail adress to the user
-        /// </summary>
         public string email { get; set; }
 
         /// <summary>
-        /// The type of user, for example agency consultant.
+        /// The type of user:
+        /// * "AgencyConsultant"
+        /// * "AgencyDirector"
+        /// * "CompanyUser"
+        /// * "PartnerUser"
         /// </summary>
         public string type { get; protected set; }
     }

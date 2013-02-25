@@ -7,20 +7,17 @@ namespace Foretagsplatsen.Api2.Entities.User
 {
     /// <summary>
     /// Company user is a user connected to one or more company. The user can have different roles in each company, 
-    /// defined in CompanyRole.
+    /// defined in <see cref="CompanyRole"/>.
     /// </summary>
     public class CompanyUser : UserInfo
     {
-        public const string companyUserTypeName = "companyUser";
+        public const string companyUserTypeName = "CompanyUser";
 
         public CompanyUser()
         {
             type = companyUserTypeName;
         }
 
-        /// <summary>
-        /// List of companies the user have access to.
-        /// </summary>
         public IEnumerable<CompanyRole> companies { get; set; }
     }
 }

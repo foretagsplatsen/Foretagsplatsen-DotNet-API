@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Foretagsplatsen.Api2.Entities;
 using Foretagsplatsen.Api2.Entities.Comments;
+using Foretagsplatsen.Api2.Entities.Company;
 using Foretagsplatsen.Api2.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;

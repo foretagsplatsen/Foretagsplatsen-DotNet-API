@@ -3,11 +3,11 @@
 namespace Foretagsplatsen.Api2.Entities.User
 {
     /// <summary>
-    /// Partner user is user connected to a partner.
+    /// Partner user is a user connected to a partner.
     /// </summary>
     public class PartnerUser : UserInfo
     {
-        public const string PartnerUserTypeName = "partnerUser";
+        public const string PartnerUserTypeName = "PartnerUser";
 
         public PartnerUser()
         {

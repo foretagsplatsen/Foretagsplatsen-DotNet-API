@@ -10,6 +10,10 @@ namespace Foretagsplatsen.Api2.Entities.Documents
     public class DocumentFolder : Document
     {
         public const string documentType = "Folder";
+
+        /// <summary>
+        /// The content of the folder.
+        /// </summary>
         public List<Document> children { get; set; }
 
         public DocumentFolder()

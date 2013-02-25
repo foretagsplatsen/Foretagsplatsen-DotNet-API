@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Foretagsplatsen.Api2.Entities;
+using Foretagsplatsen.Api2.Entities.Company;
 using Foretagsplatsen.Api2.Entities.Documents;
 using Foretagsplatsen.Api2.Exceptions;
 using Newtonsoft.Json;

@@ -8,7 +8,7 @@ namespace Foretagsplatsen.Api2.Entities.User
     /// </summary>
     public class AgencyDirector : AgencyUser
     {
-        public const string agencyDirectorTypeName = "agencyDirector";
+        public const string agencyDirectorTypeName = "AgencyDirector";
 
         public AgencyDirector()
         {
