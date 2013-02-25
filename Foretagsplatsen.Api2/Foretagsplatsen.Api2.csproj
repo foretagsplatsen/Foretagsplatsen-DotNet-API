@@ -100,7 +100,7 @@
     <Compile Include="Resources\CompanyCommentResource.cs" />
     <Compile Include="Resources\CompanyKeyFigureValueResource.cs" />
     <Compile Include="Resources\CompanyResource.cs" />
-    <Compile Include="Resources\AgencySieImportResource.cs" />
+    <Compile Include="Resources\SieImportResource.cs" />
     <Compile Include="Resources\CompanyFiscalYearResource.cs" />
     <Compile Include="Resources\CompanyKeyFigureDataResource.cs" />
     <Compile Include="Resources\CompanyKeyFigurePresetResource.cs" />

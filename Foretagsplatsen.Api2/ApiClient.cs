@@ -43,14 +43,9 @@ namespace Foretagsplatsen.Api2
             return new AgencyCompanyResource(this, agencyShortName);
         }
 
-        public AgencySieImportResource GetAgencySieImportResource(Agency agency)
+        public SieImportResource GetSieImportResource()
         {
-            return new AgencySieImportResource(this, agency);
-        }
-
-        public AgencySieImportResource GetAgencySieImportResource(string agencyShortName)
-        {
-            return new AgencySieImportResource(this, agencyShortName);
+            return new SieImportResource(this);
         }
 
         public CompanyKeyFigureValueResource GetCompanyKeyFigureValueResource(CompanyInfo company)
