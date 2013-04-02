@@ -29,6 +29,15 @@ namespace Foretagsplatsen.Api.Entities
         public string ChartOfAccountsId { get; set; }
 
         /// <summary>
+        /// Deprecated. Legacy chart of accounts id. Will be used if no ChartOfAccountsId exists
+        /// 0 = Bas95
+        /// 1 = Bas96
+        /// 2 = EuBas97
+        /// 3 = Ns4102
+        /// </summary>
+        public int? ChartOfAccountsType { get; set; }
+
+        /// <summary>
         /// Date for last ledger to show. All ledgers after that date will be hidden. If <c>null</c> all ledgers are visible.
         /// </summary>
         public DateTime? LastLedgerDate { get; set; }
