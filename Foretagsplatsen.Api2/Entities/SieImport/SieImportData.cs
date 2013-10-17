@@ -11,11 +11,13 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
     public class SieImportData
     {
         /// <summary>
+        /// Required field.
         /// Content from a SIE-4 file. Use IBM PC 8-bits extended ASCII (Code page 437) encoding.
         /// </summary>
         public string data { get; set; }
 
         /// <summary>
+        /// Required field.
         /// Currency to use. ISO 4217 (SEK, NOK, EUR)
         /// </summary>
         public string currency { get; set; }
@@ -27,6 +29,7 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
         public string[] dimensionObjects { get; set; }
 
         /// <summary>
+        /// Required field.
         /// Chart of accounts id to use. <see cref="ChartOfAccounts"/>
         /// </summary>
         public string chartOfAccountsId { get; set; }
