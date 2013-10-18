@@ -20,6 +20,10 @@ namespace Foretagsplatsen.Api2.Entities.User
         public string phone { get; set; }
         public string cellphone { get; set; }
         public string email { get; set; }
+        /// <summary>
+        /// Language in culture name format, eg: se-SV or nb-NO
+        /// </summary>
+        public string language { get; set; }
 
         /// <summary>
         /// The type of user:
