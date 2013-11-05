@@ -15,6 +15,12 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         public List<IChartOfAccountChild> children { get; set; }
         public KnownGroupDictionary knownGroups { get; set; }
 
+        /// <summary>
+        /// Language in culture name format, eg: se-SV or nb-NO
+        /// </summary>
+        public string language { get; set; }
+
+
         public ChartOfAccounts()
         {
             knownGroups = new KnownGroupDictionary();
