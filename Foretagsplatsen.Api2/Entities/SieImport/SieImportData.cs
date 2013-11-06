@@ -17,7 +17,11 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
         public string data { get; set; }
 
         /// <summary>
-        /// Required field.
+        /// Use UTF-8 character encoding for the imported data (default is false).
+        /// </summary>
+        public bool utf8 { get; set; }
+
+        /// <summary>
         /// Currency to use. ISO 4217 (SEK, NOK, EUR)
         /// </summary>
         public string currency { get; set; }
