@@ -16,10 +16,7 @@ namespace Foretagsplatsen.Api2
         /// Url needed when accessing building URLs for
         /// accessing the OAuthCredentialService
         /// </summary>
-        public string BaseUrl
-        {
-            get { return baseUrl; }
-        }
+        public string BaseUrl { get { return baseUrl; } }
 
         /// <summary>
         /// Instantiate a new <see cref="OAuthRestClient"/>
@@ -42,18 +39,33 @@ namespace Foretagsplatsen.Api2
         /// <returns>Response from server.</returns>
         public WebResponse MakeRequest(string httpMethod, string url, object arguments)
         {
+            var request = CreateRequest(httpMethod, url, arguments);
+
+            return request.GetResponse();
+        }
+
+        /// <summary>
+        /// Add OAuth signing to requests and executes the request.
+        /// </summary>
+        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
+        /// <param name="url">Url to execute the request against.</param>
+        /// <param name="arguments">Query arguments</param>
+        /// <returns>The HttpWebRequest.</returns>
+        public HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
+        {
             IOAuthSession session = OAuthService.CreateSession(credentials, BaseUrl, String.Empty);
 
-            IConsumerRequest request = session.Request()
+            IConsumerRequest request = session
+                .Request()
                 .ForMethod(httpMethod)
                 .ForUrl(url)
                 .AlterHttpWebRequest(httpRequest => httpRequest.ContentType = "application/json")
                 .AlterContext(context => context.UseQueryParametersForOAuth = true)
                 .SignWithToken(credentials.Token)
-                .AlterHttpWebRequest(httpRequest => httpRequest.Timeout = 30 * 60 * 1000)
-                .AlterHttpWebRequest(httpRequest => httpRequest.ReadWriteTimeout = 30 * 60 * 1000);
+                .AlterHttpWebRequest(httpRequest => httpRequest.Timeout = 30*60*1000)
+                .AlterHttpWebRequest(httpRequest => httpRequest.ReadWriteTimeout = 30*60*1000);
 
-            
+
             if (arguments != null && (httpMethod == "POST" || httpMethod == "PUT"))
             {
                 request.ConsumerContext.EncodeRequestBody = false;
@@ -69,47 +81,15 @@ namespace Foretagsplatsen.Api2
                 request.WithQueryParameters(arguments);
             }
 
-            WebResponse response = request.ToWebResponse();
-            return response;
+            var httpWebRequest = ((ConsumerRequest) request).ToWebRequest();
+
+            return httpWebRequest;
         }
 
-        /// <summary>
-        /// Add OAuth signing to a requests but returns the Url instead of executing the request.
-        /// </summary>
-        /// <param name="url">Url to execute the request against.</param>
-        /// <param name="queryParameters">Query arguments</param>
-        /// <returns>Url</returns>
-        public Uri GetUri(string url, object queryParameters)
+        public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
         {
-            IOAuthSession session = 
-                OAuthService.CreateSession(credentials, BaseUrl, String.Empty);
-
-            return session
-                .Request()
-                .Get()
-                .ForUrl(url)
-                .SignWithToken(credentials.Token)
-                .WithQueryParameters(queryParameters)
-                .Context.GenerateUri();
-        }
-
-        /// <summary>
-        /// Add OAuth signing to a requests but returns the Url instead of executing the request.
-        /// </summary>
-        /// <param name="url">Url to execute the request against.</param>
-        /// <returns>Url</returns>
-        public Uri GetUri(string url)
-        {
-            IOAuthSession session = 
-                OAuthService.CreateSession(credentials, BaseUrl, String.Empty);
-
-            return session
-                .Request()
-                .Get()
-                .ForUrl(url)
-                .SignWithToken(credentials.Token)
-                .Context
-                .GenerateUri();
+            var loginToUrl = String.Format("{0}/Account/Login/{1}", baseUrl, loginParameters.BusinessIdentityCode);
+            return CreateRequest("GET", loginToUrl, new { loginParameters.Service });
         }
     }
 }

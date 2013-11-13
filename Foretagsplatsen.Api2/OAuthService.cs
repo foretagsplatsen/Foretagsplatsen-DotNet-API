@@ -8,7 +8,7 @@ using DevDefined.OAuth.Storage.Basic;
 using Foretagsplatsen.Api2.Entities;
 using Foretagsplatsen.Api2.Exceptions;
 using Newtonsoft.Json;
-using OAuthException=DevDefined.OAuth.Framework.OAuthException;
+using OAuthException = DevDefined.OAuth.Framework.OAuthException;
 
 namespace Foretagsplatsen.Api2
 {
@@ -54,21 +54,18 @@ namespace Foretagsplatsen.Api2
         {
             get
             {
-                if(requestToken == null)
+                if (requestToken == null)
                 {
                     throw new ApplicationException("RequestToken missing. Call GetRequestToken to obtain a token from server.");
                 }
-                
+
                 return requestToken;
             }
 
             set { requestToken = value; }
         }
 
-        public OAuthCredentials Credentials
-        {
-            get { return credentials; }
-        }
+        public OAuthCredentials Credentials { get { return credentials; } }
 
         /// <summary>
         /// The first step to authenticating a user is to obtain a request token from Företagsplatsen. 
@@ -80,7 +77,7 @@ namespace Foretagsplatsen.Api2
             try
             {
                 RequestToken = session.GetRequestToken();
-                
+
                 if (RequestToken.Token == null)
                 {
                     throw new ApiException("Invalid request token. (This can occur with the wrong provider host.)");
@@ -132,8 +129,8 @@ namespace Foretagsplatsen.Api2
 
             var usernameAndPasswordParameters = new Dictionary<string, string>
             {
-                {"username", username},
-                {"password", password}
+                { "username", username },
+                { "password", password }
             };
 
             // Build request for direct of user to service provider
@@ -151,9 +148,9 @@ namespace Foretagsplatsen.Api2
 
             // Read response
             string json = authorizationResponse.ReadBody();
-            
-            var authorizeResult  = JsonConvert.DeserializeObject<AuthorizeResult>(json);
-            
+
+            var authorizeResult = JsonConvert.DeserializeObject<AuthorizeResult>(json);
+
             return authorizeResult.verifier;
         }
 
@@ -164,11 +161,11 @@ namespace Foretagsplatsen.Api2
         /// <param name="verifier">OAuth verifier </param>
         /// <returns>OAuth credentials.</returns>
         public OAuthCredentials GetAccessToken(string username, string verifier)
-        {   
+        {
             TokenBase tokenBase;
             try
             {
-                tokenBase = (TokenBase)session.ExchangeRequestTokenForAccessToken(RequestToken, verifier);
+                tokenBase = (TokenBase) session.ExchangeRequestTokenForAccessToken(RequestToken, verifier);
             }
             catch (OAuthException ex)
             {
@@ -177,7 +174,7 @@ namespace Foretagsplatsen.Api2
                 {
                     throw new OAuthAuthorizationException(ex);
                 }
-                
+
                 throw;
             }
 

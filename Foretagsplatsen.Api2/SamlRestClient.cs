@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net;
 using System.Xml;
 
@@ -21,17 +22,19 @@ namespace Foretagsplatsen.Api2
             this.samlAssertion = samlAssertionDocument.OuterXml;
         }
 
-
         #region Implementation of IRestClient
 
-        public string BaseUrl
-        {
-            get { return baseUrl; }
-        }
+        public string BaseUrl { get { return baseUrl; } }
 
         public WebResponse MakeRequest(string httpMethod, string url, object arguments)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url);
+            var request = CreateRequest(httpMethod, url, arguments);
+            return request.GetResponse();
+        }
+
+        public HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
+        {
+            var request = (HttpWebRequest) WebRequest.Create(url);
 
             request.Accept = "application/json";
             request.Method = httpMethod;
@@ -49,8 +52,19 @@ namespace Foretagsplatsen.Api2
             {
                 request.ContentLength = 0;
             }
-            
-            return request.GetResponse();
+
+            return request;
+        }
+
+        public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
+        {
+            string loginToUrl = String.Format("{0}/Account/SamlLogin/{1}/{2}/{3}",
+                baseUrl,
+                loginParameters.AgencyId,
+                loginParameters.BusinessIdentityCode,
+                loginParameters.Service);
+
+            return CreateRequest("GET", loginToUrl, null);
         }
 
         #endregion

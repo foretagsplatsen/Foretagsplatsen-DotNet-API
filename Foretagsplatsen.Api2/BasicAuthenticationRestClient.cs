@@ -15,11 +15,7 @@ namespace Foretagsplatsen.Api2
         /// Url needed when accessing building URLs for
         /// accessing the OAuthCredentialService
         /// </summary>
-        public string BaseUrl
-        {
-            get { return baseUrl; }
-        }
-
+        public string BaseUrl { get { return baseUrl; } }
 
         public BasicAuthenticationRestClient(string username, string password, string baseUrl)
 
@@ -28,7 +24,7 @@ namespace Foretagsplatsen.Api2
             BasicCredentials = new CredentialCache
             {
                 {
-                    new Uri(baseUrl), 
+                    new Uri(baseUrl),
                     "Basic", new NetworkCredential(username, password)
                 }
             };
@@ -40,7 +36,13 @@ namespace Foretagsplatsen.Api2
 
         public WebResponse MakeRequest(string httpMethod, string url, object arguments)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url);
+            var request = CreateRequest(httpMethod, url, arguments);
+            return request.GetResponse();
+        }
+
+        public HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
+        {
+            var request = (HttpWebRequest) WebRequest.Create(url);
 
             request.Accept = "application/json";
             request.Method = httpMethod;
@@ -60,7 +62,13 @@ namespace Foretagsplatsen.Api2
                 request.ContentLength = 0;
             }
 
-            return request.GetResponse();
+            return request;
+        }
+
+        public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
+        {
+            var loginToUrl = String.Format("{0}/Account/Login", baseUrl);
+            return CreateRequest("POST", loginToUrl, new { loginParameters.UserName, loginParameters.Password });
         }
     }
 }

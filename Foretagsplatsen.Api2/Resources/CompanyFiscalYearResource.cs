@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Foretagsplatsen.Api2.Entities;
 using Foretagsplatsen.Api2.Entities.Company;
+using Newtonsoft.Json.Linq;
 
 namespace Foretagsplatsen.Api2.Resources
 {
@@ -30,6 +31,12 @@ namespace Foretagsplatsen.Api2.Resources
         {
             var url = GetUrl(fiscalYearId);
             return client.Get<FiscalYear>(url);
+        }
+
+        public FiscalYear Update(FiscalYear fiscalYear)
+        {
+            var url = GetUrl(fiscalYear.id);
+            return client.Put<FiscalYear>(url, JObject.FromObject(fiscalYear).ToString());
         }
 
         public void Delete(string fiscalYearId)

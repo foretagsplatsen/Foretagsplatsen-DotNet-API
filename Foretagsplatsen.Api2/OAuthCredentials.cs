@@ -26,7 +26,7 @@ namespace Foretagsplatsen.Api2
 
         public string TokenAsJson()
         {
-            return JsonConvert.SerializeObject(Token);    
+            return JsonConvert.SerializeObject(Token);
         }
     }
 }

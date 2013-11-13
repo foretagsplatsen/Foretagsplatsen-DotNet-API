@@ -24,6 +24,8 @@ namespace Foretagsplatsen.Api2
             get { return baseUrl; }
         }
 
+        #region Resources
+
         public CompanyResource GetCompanyResource()
         {
             return new CompanyResource(this);
@@ -128,6 +130,19 @@ namespace Foretagsplatsen.Api2
         {
             return new CompanyDocumentResource(this, companyId);
         }
+
+        #endregion
+
+        #region Login
+
+        public HttpWebRequest GetLoginRequest(LoginParameters loginParameters)
+        {
+            return restClient.CreateLoginRequest(loginParameters);
+        }
+
+        #endregion
+
+        #region Request methods
 
         public string Get(string resourceUrl)
         {
@@ -246,5 +261,7 @@ namespace Foretagsplatsen.Api2
 
             return json;
         }
+
+        #endregion
     }
 }

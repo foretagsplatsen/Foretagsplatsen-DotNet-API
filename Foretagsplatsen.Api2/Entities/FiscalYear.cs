@@ -25,8 +25,13 @@ namespace Foretagsplatsen.Api2.Entities
         public DateTime lastLedgerDate { get; set; }
 
         /// <summary>
-        /// Currency in ISO 4217, example SEK, NOK, USD
+        /// Currency in culture format, e.g. sv-SE, nb-NO
         /// </summary>
         public string currency { get; set; }
+
+        /// <summary>
+        /// Denotes is the fiscal year is still open or closed.
+        /// </summary>
+        public bool isOpen { get; set; }
     }
 }

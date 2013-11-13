@@ -92,6 +92,7 @@
     <Compile Include="Exceptions\OAuthConsumerException.cs" />
     <Compile Include="IRestClient.cs" />
     <Compile Include="OAuthCredentials.cs" />
+    <Compile Include="LoginParameters.cs" />
     <Compile Include="OAuthRestClient.cs" />
     <Compile Include="OAuthService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
