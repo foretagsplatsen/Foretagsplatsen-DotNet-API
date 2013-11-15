@@ -8,15 +8,9 @@ namespace Foretagsplatsen.Api.Entities
     public class ImportData
     {
         /// <summary>
-        /// Content from a SIE-4 file. The default encoding is: IBM PC 8-bits extended ASCII (Code page 437)
-        /// according to SIE-4 protocol specification. 
+        /// >Content from a SIE-4 file. Use IBM PC 8-bits extended ASCII (Code page 437) encoding.
         /// </summary>
         public string Data { get; set; }
-
-        /// <summary>
-        /// Use UTF-8 character encoding for the imported data (default is false).
-        /// </summary>
-        public bool Utf8 { get; set; }
 
         /// <summary>
         /// Currency to use. ISO 4217 (SEK, NOK, EUR)
