@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 // ReSharper disable InconsistentNaming
 
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
+    [JsonConverter(typeof(KnownGroupDictionaryJsonConverter))]
     public class KnownGroupDictionary
     {
         #region Known group identifiers
@@ -108,8 +110,13 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
         private readonly Dictionary<string, IAccountGroup> dictionary = new Dictionary<string, IAccountGroup>();
 
-        public KnownGroupDictionary()
+        [JsonIgnore]
+        public ChartOfAccounts chartOfAccounts { get; private set; }
+
+        public KnownGroupDictionary(ChartOfAccounts chartOfAccounts)
         {
+            this.chartOfAccounts = chartOfAccounts;
+
             // Mandatory groups
 
             #region Mandatory groups

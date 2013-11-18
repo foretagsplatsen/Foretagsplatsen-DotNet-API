@@ -54,11 +54,13 @@
     <Compile Include="Entities\Accounts\AccountGroup.cs" />
     <Compile Include="Entities\Accounts\AccountIntervalGroup.cs" />
     <Compile Include="Entities\Accounts\AccountNumberInterval.cs" />
+    <Compile Include="Entities\Accounts\ChartOfAccountChildJsonConverter.cs" />
     <Compile Include="Entities\Accounts\ChartOfAccounts.cs" />
     <Compile Include="Entities\Accounts\IAccountGroup.cs" />
     <Compile Include="Entities\Accounts\IChartOfAccountChild.cs" />
     <Compile Include="Entities\Accounts\KnownGroup.cs" />
     <Compile Include="Entities\Accounts\KnownGroupDictionary.cs" />
+    <Compile Include="Entities\Accounts\KnownGroupDictionaryJsonConverter.cs" />
     <Compile Include="Entities\Agency.cs" />
     <Compile Include="Entities\AuthorizeResult.cs" />
     <Compile Include="Entities\Comments\Comment.cs" />

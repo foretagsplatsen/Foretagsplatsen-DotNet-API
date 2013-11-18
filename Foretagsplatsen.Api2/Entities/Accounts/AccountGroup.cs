@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 // ReSharper disable InconsistentNaming
 
@@ -24,6 +25,7 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
         /// <summary>
         /// Can be other <see cref="AccountGroup"/> or <see cref="AccountIntervalGroup"/>.
         /// </summary>
+        [JsonConverter(typeof(ChartOfAccountChildJsonConverter))]
         public List<IChartOfAccountChild> children { get; set; }
 
         public AccountGroup()

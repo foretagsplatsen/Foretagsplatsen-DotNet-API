@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 // ReSharper disable InconsistentNaming
 
@@ -12,7 +13,11 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
         public string id { get; set; }
         public string name { get; set; }
+
+        [JsonConverter(typeof(ChartOfAccountChildJsonConverter))]
         public List<IChartOfAccountChild> children { get; set; }
+
+
         public KnownGroupDictionary knownGroups { get; set; }
 
         /// <summary>
@@ -23,7 +28,7 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
         public ChartOfAccounts()
         {
-            knownGroups = new KnownGroupDictionary();
+            knownGroups = new KnownGroupDictionary(this);
             children = new List<IChartOfAccountChild>();
         }
 
