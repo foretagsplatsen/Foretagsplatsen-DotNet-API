@@ -64,7 +64,7 @@ namespace Foretagsplatsen.Api2.Resources
         /// <returns>A chart of account</returns>
         public ChartOfAccounts Get(string chartOfAccountsId)
         {
-            var url = GetUrl();
+            var url = GetUrl(chartOfAccountsId);
             return client.Get<ChartOfAccounts>(url);
         }
 
