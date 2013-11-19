@@ -48,7 +48,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string fiscalYearId)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureData/{2}";
+            const string urlFormat = "{0}/Api/v2/Company/{1}/FiscalYear/{2}/KeyFigureData";
             return string.Format(urlFormat, client.BaseUrl, companyId, fiscalYearId);
         }
 
