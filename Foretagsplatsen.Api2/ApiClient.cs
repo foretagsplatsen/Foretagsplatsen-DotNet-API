@@ -11,17 +11,15 @@ namespace Foretagsplatsen.Api2
     public class ApiClient
     {
         private readonly IRestClient restClient;
-        private readonly string baseUrl;
 
         public ApiClient(IRestClient restClient)
         {
             this.restClient = restClient;
-            this.baseUrl = restClient.BaseUrl;
         }
-
+        
         public string BaseUrl
         {
-            get { return baseUrl; }
+            get { return restClient.BaseUrl; }
         }
 
         #region Resources
@@ -134,6 +132,25 @@ namespace Foretagsplatsen.Api2
         #endregion
 
         #region Login
+
+        public HttpWebRequest GetLoginRequest(string businessIdentityCode, string service)
+        {
+            return GetLoginRequest(new LoginParameters
+            {
+                BusinessIdentityCode = businessIdentityCode,
+                Service = service
+            });
+        }
+
+        public HttpWebRequest GetLoginRequest(string agencyId, string businessIdentityCode, string service)
+        {
+            return GetLoginRequest(new LoginParameters
+            {
+                AgencyId = agencyId,
+                BusinessIdentityCode = businessIdentityCode,
+                Service = service
+            });
+        }
 
         public HttpWebRequest GetLoginRequest(LoginParameters loginParameters)
         {
