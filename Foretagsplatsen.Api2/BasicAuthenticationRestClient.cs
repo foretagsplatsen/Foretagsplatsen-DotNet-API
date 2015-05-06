@@ -10,6 +10,8 @@ namespace Foretagsplatsen.Api2
     public class BasicAuthenticationRestClient : IRestClient
     {
         private readonly string baseUrl;
+        private readonly string username;
+        private readonly string password;
 
         /// <summary>
         /// Url needed when accessing building URLs for
@@ -18,8 +20,10 @@ namespace Foretagsplatsen.Api2
         public string BaseUrl { get { return baseUrl; } }
 
         public BasicAuthenticationRestClient(string username, string password, string baseUrl)
-
         {
+            this.username = username;
+            this.password = password;
+
             // Basic Authentication
             BasicCredentials = Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
 
@@ -61,8 +65,9 @@ namespace Foretagsplatsen.Api2
 
         public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
         {
+            //TODO: Add support for selecting service
             var loginToUrl = String.Format("{0}/Account/Login", baseUrl);
-            return CreateRequest("POST", loginToUrl, new { loginParameters.UserName, loginParameters.Password });
+            return CreateRequest("POST", loginToUrl, new { username, password });
         }
     }
 }
