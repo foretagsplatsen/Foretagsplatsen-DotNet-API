@@ -54,13 +54,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Foretagsplatsen.Api\Foretagsplatsen.Api.csproj">
-      <Project>{ACCE865F-FE35-47F5-9D01-C6DB5F12422C}</Project>
-      <Name>Foretagsplatsen.Api</Name>
-    </ProjectReference>
+    <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\Foretagsplatsen.Api2\Foretagsplatsen.Api2.csproj">
+      <Project>{22713c19-3001-4d0c-b64f-7ff6599dc30a}</Project>
+      <Name>Foretagsplatsen.Api2</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
