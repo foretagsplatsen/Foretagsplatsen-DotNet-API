@@ -1,43 +1,29 @@
 ﻿namespace Foretagsplatsen.Api2
 {
+    /// <summary>
+    /// Valid Login parameters. 
+    /// </summary>
     public class LoginParameters
     {
-        public string BusinessIdentityCode { get; private set; }
-        public string Service { get; private set; }
-        public string AgencyId { get; private set; }
-        public string UserName { get; private set; }
-        public string Password { get; private set; }
+        public const string MyCompaniesServiceName = "MyCompanies";
+        public const string DocumentServiceName = "document";
+        public const string FinancialServiceName = "financial";
+        public const string AccountingServiceName = "accounting";
 
-        protected LoginParameters()
-        {
-        }
-
-        public static LoginParameters CreateOAuthLoginParameters(string businessIdentityCode, string service)
-        {
-            return new LoginParameters
-            {
-                BusinessIdentityCode = businessIdentityCode,
-                Service = service
-            };
-        }
-
-        public static LoginParameters CreateSamlLoginParameters(string agencyId, string businessIdentityCode, string service)
-        {
-            return new LoginParameters
-            {
-                AgencyId = agencyId,
-                BusinessIdentityCode = businessIdentityCode,
-                Service = service
-            };
-        }
-
-        public static LoginParameters CreateBasicAuthenticationLoginParameters(string userName, string passowrd)
-        {
-            return new LoginParameters
-            {
-                UserName = userName,
-                Password = passowrd
-            };
-        }
+        /// <summary>
+        /// Company and agency users are not required to provide an agency id 
+        /// since the company id is enough to uniqly identify a company.
+        /// </summary>
+        public string AgencyId { get; set; }
+        
+        /// <summary>
+        /// Business Identity code for company to login to.
+        /// </summary>
+        public string BusinessIdentityCode { get; set; }
+        
+        /// <summary>
+        /// Service to redirect to after login.
+        /// </summary>
+        public string Service { get; set; }
     }
 }
