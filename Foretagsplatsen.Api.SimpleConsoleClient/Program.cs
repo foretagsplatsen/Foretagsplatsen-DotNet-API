@@ -14,7 +14,7 @@ namespace Foretagsplatsen.Api.SimpleConsoleClient
             const string baseUrl = "https://web.foretagsplatsen.se";
 
             // Create a client
-            var client = new ApiClient(new BasicAuthenticationRestClient("apiuser", "api", baseUrl));
+            var client = new ApiClient(new BasicAuthenticationRestClient("apiconsultant", "api", baseUrl));
 
             // List all companies
             var companyResource = client.GetCompanyResource();
@@ -42,7 +42,7 @@ namespace Foretagsplatsen.Api.SimpleConsoleClient
             Console.WriteLine(loginUrl.RequestUri);
 
             // Execute custom requests
-            var moreCompanies = client.Get<List<CompanyInfo>>(baseUrl + "/Api/Company");
+            var moreCompanies = client.Get<List<CompanyInfo>>(baseUrl + "/Api/v2/Company");
             foreach (CompanyInfo info in moreCompanies)
             {
                 Console.WriteLine(info.name);
