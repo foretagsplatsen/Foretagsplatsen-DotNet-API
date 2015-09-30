@@ -5,6 +5,7 @@ namespace Foretagsplatsen.Api2.Entities.Company
     public class CompanyRole
     {
         public const string adminCompanyRoleType = "Admin";
+        public const string importCompanyRoleType = "Import";
         public const string normalCompanyRoleType = "Normal";
         public const string limitedCompanyRoleType = "Limited";
 
@@ -14,7 +15,7 @@ namespace Foretagsplatsen.Api2.Entities.Company
         public string companyId { get; set; }
 
         /// <summary>
-        /// Can be "Admin", "Normal" or "Limited"
+        /// Can be "Admin", "Import", "Normal" or "Limited"
         /// </summary>
         public string typeOfRole { get; set; }
     }
