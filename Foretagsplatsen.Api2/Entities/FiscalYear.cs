@@ -37,7 +37,7 @@ namespace Foretagsplatsen.Api2.Entities
         /// <summary>
         /// Last Date of the visible/active part of the Fiscal Year.
         /// </summary>
-        public DateTime lastActiveDate { get; set; }
+        public DateTime? lastActiveDate { get; set; }
 
         /// <summary>
         /// Timestamp for when the Active Period was last updated.
