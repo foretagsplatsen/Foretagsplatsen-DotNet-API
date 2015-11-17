@@ -77,6 +77,7 @@
     <Compile Include="Entities\KeyFigures\KeyFigurePreset.cs" />
     <Compile Include="Entities\KeyFigures\KeyFigureValue.cs" />
     <Compile Include="Entities\Period.cs" />
+    <Compile Include="Entities\PeriodReport.cs" />
     <Compile Include="Entities\SieImport\SieImportData.cs" />
     <Compile Include="Entities\SieImport\SieImportInfo.cs" />
     <Compile Include="Entities\SieImport\SieImportResult.cs" />
