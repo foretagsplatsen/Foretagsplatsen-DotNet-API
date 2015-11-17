@@ -17,7 +17,7 @@ namespace Foretagsplatsen.Api2.Entities
 
         public string name { get; set; }
 
-        public DateTime timeStamp { get; set; }
+        public DateTime created { get; set; }
 
         public Period period { get; set; }  
 
