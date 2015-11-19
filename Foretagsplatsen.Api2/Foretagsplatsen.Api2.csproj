@@ -35,6 +35,9 @@
     <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevDefined.OAuth">
+      <HintPath>..\ThirdParty\DevDefined\DevDefined.OAuth.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ThirdParty\JsonDotNet\Json45r10\Newtonsoft.Json.dll</HintPath>
@@ -118,12 +121,6 @@
     <Compile Include="Saml\FtgpSamlAssertionService.cs" />
     <Compile Include="Saml\SamlSignedXml.cs" />
     <Compile Include="WebResponseExtension.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\thirdparty\libs\DevDefined.OAuth\src\DevDefined.OAuth\DevDefined.OAuth.csproj">
-      <Project>{61b700b6-3911-4cef-8751-7f42ca765068}</Project>
-      <Name>DevDefined.OAuth</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

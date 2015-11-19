@@ -21,18 +21,12 @@ namespace Foretagsplatsen.Api2
 
         {
             // Basic Authentication
-            BasicCredentials = new CredentialCache
-            {
-                {
-                    new Uri(baseUrl),
-                    "Basic", new NetworkCredential(username, password)
-                }
-            };
+            BasicCredentials = Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
 
             this.baseUrl = baseUrl;
         }
 
-        protected CredentialCache BasicCredentials { get; set; }
+        protected string BasicCredentials { get; set; }
 
         public WebResponse MakeRequest(string httpMethod, string url, object arguments)
         {
@@ -48,7 +42,7 @@ namespace Foretagsplatsen.Api2
             request.Method = httpMethod;
             request.ContentType = "application/json";
 
-            request.Credentials = BasicCredentials;
+            request.Headers.Add("Authorization", "Basic " + BasicCredentials);
 
             if (arguments != null && (httpMethod == "POST" || httpMethod == "PUT"))
             {
