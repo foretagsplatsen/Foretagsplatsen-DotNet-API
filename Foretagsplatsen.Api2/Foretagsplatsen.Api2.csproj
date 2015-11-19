@@ -103,6 +103,7 @@
     <Compile Include="OAuthService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AgencyCompanyResource.cs" />
+    <Compile Include="Resources\CompanyPeriodReportResource.cs" />
     <Compile Include="Resources\AgencyResource.cs" />
     <Compile Include="Resources\CompanyCommentResource.cs" />
     <Compile Include="Resources\CompanyKeyFigureValueResource.cs" />

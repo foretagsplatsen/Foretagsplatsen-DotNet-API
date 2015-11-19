@@ -101,6 +101,16 @@ namespace Foretagsplatsen.Api2
             return new CompanyFiscalYearResource(this, companyId);
         }
 
+        public CompanyPeriodReportResource GetCompanyPeriodReportResource(CompanyInfo company)
+        {
+            return new CompanyPeriodReportResource(this, company);
+        }
+
+        public CompanyPeriodReportResource GetCompanyPeriodReportResource(string companyId)
+        {
+            return new CompanyPeriodReportResource(this, companyId);
+        }
+
         public UserResource GetUserResource()
         {
             return new UserResource(this);

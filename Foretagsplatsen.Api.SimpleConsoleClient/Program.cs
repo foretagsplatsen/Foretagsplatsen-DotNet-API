@@ -41,6 +41,13 @@ namespace Foretagsplatsen.Api.SimpleConsoleClient
             var loginUrl = client.GetLoginRequest(LoginParameters.CreateOAuthLoginParameters(firstCompany.businessIdentityCode, "MyCompanies"));
             Console.WriteLine(loginUrl.RequestUri);
 
+            // Fetch latest 2 period reports
+            var latestPeriodReports = client.GetCompanyPeriodReportResource(firstCompany).List(latest: 2);
+            foreach (var report in latestPeriodReports)
+            {
+                Console.WriteLine(report.name);
+            }
+
             // Execute custom requests
             var moreCompanies = client.Get<List<CompanyInfo>>(baseUrl + "/Api/v2/Company");
             foreach (CompanyInfo info in moreCompanies)
