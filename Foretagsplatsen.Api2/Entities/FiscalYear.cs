@@ -30,11 +30,6 @@ namespace Foretagsplatsen.Api2.Entities
         public string currency { get; set; }
 
         /// <summary>
-        /// Denotes if the fiscal year is still open or closed.
-        /// </summary>
-        public bool isOpen { get; set; }
-
-        /// <summary>
         /// Last Date of the visible/active part of the Fiscal Year.
         /// </summary>
         public DateTime? lastActiveDate { get; set; }
