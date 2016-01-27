@@ -45,7 +45,7 @@ namespace Foretagsplatsen.Api.SimpleConsoleClient
             var latestPeriodReports = client.GetCompanyPeriodReportResource(firstCompany).List(latest: 2);
             foreach (var report in latestPeriodReports)
             {
-                Console.WriteLine(report.name);
+                Console.WriteLine(report.title);
             }
 
             // Execute custom requests
