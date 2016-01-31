@@ -17,6 +17,8 @@ namespace Foretagsplatsen.Api2.Entities
 
         public string title { get; set; }
 
+        public string name { get; set; }
+
         public string comment { get; set; }
 
         public string author { get; set; }
