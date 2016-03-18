@@ -7,6 +7,9 @@ namespace Foretagsplatsen.Api2.Entities.Company
     /// </summary>
     public class CompanyInfo
     {
+        public const string FortnoxCompanyType = "FortnoxCompany";
+        public const string CompanyType = "Company";
+
         /// <summary>
         /// Can be "Company" or "FortnoxCompany", default value if left out is "Company"
         /// </summary>
