@@ -25,5 +25,7 @@ namespace Foretagsplatsen.Api2.Entities.Company
         /// Fortnox API authorization code. Only used when creating or updating a Fortnox company.
         /// </summary>
         public string fortnoxAuthorizationCode { get; set; }
+
+        public bool isFortnoxCompany => typeOfCompany == FortnoxCompanyType;
     }
 }
