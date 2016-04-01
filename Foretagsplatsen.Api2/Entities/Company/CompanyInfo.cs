@@ -27,5 +27,6 @@ namespace Foretagsplatsen.Api2.Entities.Company
         public string fortnoxAuthorizationCode { get; set; }
 
         public bool isFortnoxCompany => typeOfCompany == FortnoxCompanyType;
+        public bool hasFortnoxAuthorizationCode => !string.IsNullOrEmpty(fortnoxAuthorizationCode);
     }
 }
