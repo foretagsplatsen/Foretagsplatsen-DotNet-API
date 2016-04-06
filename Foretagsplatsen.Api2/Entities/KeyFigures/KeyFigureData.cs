@@ -21,5 +21,6 @@ namespace Foretagsplatsen.Api2.Entities.KeyFigures
         public string keyFigureInfoId { get; set; }
         public Period period { get; set; }
         public decimal value { get; set; }
+        public string dimensionId { get; set; }
     }
 }
