@@ -119,7 +119,7 @@
     <Compile Include="Resources\UserResource.cs" />
     <Compile Include="SamlRestClient.cs" />
     <Compile Include="Saml\FtgpSamlAssertionInfo.cs" />
-    <Compile Include="Saml\FtgpSamlAssertionService.cs" />
+    <Compile Include="Saml\FtgpSamlService.cs" />
     <Compile Include="Saml\SamlSignedXml.cs" />
     <Compile Include="WebResponseExtension.cs" />
   </ItemGroup>
