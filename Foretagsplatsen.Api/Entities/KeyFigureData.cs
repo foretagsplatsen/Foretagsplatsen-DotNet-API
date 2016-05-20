@@ -7,6 +7,6 @@
     {
         public string KeyFigureInfoId { get; set; }
         public Period Period { get; set; }
-        public decimal Value { get; set; }
+        public decimal? Value { get; set; }
     }
 }
