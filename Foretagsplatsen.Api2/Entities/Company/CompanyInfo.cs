@@ -7,6 +7,9 @@ namespace Foretagsplatsen.Api2.Entities.Company
     /// </summary>
     public class CompanyInfo
     {
+        public const string FortnoxCompanyType = "FortnoxCompany";
+        public const string CompanyType = "Company";
+
         /// <summary>
         /// Can be "Company" or "FortnoxCompany", default value if left out is "Company"
         /// </summary>
@@ -22,5 +25,8 @@ namespace Foretagsplatsen.Api2.Entities.Company
         /// Fortnox API authorization code. Only used when creating or updating a Fortnox company.
         /// </summary>
         public string fortnoxAuthorizationCode { get; set; }
+
+        public bool isFortnoxCompany => typeOfCompany == FortnoxCompanyType;
+        public bool hasFortnoxAuthorizationCode => !string.IsNullOrEmpty(fortnoxAuthorizationCode);
     }
 }
