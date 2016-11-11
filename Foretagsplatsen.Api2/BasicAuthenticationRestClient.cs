@@ -7,34 +7,18 @@ namespace Foretagsplatsen.Api2
     /// <summary>
     /// Basic Authentication client to sign and execute REST requests.
     /// </summary>
-    public class BasicAuthenticationRestClient : IRestClient
+    public class BasicAuthenticationRestClient : RestClientBase
     {
-        private readonly string baseUrl;
-
-        /// <summary>
-        /// Url needed when accessing building URLs for
-        /// accessing the OAuthCredentialService
-        /// </summary>
-        public string BaseUrl { get { return baseUrl; } }
-
         public BasicAuthenticationRestClient(string username, string password, string baseUrl)
-
         {
             // Basic Authentication
             BasicCredentials = Convert.ToBase64String(System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(username + ":" + password));
-
-            this.baseUrl = baseUrl;
+            BaseUrl = baseUrl;
         }
 
         protected string BasicCredentials { get; set; }
 
-        public WebResponse MakeRequest(string httpMethod, string url, object arguments)
-        {
-            var request = CreateRequest(httpMethod, url, arguments);
-            return request.GetResponse();
-        }
-
-        public HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
+        public override HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
         {
             var request = (HttpWebRequest) WebRequest.Create(url);
 
@@ -59,9 +43,9 @@ namespace Foretagsplatsen.Api2
             return request;
         }
 
-        public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
+        public override HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
         {
-            var loginToUrl = String.Format("{0}/Account/Login", baseUrl);
+            var loginToUrl = $"{BaseUrl}/Account/Login";
             return CreateRequest("POST", loginToUrl, new { loginParameters.UserName, loginParameters.Password });
         }
     }
