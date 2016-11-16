@@ -47,7 +47,12 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Net.Http.dll</HintPath>
+    </Reference>
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -120,6 +125,8 @@
     <Compile Include="Resources\UserBaseResource.cs" />
     <Compile Include="Resources\MeResource.cs" />
     <Compile Include="Resources\UserResource.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="RestClientBase.cs" />
     <Compile Include="SamlRestClient.cs" />
     <Compile Include="Saml\FtgpSamlAssertionInfo.cs" />
     <Compile Include="Saml\FtgpSamlService.cs" />
