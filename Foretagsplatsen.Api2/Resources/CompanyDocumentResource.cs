@@ -52,7 +52,14 @@ namespace Foretagsplatsen.Api2.Resources
             var json = client.Post(url, JObject.FromObject(document).ToString());
             var jsonDocument = JObject.Parse(json);
             return CreateDocument(jsonDocument);
+        }
 
+        public List<Document> Create(List<Document> documents)
+        {
+            var url = GetUrl(isBatchRequest: true);
+            var json = client.Post(url, JArray.FromObject(documents).ToString());
+            var jsonDocuments = JArray.Parse(json);
+            return jsonDocuments.Select(CreateDocument).ToList();
         }
 
         public Document Update(Document document)
@@ -76,10 +83,10 @@ namespace Foretagsplatsen.Api2.Resources
 
         #region Private methods
 
-        private string GetUrl(string documentId = "")
+        private string GetUrl(string documentId = "", bool isBatchRequest = false)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/Document/{2}";
-            return string.Format(urlFormat, client.BaseUrl, companyId, documentId);
+            var resource = isBatchRequest ? "Documents" : "Document";
+            return $"{client.BaseUrl}/Api/v2/Company/{companyId}/{resource}/{documentId}";
         }
 
         private static Document CreateDocument(JToken obj)

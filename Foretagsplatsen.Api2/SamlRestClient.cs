@@ -5,34 +5,23 @@ using System.Xml;
 
 namespace Foretagsplatsen.Api2
 {
-    public class SamlRestClient : IRestClient
+    public class SamlRestClient : RestClientBase
     {
-        private readonly string baseUrl;
         private readonly string samlAssertion;
 
         public SamlRestClient(string baseUrl, string samlAssertion)
         {
-            this.baseUrl = baseUrl;
+            BaseUrl = baseUrl;
             this.samlAssertion = samlAssertion;
         }
 
         public SamlRestClient(string baseUrl, XmlDocument samlAssertionDocument)
         {
-            this.baseUrl = baseUrl;
+            this.BaseUrl = baseUrl;
             this.samlAssertion = samlAssertionDocument.OuterXml;
         }
 
-        #region Implementation of IRestClient
-
-        public string BaseUrl { get { return baseUrl; } }
-
-        public WebResponse MakeRequest(string httpMethod, string url, object arguments)
-        {
-            var request = CreateRequest(httpMethod, url, arguments);
-            return request.GetResponse();
-        }
-
-        public HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
+        public override HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
         {
             var request = (HttpWebRequest) WebRequest.Create(url);
 
@@ -56,17 +45,15 @@ namespace Foretagsplatsen.Api2
             return request;
         }
 
-        public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
+        public override HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
         {
-            string loginToUrl = String.Format("{0}/Account/SamlLogin/{1}/{2}/{3}",
-                baseUrl,
+            var loginToUrl = string.Format("{0}/Account/SamlLogin/{1}/{2}/{3}",
+                BaseUrl,
                 loginParameters.AgencyId,
                 loginParameters.BusinessIdentityCode,
                 loginParameters.Service);
 
             return CreateRequest("GET", loginToUrl, null);
         }
-
-        #endregion
     }
 }

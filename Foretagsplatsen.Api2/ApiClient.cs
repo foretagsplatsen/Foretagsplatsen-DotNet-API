@@ -1,28 +1,21 @@
-using System;
 using System.Net;
 using Foretagsplatsen.Api2.Entities;
 using Foretagsplatsen.Api2.Entities.Company;
-using Foretagsplatsen.Api2.Exceptions;
 using Foretagsplatsen.Api2.Resources;
-using Newtonsoft.Json;
 
 namespace Foretagsplatsen.Api2
 {
     public class ApiClient
     {
         private readonly IRestClient restClient;
-        private readonly string baseUrl;
 
         public ApiClient(IRestClient restClient)
         {
             this.restClient = restClient;
-            this.baseUrl = restClient.BaseUrl;
+            BaseUrl = restClient.BaseUrl;
         }
 
-        public string BaseUrl
-        {
-            get { return baseUrl; }
-        }
+        public string BaseUrl { get; }
 
         #region Resources
 
@@ -216,60 +209,14 @@ namespace Foretagsplatsen.Api2
 
         public string Execute(string httpMethod, string url, object arguments)
         {
-            WebResponse response = GetResponse(httpMethod, url, arguments);
-            return TryReadResponseBody(response);
+            var response = restClient.MakeRequest(httpMethod, url, arguments);
+            return response.Body;
         }
 
         public T Execute<T>(string httpMethod, string url, object arguments) where T : new()
         {
-            WebResponse response = GetResponse(httpMethod, url, arguments);
-            return ParseResponse<T>(response);
-        }
-
-        public WebResponse GetResponse(string httpMethod, string url, object arguments)
-        {
-            WebResponse response;
-            try
-            {
-                response = restClient.MakeRequest(httpMethod, url, arguments);
-            }
-            catch (WebException exception)
-            {
-                response = exception.Response;
-            }
-            
-            return response;
-        }
-
-        public static T ParseResponse<T>(WebResponse response)
-        {
-            string json = TryReadResponseBody(response);
-
-            return JsonConvert.DeserializeObject<T>(json);
-        }
-
-        public static string TryReadResponseBody(WebResponse response)
-        {
-            string json;
-            try
-            {
-                json = response.ReadBody();
-            }
-            catch (Exception exception)
-            {
-                throw new ApiException("Failed to read response body", ApiErrorType.Unknown, exception);
-            }
-
-            HttpStatusCode statusCode = ((HttpWebResponse)(response)).StatusCode;
-            if (statusCode != HttpStatusCode.OK && statusCode != HttpStatusCode.NoContent) // NoContent is returned for void Web Api methods
-            {
-                ApiException serverErrorException = ApiException.CreateFromJson(json);
-                throw serverErrorException;
-            }
-
-            response.Close();
-
-            return json;
+            var response = restClient.MakeRequest(httpMethod, url, arguments);
+            return response.Parse<T>();
         }
 
         #endregion

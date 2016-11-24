@@ -7,16 +7,9 @@ namespace Foretagsplatsen.Api2
     /// <summary>
     /// OAuth client to sign and execute REST requests.
     /// </summary>
-    public class OAuthRestClient : IRestClient
+    public class OAuthRestClient : RestClientBase
     {
         private readonly OAuthCredentials credentials;
-        private readonly string baseUrl;
-
-        /// <summary>
-        /// Url needed when accessing building URLs for
-        /// accessing the OAuthCredentialService
-        /// </summary>
-        public string BaseUrl { get { return baseUrl; } }
 
         /// <summary>
         /// Instantiate a new <see cref="OAuthRestClient"/>
@@ -27,21 +20,7 @@ namespace Foretagsplatsen.Api2
         public OAuthRestClient(OAuthCredentials credentials, string baseUrl)
         {
             this.credentials = credentials;
-            this.baseUrl = baseUrl;
-        }
-
-        /// <summary>
-        /// Add OAuth signing to requests and executes the request.
-        /// </summary>
-        /// <param name="httpMethod">HTTP Verb (GET, POST, PUT, DELETE)</param>
-        /// <param name="url">Url to execute the request against.</param>
-        /// <param name="arguments">Query arguments</param>
-        /// <returns>Response from server.</returns>
-        public WebResponse MakeRequest(string httpMethod, string url, object arguments)
-        {
-            var request = CreateRequest(httpMethod, url, arguments);
-
-            return request.GetResponse();
+            this.BaseUrl = baseUrl;
         }
 
         /// <summary>
@@ -51,11 +30,11 @@ namespace Foretagsplatsen.Api2
         /// <param name="url">Url to execute the request against.</param>
         /// <param name="arguments">Query arguments</param>
         /// <returns>The HttpWebRequest.</returns>
-        public HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
+        public override HttpWebRequest CreateRequest(string httpMethod, string url, object arguments)
         {
-            IOAuthSession session = OAuthService.CreateSession(credentials, BaseUrl, String.Empty);
+            var session = OAuthService.CreateSession(credentials, BaseUrl, String.Empty);
 
-            IConsumerRequest request = session
+            var request = session
                 .Request()
                 .ForMethod(httpMethod)
                 .ForUrl(url)
@@ -86,9 +65,9 @@ namespace Foretagsplatsen.Api2
             return httpWebRequest;
         }
 
-        public HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
+        public override HttpWebRequest CreateLoginRequest(LoginParameters loginParameters)
         {
-            var loginToUrl = String.Format("{0}/Account/Login/{1}", baseUrl, loginParameters.BusinessIdentityCode);
+            var loginToUrl = $"{BaseUrl}/Account/Login/{loginParameters.BusinessIdentityCode}";
             return CreateRequest("GET", loginToUrl, new { loginParameters.Service });
         }
     }
