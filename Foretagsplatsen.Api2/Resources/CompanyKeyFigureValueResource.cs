@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Foretagsplatsen.Api2.Entities;
 using Foretagsplatsen.Api2.Entities.Company;
 using Foretagsplatsen.Api2.Entities.KeyFigures;
 
@@ -30,6 +29,12 @@ namespace Foretagsplatsen.Api2.Resources
         public List<KeyFigureResult> List(DateTime startDate, DateTime endDate)
         {
             string url = GetUrl(startDate, endDate);
+            return client.Get<List<KeyFigureResult>>(url);
+        }
+
+        public List<KeyFigureResult> List(int numberOfYears, string keyFigurePresetId)
+        {
+            string url = GetUrl(numberOfYears, keyFigurePresetId);
             return client.Get<List<KeyFigureResult>>(url);
         }
 
@@ -69,6 +74,12 @@ namespace Foretagsplatsen.Api2.Resources
         {
             const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue/{2}?startDate={3}&endDate={4}";
             return string.Format(urlFormat, client.BaseUrl, companyId, keyFigureId, startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"));
+        }
+
+        private string GetUrl(int numberOfYears, string keyFigurePresetId)
+        {
+            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue/?numberOfYears={2}&keyFigurePresetId={3}";
+            return string.Format(urlFormat, client.BaseUrl, companyId, numberOfYears, keyFigurePresetId);
         }
 
         #endregion
