@@ -56,7 +56,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         public List<Document> Create(List<Document> documents)
         {
-            var url = GetUrl(isBatchRequest: true);
+            var url = GetUrl();
             var json = client.Post(url, JArray.FromObject(documents).ToString());
             var jsonDocuments = JArray.Parse(json);
             return jsonDocuments.Select(CreateDocument).ToList();
@@ -83,10 +83,9 @@ namespace Foretagsplatsen.Api2.Resources
 
         #region Private methods
 
-        private string GetUrl(string documentId = "", bool isBatchRequest = false)
+        private string GetUrl(string documentId = "")
         {
-            var resource = isBatchRequest ? "Documents" : "Document";
-            return $"{client.BaseUrl}/Api/v2/Company/{companyId}/{resource}/{documentId}";
+            return $"{client.BaseUrl}/Api/v2/Company/{companyId}/Document/{documentId}";
         }
 
         private static Document CreateDocument(JToken obj)
