@@ -35,6 +35,12 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
                     var accountIntervalGroup = JsonConvert.DeserializeObject<AccountIntervalGroup>(token.ToString());
                     children.Add(accountIntervalGroup);
                 }
+
+                if (type == AccountListGroup.typeName)
+                {
+                    var accountListGroup = JsonConvert.DeserializeObject<AccountListGroup>(token.ToString());
+                    children.Add(accountListGroup);
+                }
             }
 
             return children;
