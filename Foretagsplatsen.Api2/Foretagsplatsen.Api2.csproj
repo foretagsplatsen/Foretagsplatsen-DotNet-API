@@ -63,6 +63,7 @@
     <Compile Include="ApiClient.cs" />
     <Compile Include="BasicAuthenticationRestClient.cs" />
     <Compile Include="Entities\Accounts\AccountGroup.cs" />
+    <Compile Include="Entities\Accounts\AccountListGroup.cs" />
     <Compile Include="Entities\Accounts\AccountIntervalGroup.cs" />
     <Compile Include="Entities\Accounts\AccountNumberInterval.cs" />
     <Compile Include="Entities\Accounts\ChartOfAccountChildJsonConverter.cs" />

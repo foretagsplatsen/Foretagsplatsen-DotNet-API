@@ -5,7 +5,7 @@
 namespace Foretagsplatsen.Api2.Entities.Accounts
 {
     /// <summary>
-    /// Represents a leaf node in the chart of accounts tree.
+    /// Represents a leaf node in the chart of accounts tree, which contains all accounts in specified intervals.
     /// </summary>
     public class AccountIntervalGroup : IChartOfAccountChild
     {
