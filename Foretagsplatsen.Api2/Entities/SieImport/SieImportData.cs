@@ -25,13 +25,14 @@ namespace Foretagsplatsen.Api2.Entities.SieImport
         /// <summary>
         /// List of object/project identifiers. If a project is not in the list it will be hidden. 
         /// If null all projects are visible.
-        /// NB! Both having a list of dimensionObjects and setting excludeEmptyDimensions to true is not supported and will result in an exception.
+        /// If set to an empty list, none of the projects will be visible.
+        /// NB! Both having a list of dimensionObjects(even empty) and setting excludeEmptyDimensions to true is not supported and will result in an exception.
         /// </summary>
         public string[] dimensionObjects { get; set; }
 
         /// <summary>
         /// If set to true, dimensions without transactions will be filtered out. 
-        /// NB! Both having a list of dimensionObjects and setting excludeEmptyDimensions to true is not supported and will result in an exception.
+        /// NB! Both having a list of dimensionObjects((even empty) and setting excludeEmptyDimensions to true is not supported and will result in an exception.
         /// </summary>
         public bool excludeEmptyDimensions { get; set; }
 
