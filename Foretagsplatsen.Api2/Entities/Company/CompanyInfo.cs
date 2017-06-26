@@ -23,12 +23,19 @@ namespace Foretagsplatsen.Api2.Entities.Company
         public ContactInfo contactInfo { get; set; }
         /// <summary>
         /// Fortnox API authorization code. Only used when creating or updating a Fortnox company.
+        /// Cannot be used together with fortnoxExtendedAuthorizationCode in the same request.
         /// </summary>
         public string fortnoxAuthorizationCode { get; set; }
+        /// <summary>
+        /// Fortnox Extended API authorization code. Only used when creating or updating a Fortnox company with extended API support for accounts receivables and liquidity support.
+        /// Cannot be used together with fortnoxExtendedAuthorizationCode in the same request.
+        /// </summary>
+        public string fortnoxExtendedAuthorizationCode { get; set; }
 
         public bool? isVirtualFarmerCompany { get; set; }
 
         public bool isFortnoxCompany => typeOfCompany == FortnoxCompanyType;
         public bool hasFortnoxAuthorizationCode => !string.IsNullOrEmpty(fortnoxAuthorizationCode);
+        public bool hasFortnoxExtendedAuthorizationCode => !string.IsNullOrEmpty(fortnoxExtendedAuthorizationCode);
     }
 }
