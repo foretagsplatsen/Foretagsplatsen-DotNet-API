@@ -28,7 +28,7 @@ namespace Foretagsplatsen.Api2.Entities.Company
         public string fortnoxAuthorizationCode { get; set; }
         /// <summary>
         /// Fortnox Extended API authorization code. Only used when creating or updating a Fortnox company with extended API support for accounts receivables and liquidity support.
-        /// Cannot be used together with fortnoxExtendedAuthorizationCode in the same request.
+        /// Cannot be used together with fortnoxAuthorizationCode in the same request.
         /// </summary>
         public string fortnoxExtendedAuthorizationCode { get; set; }
 
