@@ -129,7 +129,7 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
                 if (!string.IsNullOrEmpty(group.id))
                 {
                     writer.WritePropertyName("id");
-                    writer.WriteValue(group.name);
+                    writer.WriteValue(group.id);
                 }
 
 
