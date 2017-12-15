@@ -12,7 +12,12 @@ namespace Foretagsplatsen.Api2.Entities.Documents
         /// <summary>
         /// Base64 encoded file content.
         /// </summary>
-        public string data { get; set; } 
+        public string data { get; set; }
+
+        /// <summary>
+        /// Content type.
+        /// </summary>
+        public string contentType { get; set; }
 
         public DocumentFile()
         {
