@@ -132,6 +132,7 @@
     <Compile Include="Saml\FtgpSamlService.cs" />
     <Compile Include="Saml\SamlSignedXml.cs" />
     <Compile Include="WebResponseExtension.cs" />
+    <Compile Include="XAuthResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
