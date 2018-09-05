@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACCE865F-FE35-47F5-9D01-C6DB5F12422C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Foretagsplatsen.Api</RootNamespace>
+    <AssemblyName>Foretagsplatsen.Api</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevDefined.OAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a3261f5b4697e67d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\DevDefined\DevDefined.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Accounts\AccountGroup.cs" />
+    <Compile Include="Entities\Accounts\AccountNumberInterval.cs" />
+    <Compile Include="Entities\Accounts\AccountIntervalGroup.cs" />
+    <Compile Include="Entities\Accounts\ChartOfAccountChildJsonConverter.cs" />
+    <Compile Include="Entities\Accounts\IAccountGroup.cs" />
+    <Compile Include="Entities\Accounts\KnownGroup.cs" />
+    <Compile Include="Entities\Accounts\KnownGroupDictionaryJsonConverter.cs" />
+    <Compile Include="Entities\Accounts\IChartOfAccountChild.cs" />
+    <Compile Include="Entities\Accounts\KnownGroupDictionary.cs" />
+    <Compile Include="Entities\Agency.cs" />
+    <Compile Include="Entities\AuthorizeResult.cs" />
+    <Compile Include="Entities\Accounts\ChartOfAccounts.cs" />
+    <Compile Include="Entities\Comments\IComment.cs" />
+    <Compile Include="Entities\Comments\KeyFigureComment.cs" />
+    <Compile Include="Entities\CompanyRole.cs" />
+    <Compile Include="Entities\CompanyRoleType.cs" />
+    <Compile Include="Entities\ContactInfo.cs" />
+    <Compile Include="Entities\Document.cs" />
+    <Compile Include="Entities\ImportData.cs" />
+    <Compile Include="Entities\KeyFigureData.cs" />
+    <Compile Include="Entities\KeyFigurePreset.cs" />
+    <Compile Include="Entities\KeyFigures\PreliminaryResult.cs" />
+    <Compile Include="Entities\KeyFigures\PreliminaryResultEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfit.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfitEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfitMarginEntry.cs" />
+    <Compile Include="Entities\KeyFigures\GrossProfitMargin.cs" />
+    <Compile Include="Entities\KeyFigures\IKeyFigure.cs" />
+    <Compile Include="Entities\KeyFigures\IKeyFigureEntry.cs" />
+    <Compile Include="Entities\KeyFigures\KeyFigureBase.cs" />
+    <Compile Include="Entities\KeyFigures\KeyFigureEntryBase.cs" />
+    <Compile Include="Entities\KeyFigures\KeyFigureType.cs" />
+    <Compile Include="Entities\KeyFigures\NetProfitMargin.cs" />
+    <Compile Include="Entities\KeyFigures\NetProfitMarginEntry.cs" />
+    <Compile Include="Entities\KeyFigures\NetSalesPerEmployee.cs" />
+    <Compile Include="Entities\KeyFigures\NetSalesPerEmployeeEntry.cs" />
+    <Compile Include="Entities\KeyFigures\PeriodType.cs" />
+    <Compile Include="Entities\KeyFigures\Profit.cs" />
+    <Compile Include="Entities\KeyFigures\ProfitEntry.cs" />
+    <Compile Include="Entities\KeyFigures\Turnover.cs" />
+    <Compile Include="Entities\KeyFigures\TurnoverEntry.cs" />
+    <Compile Include="Entities\Period.cs" />
+    <Compile Include="Entities\UserInfo.cs" />
+    <Compile Include="Entities\UserType.cs" />
+    <Compile Include="Entities\XAuthResult.cs" />
+    <Compile Include="Exceptions\ApiErrorType.cs" />
+    <Compile Include="Exceptions\ApiException.cs" />
+    <Compile Include="Entities\CompanyInfo.cs" />
+    <Compile Include="Exceptions\OAuthConsumerException.cs" />
+    <Compile Include="Exceptions\OAuthAuthorizationException.cs" />
+    <Compile Include="IRestClient.cs" />
+    <Compile Include="OAuthCredentials.cs" />
+    <Compile Include="Exceptions\ApiOAuthException.cs" />
+    <Compile Include="OAuthService.cs" />
+    <Compile Include="ApiClient.cs" />
+    <Compile Include="Entities\FiscalYear.cs" />
+    <Compile Include="Exceptions\ApiServerException.cs" />
+    <Compile Include="Entities\ImportInfo.cs" />
+    <Compile Include="OAuthRestClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\ImportSieResult.cs" />
+    <Compile Include="Resources\AgencyUserCompanyResource.cs" />
+    <Compile Include="Resources\AgencyUserResource.cs" />
+    <Compile Include="Resources\ChartOfAccountsResource.cs" />
+    <Compile Include="Resources\CommentResource.cs" />
+    <Compile Include="Resources\CompanyAgencyUserResource.cs" />
+    <Compile Include="Resources\CompanyResource.cs" />
+    <Compile Include="Resources\CompanyUserResource.cs" />
+    <Compile Include="Resources\DocumentResource.cs" />
+    <Compile Include="Resources\FiscalYearResource.cs" />
+    <Compile Include="Resources\ImportSieResource.cs" />
+    <Compile Include="Resources\KeyFigureDataResource.cs" />
+    <Compile Include="Resources\KeyFigurePresetResource.cs" />
+    <Compile Include="Resources\KeyFigureResource.cs" />
+    <Compile Include="Resources\UserResource.cs" />
+    <Compile Include="WebResponseExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\thirdparty\libs\DevDefined.OAuth\src\DevDefined.OAuth\DevDefined.OAuth.csproj">
+      <Project>{61B700B6-3911-4CEF-8751-7F42CA765068}</Project>
+      <Name>DevDefined.OAuth</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
