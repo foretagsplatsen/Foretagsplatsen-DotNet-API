@@ -8,6 +8,7 @@ namespace Foretagsplatsen.Api2.Entities.Company
         public const string importCompanyRoleType = "Import";
         public const string normalCompanyRoleType = "Normal";
         public const string limitedCompanyRoleType = "Limited";
+        public const string documentArchiveCompanyRoleType = "DocumentArchive";
 
         /// <summary>
         /// The id of the company the role applies to. See also <see cref="CompanyInfo"/>.
