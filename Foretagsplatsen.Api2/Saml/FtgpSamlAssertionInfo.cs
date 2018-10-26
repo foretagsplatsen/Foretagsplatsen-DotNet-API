@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Foretagsplatsen.Api2.Saml
@@ -43,28 +43,57 @@ namespace Foretagsplatsen.Api2.Saml
 
         public void AddAgencyDirectorRole(string businessIdentityCode)
         {
-            Roles.Add(string.Format("{0}|{1}", businessIdentityCode, "AgencyDirector"));
+            Roles.Add(CreateAgencyDirectorRole(businessIdentityCode));
         } 
 
         public void AddAgencyConsultantRole(string businessIdentityCode)
         {
-            Roles.Add(string.Format("{0}|{1}", businessIdentityCode, "AgencyConsultant"));
+            Roles.Add(CreateAgencyConsultantRole(businessIdentityCode));
         }
 
         public void AddCompanyNormalRole(string businessIdentityCode)
         {
-            Roles.Add(string.Format("{0}|{1}", businessIdentityCode, "CompanyNormalRole"));
+            Roles.Add(CreateCompanyNormalRole(businessIdentityCode));
         }
 
         public void AddCompanyAdminRole(string businessIdentityCode)
         {
-            Roles.Add(string.Format("{0}|{1}", businessIdentityCode, "CompanyAdminRole"));
+            Roles.Add(CreateCompanyAdminRole(businessIdentityCode));
         }
 
         public void AddCompanyLimitedRole(string businessIdentityCode)
         {
-            Roles.Add(string.Format("{0}|{1}", businessIdentityCode, "CompanyLimitedRole"));
+            Roles.Add(CreateCompanyLimitedRole(businessIdentityCode));
         }
 
+        public static string CreateAgencyDirectorRole(string businessIdentityCode)
+        {
+            return CreateRole(businessIdentityCode, "AgencyDirector");
+        }
+
+        public static string CreateAgencyConsultantRole(string businessIdentityCode)
+        {
+            return CreateRole(businessIdentityCode, "AgencyConsultant");
+        }
+
+        public static string CreateCompanyNormalRole(string businessIdentityCode)
+        {
+            return CreateRole(businessIdentityCode, "CompanyNormalRole");
+        }
+
+        public static string CreateCompanyAdminRole(string businessIdentityCode)
+        {
+            return CreateRole(businessIdentityCode, "CompanyAdminRole");
+        }
+
+        public static string CreateCompanyLimitedRole(string businessIdentityCode)
+        {
+            return CreateRole(businessIdentityCode, "CompanyLimitedRole");
+        }
+
+        private static string CreateRole(string businessIdentityCode, string role)
+        {
+            return string.Format("{0}|{1}", businessIdentityCode, role);
+        }
     }
 }

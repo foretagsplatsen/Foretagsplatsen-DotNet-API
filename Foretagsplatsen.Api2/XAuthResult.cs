@@ -1,6 +1,6 @@
 using System;
 
-namespace Foretagsplatsen.Api.Entities
+namespace Foretagsplatsen.Api2.Entities
 {
     public class XAuthResult
     {
