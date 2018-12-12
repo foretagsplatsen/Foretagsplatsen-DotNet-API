@@ -54,8 +54,6 @@ namespace Foretagsplatsen.Api.SimpleConsoleClient
             {
                 Console.WriteLine(info.name);
             }
-
-            Console.ReadKey();
         }
     }
 }

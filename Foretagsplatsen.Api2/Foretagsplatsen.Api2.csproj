@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageId>Foretagsplatsen.Api</PackageId>
+    <Authors>whenrik</Authors>
+    <PackageProjectUrl>http://web.foretagsplatsen.se/Api/v2/Help/About/Api/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/foretagsplatsen/Foretagsplatsen-DotNet-API</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
