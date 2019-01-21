@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foretagsplatsen.Api2", "Foretagsplatsen.Api2\Foretagsplatsen.Api2.csproj", "{22713C19-3001-4D0C-B64F-7FF6599DC30A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foretagsplatsen.Api2", "Foretagsplatsen.Api2\Foretagsplatsen.Api2.csproj", "{22713C19-3001-4D0C-B64F-7FF6599DC30A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foretagsplatsen.Api.SimpleConsoleClient", "Foretagsplatsen.Api.SimpleConsoleClient\Foretagsplatsen.Api.SimpleConsoleClient.csproj", "{DCA6EB6C-A6FB-4921-B5FB-B4465179F459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foretagsplatsen.Api.SimpleConsoleClient", "Foretagsplatsen.Api.SimpleConsoleClient\Foretagsplatsen.Api.SimpleConsoleClient.csproj", "{DCA6EB6C-A6FB-4921-B5FB-B4465179F459}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foretagsplatsen.Api.TestProject", "Foretagsplatsen.Api.TestProject\Foretagsplatsen.Api.TestProject.csproj", "{885586CA-88D5-43BB-A798-BE80B2BD6ACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{DCA6EB6C-A6FB-4921-B5FB-B4465179F459}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA6EB6C-A6FB-4921-B5FB-B4465179F459}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA6EB6C-A6FB-4921-B5FB-B4465179F459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{885586CA-88D5-43BB-A798-BE80B2BD6ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885586CA-88D5-43BB-A798-BE80B2BD6ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885586CA-88D5-43BB-A798-BE80B2BD6ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885586CA-88D5-43BB-A798-BE80B2BD6ACD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95CD8306-AE8A-4D6D-B480-D6B24BD3AD4A}
 	EndGlobalSection
 EndGlobal
