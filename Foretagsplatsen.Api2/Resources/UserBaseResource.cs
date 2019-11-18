@@ -31,8 +31,6 @@ namespace Foretagsplatsen.Api2.Resources
             {
                 switch (type)
                 {
-                    case PartnerUser.PartnerUserTypeName:
-                        return JsonConvert.DeserializeObject<PartnerUser>(obj.ToString());
                     case AgencyDirector.agencyDirectorTypeName:
                         return JsonConvert.DeserializeObject<AgencyDirector>(obj.ToString());
                     case AgencyConsultant.agencyConsultantTypeName:

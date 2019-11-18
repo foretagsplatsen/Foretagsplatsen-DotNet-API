@@ -96,7 +96,6 @@
     <Compile Include="Entities\User\AgencyUser.cs" />
     <Compile Include="Entities\User\CompanyUser.cs" />
     <Compile Include="Entities\User\AgencyDirector.cs" />
-    <Compile Include="Entities\User\PartnerUser.cs" />
     <Compile Include="Entities\User\AgencyConsultant.cs" />
     <Compile Include="Entities\User\UserInfo.cs" />
     <Compile Include="Exceptions\ApiErrorType.cs" />

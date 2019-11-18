@@ -36,15 +36,10 @@ namespace Foretagsplatsen.Api2.Saml
             AgencyId = agencyId;
         }
 
-        public void AddPartnerRole(string partnerId)
-        {
-            Roles.Add(string.Format("{0}|{1}", partnerId, "PartnerUser"));
-        }
-
         public void AddAgencyDirectorRole(string businessIdentityCode)
         {
             Roles.Add(CreateAgencyDirectorRole(businessIdentityCode));
-        } 
+        }
 
         public void AddAgencyConsultantRole(string businessIdentityCode)
         {
