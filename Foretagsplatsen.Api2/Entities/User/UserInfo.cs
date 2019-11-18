@@ -30,7 +30,6 @@ namespace Foretagsplatsen.Api2.Entities.User
         /// * "AgencyConsultant"
         /// * "AgencyDirector"
         /// * "CompanyUser"
-        /// * "PartnerUser"
         /// </summary>
         public string type { get; protected set; }
     }
