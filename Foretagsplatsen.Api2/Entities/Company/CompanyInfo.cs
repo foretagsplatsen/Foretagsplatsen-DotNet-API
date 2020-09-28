@@ -37,5 +37,10 @@ namespace Foretagsplatsen.Api2.Entities.Company
         public bool isFortnoxCompany => typeOfCompany == FortnoxCompanyType;
         public bool hasFortnoxAuthorizationCode => !string.IsNullOrEmpty(fortnoxAuthorizationCode);
         public bool hasFortnoxExtendedAuthorizationCode => !string.IsNullOrEmpty(fortnoxExtendedAuthorizationCode);
+        /// <summary>
+        /// Id of the company type.
+        /// null means "use agency's default company type"
+        /// </summary>
+        public string CompanyTypeId { get; set; }
     }
 }
