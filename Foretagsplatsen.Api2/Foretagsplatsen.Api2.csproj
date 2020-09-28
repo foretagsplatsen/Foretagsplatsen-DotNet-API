@@ -79,6 +79,7 @@
     <Compile Include="Entities\Comments\KeyFigureComment.cs" />
     <Compile Include="Entities\Company\CompanyInfo.cs" />
     <Compile Include="Entities\Company\CompanyRole.cs" />
+    <Compile Include="Entities\Company\CompanyType.cs" />
     <Compile Include="Entities\ContactInfo.cs" />
     <Compile Include="Entities\Documents\DocumentFolder.cs" />
     <Compile Include="Entities\Documents\Document.cs" />
