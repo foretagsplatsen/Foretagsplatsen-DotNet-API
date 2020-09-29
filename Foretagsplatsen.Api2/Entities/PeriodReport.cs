@@ -12,7 +12,6 @@ namespace Foretagsplatsen.Api2.Entities
     /// </summary>
     public class PeriodReport
     {
-
         public string id { get; set; }
 
         public string title { get; set; }
@@ -27,5 +26,8 @@ namespace Foretagsplatsen.Api2.Entities
 
         public Period period { get; set; }  
 
+        public DateTime lastUpdated { get; set; }
+
+        public bool isPublished { get; set; }
     }
 }
