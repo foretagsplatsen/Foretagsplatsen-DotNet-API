@@ -26,7 +26,7 @@ namespace Foretagsplatsen.Api2.Entities
 
         public Period period { get; set; }  
 
-        public DateTime lastUpdated { get; set; }
+        public DateTime? lastUpdated { get; set; }
 
         public bool isPublished { get; set; }
     }
