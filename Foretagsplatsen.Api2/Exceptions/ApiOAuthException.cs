@@ -17,7 +17,7 @@ namespace Foretagsplatsen.Api2.Exceptions
 
         public ApiOAuthException(string message, OAuthException innerException) : base(message, innerException)
         {
-            OAuthProblemReport report = innerException.Report;
+            var report = innerException.Report;
             Problem = report.Problem;
             Advice = report.ProblemAdvice;
         }

@@ -22,31 +22,31 @@ namespace Foretagsplatsen.Api2.Resources
 
         public List<KeyFigureResult> List()
         {
-            string url = GetUrl();
+            var url = GetUrl();
             return client.Get<List<KeyFigureResult>>(url);
         }
 
         public List<KeyFigureResult> List(DateTime startDate, DateTime endDate)
         {
-            string url = GetUrl(startDate, endDate);
+            var url = GetUrl(startDate, endDate);
             return client.Get<List<KeyFigureResult>>(url);
         }
 
         public List<KeyFigureResult> List(int numberOfYears, string keyFigurePresetId)
         {
-            string url = GetUrl(numberOfYears, keyFigurePresetId);
+            var url = GetUrl(numberOfYears, keyFigurePresetId);
             return client.Get<List<KeyFigureResult>>(url);
         }
 
         public KeyFigureResult Get(string keyFigureId)
         {
-            string url = GetUrl(keyFigureId);
+            var url = GetUrl(keyFigureId);
             return client.Get<KeyFigureResult>(url);
         }
 
         public KeyFigureResult Get(string keyFigureId, DateTime startDate, DateTime endDate)
         {
-            string url = GetUrl(keyFigureId, startDate, endDate);
+            var url = GetUrl(keyFigureId, startDate, endDate);
             return client.Get<KeyFigureResult>(url, new { startDate, endDate });
         }
 
