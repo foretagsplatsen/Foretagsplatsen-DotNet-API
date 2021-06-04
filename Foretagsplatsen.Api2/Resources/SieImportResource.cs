@@ -16,7 +16,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         public SieImportResult Upload(SieImportData importData)
         {
-            string url = GetUrl();
+            var url = GetUrl();
             return client.Put<SieImportResult>(url, JObject.FromObject(importData).ToString());
         }
 
@@ -27,7 +27,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         public SieImportResult Upload(SieImportData importData, string agencyShortName)
         {
-            string url = GetUrl(agencyShortName);
+            var url = GetUrl(agencyShortName);
             return client.Put<SieImportResult>(url, JObject.FromObject(importData).ToString());
         }
 

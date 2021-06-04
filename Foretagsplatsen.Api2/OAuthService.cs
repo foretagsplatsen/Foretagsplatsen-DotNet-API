@@ -125,7 +125,7 @@ namespace Foretagsplatsen.Api2
         /// <returns>An OAuth verifier.</returns>
         public string Authorize(string username, string password)
         {
-            string authorizationUrl = GetAuthorizeUrl();
+            var authorizationUrl = GetAuthorizeUrl();
 
             var usernameAndPasswordParameters = new Dictionary<string, string>
             {
@@ -134,7 +134,7 @@ namespace Foretagsplatsen.Api2
             };
 
             // Build request for direct of user to service provider
-            IConsumerRequest authorizationRequest = session
+            var authorizationRequest = session
                 .Request()
                 .Post()
                 .ForUrl(authorizationUrl)
@@ -144,10 +144,10 @@ namespace Foretagsplatsen.Api2
                 .AlterHttpWebRequest(httpRequest => httpRequest.AllowAutoRedirect = false);
 
             // Get response from server and parse needed values from response
-            HttpWebResponse authorizationResponse = authorizationRequest.ToWebResponse();
+            var authorizationResponse = authorizationRequest.ToWebResponse();
 
             // Read response
-            string json = authorizationResponse.ReadBody();
+            var json = authorizationResponse.ReadBody();
 
             var authorizeResult = JsonConvert.DeserializeObject<AuthorizeResult>(json);
 
@@ -200,7 +200,7 @@ namespace Foretagsplatsen.Api2
         public OAuthCredentials GetCredentials(string username, string password)
         {
             GetRequestToken();
-            string verifier = Authorize(username, password);
+            var verifier = Authorize(username, password);
             return GetAccessToken(username, verifier);
         }
 

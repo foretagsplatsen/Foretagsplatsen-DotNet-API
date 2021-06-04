@@ -22,25 +22,25 @@ namespace Foretagsplatsen.Api2.Resources
 
         public List<CompanyInfo> List()
         {
-            string url = GetUrl();
+            var url = GetUrl();
             return client.Get<List<CompanyInfo>>(url);
         }
 
         public CompanyInfo Get(string companyId)
         {
-            string url = GetUrl(companyId);
+            var url = GetUrl(companyId);
             return client.Get<CompanyInfo>(url);
         }
 
         public CompanyInfo Create(CompanyInfo company)
         {
-            string url = GetUrl(company);
+            var url = GetUrl(company);
             return client.Post<CompanyInfo>(url, JObject.FromObject(company).ToString());
         }
 
         public CompanyInfo Update(CompanyInfo company)
         {
-            string url = GetUrl(company);
+            var url = GetUrl(company);
             return client.Put<CompanyInfo>(url, JObject.FromObject(company).ToString());
         }
 
@@ -51,7 +51,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         public void Delete(string companyId)
         {
-            string url = GetUrl(companyId);
+            var url = GetUrl(companyId);
             client.Delete(url);
         }
 

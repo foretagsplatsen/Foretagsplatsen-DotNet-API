@@ -22,13 +22,13 @@ namespace Foretagsplatsen.Api2.Resources
 
         public List<PeriodReport> List(int? latest = null)
         {
-            string url = GetUrl();
+            var url = GetUrl();
             return client.Get<List<PeriodReport>>(url);
         }
 
         public PeriodReport Get(string id)
         {
-            string url = GetUrl(id);
+            var url = GetUrl(id);
             return client.Get<PeriodReport>(url);
         }
 

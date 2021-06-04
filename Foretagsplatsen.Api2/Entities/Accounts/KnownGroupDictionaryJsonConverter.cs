@@ -57,7 +57,7 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
                     if (tokenChildren != null)
                     {
-                        foreach (JToken tokenChild in tokenChildren)
+                        foreach (var tokenChild in tokenChildren)
                         {
                             var id = tokenChild.Value<string>();
 
@@ -107,8 +107,8 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
         private void WriteAccountGroup(JsonWriter writer, KeyValuePair<string, IAccountGroup> groupKeyValuePair)
         {
-            string groupIdentifier = groupKeyValuePair.Key;
-            IAccountGroup group = groupKeyValuePair.Value;
+            var groupIdentifier = groupKeyValuePair.Key;
+            var group = groupKeyValuePair.Value;
 
             if (group.type == AccountGroup.typeName)
             {

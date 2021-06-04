@@ -22,7 +22,7 @@ namespace Foretagsplatsen.Api2.Entities.Accounts
 
             foreach (var token in tokenArray)
             {
-                string type = token["type"].Value<string>();
+                var type = token["type"].Value<string>();
 
                 if (type == AccountGroup.typeName)
                 {

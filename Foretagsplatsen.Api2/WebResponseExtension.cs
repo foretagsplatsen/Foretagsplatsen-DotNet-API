@@ -7,7 +7,7 @@ namespace Foretagsplatsen.Api2
     {
         public static string ReadBody(this WebResponse webResponse)
         {
-            using (Stream responseStream = webResponse.GetResponseStream())
+            using (var responseStream = webResponse.GetResponseStream())
             {
                 if (responseStream == null)
                 {

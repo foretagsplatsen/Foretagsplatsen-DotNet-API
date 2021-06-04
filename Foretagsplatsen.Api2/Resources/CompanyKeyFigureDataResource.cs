@@ -23,13 +23,13 @@ namespace Foretagsplatsen.Api2.Resources
 
         public List<KeyFigureData> List(string fiscalYearId)
         {
-            string url = GetUrl(fiscalYearId);
+            var url = GetUrl(fiscalYearId);
             return client.Get<List<KeyFigureData>>(url);
         }
 
         public List<KeyFigureData> Update(string fiscalYearId, List<KeyFigureData> listOfKeyFigureData)
         {
-            string url = GetUrl(fiscalYearId);
+            var url = GetUrl(fiscalYearId);
             return client.Put<List<KeyFigureData>>(url, JArray.FromObject(listOfKeyFigureData).ToString());            
         }
 

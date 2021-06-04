@@ -15,25 +15,25 @@ namespace Foretagsplatsen.Api2.Resources
 
         public List<Agency> List()
         {
-            string url = GetUrl();
+            var url = GetUrl();
             return client.Get<List<Agency>>(url);
         }
 
         public Agency Get(string shortName)
         {
-            string url = GetUrl(shortName);
+            var url = GetUrl(shortName);
             return client.Get<Agency>(url);
         }
 
         public Agency Create(Agency agency)
         {
-            string url = GetUrl(agency);
+            var url = GetUrl(agency);
             return client.Post<Agency>(url, JObject.FromObject(agency).ToString());
         }
 
         public Agency Update(Agency agency)
         {
-            string url = GetUrl(agency);
+            var url = GetUrl(agency);
             return client.Put<Agency>(url, JObject.FromObject(agency).ToString());
         }
 
@@ -44,7 +44,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         public void Delete(string shortName)
         {
-            string url = GetUrl(shortName);
+            var url = GetUrl(shortName);
             client.Delete(url);
         }
 
