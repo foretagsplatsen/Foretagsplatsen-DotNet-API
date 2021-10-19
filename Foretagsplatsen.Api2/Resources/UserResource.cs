@@ -57,7 +57,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string userName = "")
         {
-            const string urlFormat = "{0}/Api/v2/User/{1}";
+            const string urlFormat = "{0}/User/{1}";
             return string.Format(urlFormat, Client.BaseUrl, userName);
         }
 

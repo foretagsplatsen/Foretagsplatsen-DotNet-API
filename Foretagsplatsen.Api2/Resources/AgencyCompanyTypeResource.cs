@@ -35,7 +35,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl()
         {
-            return $"{client.BaseUrl}/Api/v2/Agency/{agencyShortName}/CompanyType";
+            return $"{client.BaseUrl}/Agency/{agencyShortName}/CompanyType";
         }
 
         private string GetUrl(string companyTypeId)

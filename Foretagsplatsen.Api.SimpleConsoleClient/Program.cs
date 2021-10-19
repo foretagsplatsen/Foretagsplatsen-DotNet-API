@@ -1,61 +1,80 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
+using System.Text;
 using Foretagsplatsen.Api2;
-using Foretagsplatsen.Api2.Entities;
-using Foretagsplatsen.Api2.Entities.Company;
+using Foretagsplatsen.Api2.Entities.SieImport;
 
 namespace Foretagsplatsen.Api.SimpleConsoleClient
 {
-    class Program
-    {
-        static void Main()
-        {
-            const string baseUrl = "https://web.foretagsplatsen.se";
+	class Program
+	{
+		private static ApiClient apiClient;
 
-            // Create a client
-            var client = new ApiClient(new BasicAuthenticationRestClient("apiconsultant", "api", baseUrl));
+		static public void UploadData(SieImportData sieImportData, int retryCount = 3)
+		{
+			var importResource = apiClient.GetSieImportResource();
+			try
+			{
+				importResource.Upload(sieImportData);
+			}
+			catch (Exception error)
+			{
+				if (retryCount <= 0) throw error;
+				UploadData(sieImportData, retryCount - 1);
+			}
+		}
 
-            // List all companies
-            var companyResource = client.GetCompanyResource();
-            var companies = companyResource.List(true);
-            foreach (var info in companies)
-            {
-                Console.WriteLine(info.name);
-            }
+		static public string EncodeBase64(string value)
+		{
+			var valueBytes = Encoding.UTF8.GetBytes(value);
+			return Convert.ToBase64String(valueBytes);
+		}
 
-            var firstCompany = companies.First();
+		static public SieImportData Generate(string companyId, string year)
+		{
+			var generate = SieGenerator.Generate(companyId, year);
+			return new SieImportData
+			{
+				chartOfAccountsId = "EUBAS97",
+				currency = "SEK",
+				data = generate,
+				lastLedgerDate = DateTime.Parse(string.Concat(year, "-12-31")),
+				fiscalYearStart = DateTime.Parse(string.Concat(year, "-01-01")),
+				fiscalYearEnd = DateTime.Parse(string.Concat(year, "-12-31")),
+				dimensionObjects = new List<string>().ToArray(),
+				excludeEmptyDimensions = false
+			};
+		}
 
-            // List fiscal years
-            var fiscalYears = client.GetCompanyFiscalYearResource(firstCompany).List();
-            foreach (FiscalYear year in fiscalYears)
-            {
-                Console.WriteLine("Year: " + year.id);
-            }
+		static void Main()
+		{
+			const string baseUrl = "https://finsitapp.wolterskluwer.se/Api/v2";
 
-            // Update a company
-            firstCompany.name = "A brand new name";
-            companyResource.Update(firstCompany);
+			// Create a client
+			apiClient = new ApiClient(new BasicAuthenticationRestClient("eldirector", "muybienmuchacho", baseUrl));
 
-            // Get Single-Sign-On url
-            var loginUrl = client.GetLoginRequest(LoginParameters.CreateOAuthLoginParameters(firstCompany.businessIdentityCode, "MyCompanies"));
-            Console.WriteLine(loginUrl.RequestUri);
+			var companyId = "556677-13680";
 
-            // Fetch latest 2 period reports
-            var latestPeriodReports = client.GetCompanyPeriodReportResource(firstCompany).List(latest: 2);
-            foreach (var report in latestPeriodReports)
-            {
-                Console.WriteLine(report.title);
-            }
-
-            // Execute custom requests
-            var moreCompanies = client.Get<List<CompanyInfo>>(baseUrl + "/Api/v2/Company");
-            foreach (CompanyInfo info in moreCompanies)
-            {
-                Console.WriteLine(info.name);
-            }
-
-            Console.ReadKey();
-        }
-    }
+			var sieFiles = new[]
+			{
+				Generate(companyId, "1996"),
+				Generate(companyId, "1997"),
+				Generate(companyId, "1998"),
+				Generate(companyId, "1999"),
+				Generate(companyId, "2000"),
+				Generate(companyId, "2001"),
+				Generate(companyId, "2002"),
+				Generate(companyId, "2003"),
+				Generate(companyId, "2004"),
+				Generate(companyId, "2005"),
+				Generate(companyId, "2006"),
+				Generate(companyId, "2007")
+			};
+			foreach (var sieFile in sieFiles)
+			{
+				UploadData(sieFile);
+			}
+		}
+	}
 }

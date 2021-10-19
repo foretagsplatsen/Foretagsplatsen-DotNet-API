@@ -85,7 +85,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string documentId = "")
         {
-            return $"{client.BaseUrl}/Api/v2/Company/{companyId}/Document/{documentId}";
+            return $"{client.BaseUrl}/Company/{companyId}/Document/{documentId}";
         }
 
         private static Document CreateDocument(JToken obj)

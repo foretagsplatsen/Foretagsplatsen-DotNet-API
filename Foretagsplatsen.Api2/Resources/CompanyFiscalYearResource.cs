@@ -49,13 +49,13 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl()
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/FiscalYear";
+            const string urlFormat = "{0}/Company/{1}/FiscalYear";
             return string.Format(urlFormat, client.BaseUrl, companyId);
         }
 
         private string GetUrl(string fiscalYearId)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/FiscalYear/{2}";
+            const string urlFormat = "{0}/Company/{1}/FiscalYear/{2}";
             return string.Format(urlFormat, client.BaseUrl, companyId, fiscalYearId);
         }
 

@@ -80,7 +80,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string commentId = "")
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/Comment/{2}";
+            const string urlFormat = "{0}/Company/{1}/Comment/{2}";
             return string.Format(urlFormat, client.BaseUrl, companyId, commentId);
         }
 

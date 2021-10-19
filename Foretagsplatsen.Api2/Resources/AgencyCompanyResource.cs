@@ -59,13 +59,13 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl()
         {
-            const string urlFormat = "{0}/Api/v2/Agency/{1}/Company";
+            const string urlFormat = "{0}/Agency/{1}/Company";
             return string.Format(urlFormat, client.BaseUrl, agencyShortName);
         }
 
         private string GetUrl(string companyId)
         {
-            const string urlFormat = "{0}/Api/v2/Agency/{1}/Company/{2}";
+            const string urlFormat = "{0}/Agency/{1}/Company/{2}";
             return string.Format(urlFormat, client.BaseUrl, agencyShortName, companyId);
         }
 

@@ -54,31 +54,31 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl()
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue";
+            const string urlFormat = "{0}/Company/{1}/KeyFigureValue";
             return string.Format(urlFormat, client.BaseUrl, companyId);
         }
 
         private string GetUrl(DateTime startDate, DateTime endDate)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue/?startDate={2}&endDate={3}";
+            const string urlFormat = "{0}/Company/{1}/KeyFigureValue/?startDate={2}&endDate={3}";
             return string.Format(urlFormat, client.BaseUrl, companyId, startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"));
         }
 
         private string GetUrl(string keyFigureId)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue/{2}";
+            const string urlFormat = "{0}/Company/{1}/KeyFigureValue/{2}";
             return string.Format(urlFormat, client.BaseUrl, companyId, keyFigureId);
         }
 
         private string GetUrl(string keyFigureId, DateTime startDate, DateTime endDate)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue/{2}?startDate={3}&endDate={4}";
+            const string urlFormat = "{0}/Company/{1}/KeyFigureValue/{2}?startDate={3}&endDate={4}";
             return string.Format(urlFormat, client.BaseUrl, companyId, keyFigureId, startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"));
         }
 
         private string GetUrl(int numberOfYears, string keyFigurePresetId)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigureValue/?numberOfYears={2}&keyFigurePresetId={3}";
+            const string urlFormat = "{0}/Company/{1}/KeyFigureValue/?numberOfYears={2}&keyFigurePresetId={3}";
             return string.Format(urlFormat, client.BaseUrl, companyId, numberOfYears, keyFigurePresetId);
         }
 

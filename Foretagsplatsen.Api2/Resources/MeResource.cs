@@ -24,7 +24,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl()
         {
-            const string urlFormat = "{0}/Api/v2/Me";
+            const string urlFormat = "{0}/Me";
             return string.Format(urlFormat, Client.BaseUrl);
         }
 

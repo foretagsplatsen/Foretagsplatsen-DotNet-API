@@ -36,7 +36,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(int? latest = null)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/PeriodReport/";
+            const string urlFormat = "{0}/Company/{1}/PeriodReport/";
             var url = string.Format(urlFormat, client.BaseUrl, companyId);
 
             if (latest != null)
@@ -49,7 +49,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string id)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/PeriodReport/{2}";
+            const string urlFormat = "{0}/Company/{1}/PeriodReport/{2}";
             return string.Format(urlFormat, client.BaseUrl, companyId, id);
         }
 

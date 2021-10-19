@@ -35,12 +35,12 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl()
         {
-            const string importSieUrlFormat = "{0}/Api/v2/SieImport";
+            const string importSieUrlFormat = "{0}/SieImport";
             return string.Format(importSieUrlFormat, client.BaseUrl);
         }
         private string GetUrl(string agencyShortName)
         {
-            const string importSieUrlFormat = "{0}/Api/v2/SieImport/{1}";
+            const string importSieUrlFormat = "{0}/SieImport/{1}";
             return string.Format(importSieUrlFormat, client.BaseUrl, agencyShortName);
         }
 

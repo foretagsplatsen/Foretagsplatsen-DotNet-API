@@ -70,7 +70,7 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string keyFigurePresetId = "")
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/KeyFigurePreset/{2}";
+            const string urlFormat = "{0}/Company/{1}/KeyFigurePreset/{2}";
             return string.Format(urlFormat, client.BaseUrl, companyId, keyFigurePresetId);
         }
 

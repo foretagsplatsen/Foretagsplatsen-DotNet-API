@@ -103,13 +103,13 @@ namespace Foretagsplatsen.Api2.Resources
 
         private string GetUrl(string chartOfAccountsId = "")
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/ChartOfAccounts/{2}";
+            const string urlFormat = "{0}/Company/{1}/ChartOfAccounts/{2}";
             return string.Format(urlFormat, client.BaseUrl, companyId, chartOfAccountsId);
         }
 
         private string GetUrl(DateTime startDate, DateTime endDate)
         {
-            const string urlFormat = "{0}/Api/v2/Company/{1}/ChartOfAccounts/?startDate={2}&endDate={3}";
+            const string urlFormat = "{0}/Company/{1}/ChartOfAccounts/?startDate={2}&endDate={3}";
             return string.Format(urlFormat, client.BaseUrl, companyId, startDate.ToString("yyyy-MM-dd"), endDate.ToString("yyyy-MM-dd"));
         }
         #endregion
