@@ -10,5 +10,6 @@ namespace Foretagsplatsen.Api2.Exceptions
         public const string Unknown = "Unknown";
         public const string PreconditionFailed = "PreconditionFailed";
         public const string InternalServerError = "InternalServerError";
+        public const string OperationCancelled = "OperationCancelled";
     }
 }
