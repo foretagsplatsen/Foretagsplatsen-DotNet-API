@@ -14,5 +14,10 @@ namespace Foretagsplatsen.Api2.Entities.User
         /// List of company ids.
         /// </summary>
         public IEnumerable<string> customers { get; set; }
+
+        /// <summary>
+        /// Agency id attached to the user
+        /// </summary>
+        public string agency { get; set; }
     }
 }
