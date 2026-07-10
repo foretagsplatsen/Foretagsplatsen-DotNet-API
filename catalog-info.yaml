@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: "Foretagsplatsen-DotNet-API"
+  description: "Foretagsplatsen-DotNet-API"
+  annotations:
+    wolterskluwer.io/globalactions-optin: "OrcaSAST,OrcaSCA"
+    wolterskluwer.io/globalactions-optout: ""
+
+spec:
+  type: "library"
+  lifecycle: "production"
+  owner: "donotreply@wolterskluwer.com"
